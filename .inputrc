@@ -1,0 +1,10 @@
+export TERM=xterm
+set editing-mode emacs
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set meta-flag on
+set convert-meta off
+set output-meta on
+set bell-style visible
+"\e[A": history-search-backward
+"\e[B": history-search-forward
