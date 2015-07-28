@@ -15,4 +15,6 @@
 	name = Jeffrey Sulton
 	email = notlus68@me.com
 [core]
-	editor = atom --wait
+	editor = subl -n -w
+[color]
+	ui = auto

@@ -51,7 +51,7 @@ plugins=(git xcode atom osx battery brew)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Applications:/opt/X11/bin:/Users/jeffrey_sulton/.rvm/bin:/Users/jeffrey_sulton/.rvm/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Applications:/opt/X11/bin:/Users/jeffrey_sulton/.rvm/bin:/Users/jeffrey_sulton/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
