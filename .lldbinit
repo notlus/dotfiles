@@ -1,0 +1,2 @@
+command script import ~/development/chisel/fblldb.py
+command script import lldb.macosx.crashlog
