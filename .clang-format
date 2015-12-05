@@ -3,6 +3,8 @@ Language:        Cpp
 #BasedOnStyle:  LLVM
 AccessModifierOffset: -2
 ConstructorInitializerIndentWidth: 4
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
 AlignEscapedNewlinesLeft: false
 AlignTrailingComments: true
 AllowAllParametersOfDeclarationOnNextLine: true
@@ -44,7 +46,20 @@ Standard:        Cpp11
 IndentWidth:     4
 TabWidth:        4
 UseTab:          Never
-BreakBeforeBraces: Allman
+AlignAfterOpenBracket: Align
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: false
+  AfterObjCDeclaration: true
+  AfterStruct: true
+  AfterUnion: true
+  BeforeCatch: true
+  BeforeElse: true
+  IndentBraces: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 SpacesInAngles:  false
