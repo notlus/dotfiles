@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export P4CONFIG=.p4conf
-export EDITOR='atom -w'
+export EDITOR='subl -w'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
