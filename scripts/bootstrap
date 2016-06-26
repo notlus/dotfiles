@@ -2,11 +2,17 @@
 
 DOTFILES_ROOT=~/.dotfiles
 
+# Create symlink for O
+omzssrc="$DOTFILES_ROOT"/".oh-my-zsh"
+omzsdst="$HOME"/".oh-my-zsh"
+ln -s $omzssrc $omzsdst
+
 DOTFILES=`find "$DOTFILES_ROOT" -type f -maxdepth 1`
+ 
 for src in $DOTFILES
 do
     filename=$(basename $src)
-    if [[ "$filename" != ".DS_Store" && "$filename" != ".dotfiles" && "$filename" != "scripts" ]]
+    if [[ "$filename" != ".DS_Store" && "$filename" != ".dotfiles" && "$filename" != "scripts" && "$filename" != ".oh-my-zsh" && "$filename" != ".git" ]]
     then
         dst="$HOME/$filename"
 
