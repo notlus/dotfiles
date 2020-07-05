@@ -1,4 +1,5 @@
 syntax on
+set encoding=utf8
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -15,27 +16,28 @@ set ruler
 set mouse=a
 set colorcolumn=80
 set clipboard=unnamed
-"set background = "dark"
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smarttab
 
+" Initialize plugin system
 call plug#begin('~/.vim/plugged')
 
 " Vim LSP related
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'Valloric/YouCompleteMe'
-Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-dracula'
+Plug 'liuchengxu/vim-which-key'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
 
-" Initialize plugin system
 call plug#end()
 
 colorscheme gruvbox 
+let g:airline_powerline_fonts = 1
 
 " SourceKit-LSP configuration
 if executable('sourcekit-lsp')
@@ -46,7 +48,16 @@ if executable('sourcekit-lsp')
         \ })
 endif
 
-autocmd FileType swift setlocal omnifunc=lsp#complete
-autocmd FileType swift nnoremap <C-]> :LspDefinition<CR>
-
 let mapleader = " "
+
+" Edit vimrc configuration file
+nnoremap <Leader>vimrc :e $MYVIMRC<CR>
+
+" Reload vimrc configuration file
+nnoremap <Leader><CR> :source $MYVIMRC<CR>
+
+" Use ESC to exit terminal mode
+tnoremap <ESC> <C-\><C-N>
+
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
