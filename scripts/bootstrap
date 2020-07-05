@@ -2,6 +2,9 @@
 
 DOTFILES_ROOT=~/.dotfiles
 
+# Install ohmysh
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
 # Create symlink for O
 omzssrc="$DOTFILES_ROOT"/".oh-my-zsh"
 omzsdst="$HOME"/".oh-my-zsh"
