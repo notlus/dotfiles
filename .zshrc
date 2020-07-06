@@ -99,7 +99,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias nv="nvim"
-
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cb="conan build . --build-folder=build"
 
 #source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
