@@ -36,7 +36,11 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox 
+let g:gruvbox_invert_selection='0'
+set background=dark
+
 let g:airline_powerline_fonts = 1
 
 " SourceKit-LSP configuration
