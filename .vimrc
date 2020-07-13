@@ -16,8 +16,10 @@ set ruler
 set mouse=a
 set colorcolumn=80
 set clipboard=unnamed
+set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smarttab
+set splitright splitbelow
 
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
