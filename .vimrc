@@ -16,8 +16,11 @@ set ruler
 set mouse=a
 set colorcolumn=80
 set clipboard=unnamed
+set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smarttab
+set termguicolors
+set splitright splitbelow
 
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
@@ -31,6 +34,7 @@ Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-dracula'
 Plug 'liuchengxu/vim-which-key'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
 
@@ -55,7 +59,8 @@ endif
 let mapleader = " "
 
 " Edit vimrc configuration file
-nnoremap <Leader>vimrc :e $MYVIMRC<CR>
+nnoremap <Leader>initv :e $MYVIMRC<CR>
+nnoremap <Leader>vimrc :e ~/.vimrc<CR>
 
 " Reload vimrc configuration file
 nnoremap <Leader><CR> :source $MYVIMRC<CR>
