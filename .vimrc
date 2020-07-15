@@ -20,7 +20,8 @@ set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smarttab
 set termguicolors
-set splitright splitbelow
+set splitbelow
+set splitright 
 
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
@@ -70,3 +71,8 @@ tnoremap <ESC> <C-\><C-N>
 
 nnoremap <M-j> :m .+1<CR>==
 nnoremap <M-k> :m .-2<CR>==
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
