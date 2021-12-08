@@ -1,6 +1,6 @@
 {
-  "clangd.path": "/usr/local/opt/llvm/bin/clangd",
-  "sourcekit.commandPath": "/usr/local/bin/sourcekit-lsp",
+  "clangd.path": "/usr/bin/clangd",
+  "sourcekit.commandPath": "/usr/bin/sourcekit-lsp",
   "sourcekit.enable": true,
   "explorer.file.showHiddenFiles": true,
   "explorer.width": 30,
