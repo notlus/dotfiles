@@ -38,11 +38,14 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
+"Plug 'preservim/nerdtree'
 
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox 
+colorscheme dracula 
 let g:gruvbox_invert_selection='0'
 set background=dark
 
