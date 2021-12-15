@@ -6,15 +6,19 @@ set shiftwidth=4
 set expandtab
 set number relativenumber
 set nowrap
-set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+
+" Ignore case and be smart about it
+set ignorecase
+set smartcase
+
 set ruler
 set mouse=a
-set colorcolumn=80
+set colorcolumn=100
 set clipboard=unnamed
 set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -38,7 +42,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
 
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -75,7 +79,24 @@ tnoremap <ESC> <C-\><C-N>
 nnoremap <M-j> :m .+1<CR>==
 nnoremap <M-k> :m .-2<CR>==
 
+" Navigate between split views
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+
+" Toggle the NERDTree browser with the leader key
+nnoremap <Leader>0 :NERDTreeToggle<CR>
+
+" Comment/uncomment lines with leader key
+nmap <Leader>/ gcc
+
+if has("gui_vimr")
+    " Toggle the NERDTree browser with the command key
+    nmap <D-0> :NERDTreeToggle<CR>
+
+    " Comment/uncomment lines with the command key
+    vmap <D-/> gc
+    nmap <D-/> gcc
+    imap <D-/> <ESC>gcc
+endif
