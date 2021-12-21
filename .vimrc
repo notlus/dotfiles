@@ -11,6 +11,11 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set hidden
+
+" Give more space for displaying messages.
+set cmdheight=2
+
 
 " Ignore case and be smart about it
 set ignorecase
