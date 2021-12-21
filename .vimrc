@@ -113,6 +113,12 @@ nnoremap <C-L> <C-W><C-L>
 " Toggle the NERDTree browser with the leader key
 nnoremap <Leader>0 :NERDTreeToggle<CR>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 " Comment/uncomment lines with leader key
 nmap <Leader>/ gcc
 
@@ -124,4 +130,7 @@ if has("gui_vimr")
     vmap <D-/> gc
     nmap <D-/> gcc
     imap <D-/> <ESC>gcc
+
+    " Find files using Cmd-Shift-f
+    nmap <D-S-f> <cmd>Telescope find_files<cr>
 endif
