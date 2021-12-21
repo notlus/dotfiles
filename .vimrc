@@ -84,6 +84,11 @@ if executable('sourcekit-lsp')
         \ })
 endif
 
+augroup filetype
+  au! BufRead,BufNewFile *.swift set ft=swift
+augroup END
+
+" Key mappings
 let mapleader = " "
 
 " Edit vimrc configuration file
