@@ -16,7 +16,6 @@ set hidden
 " Give more space for displaying messages.
 set cmdheight=2
 
-
 " Ignore case and be smart about it
 set ignorecase
 set smartcase
@@ -26,7 +25,6 @@ set mouse=a
 set colorcolumn=100
 set clipboard=unnamed
 set cursorline
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 set smarttab
 set termguicolors
 set splitbelow
@@ -36,7 +34,7 @@ set completeopt=menu,menuone,noselect
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
 
-" Vim LSP related Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Vim LSP related 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
@@ -73,19 +71,10 @@ call plug#end()
 
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme dracula 
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 let g:gruvbox_invert_selection='0'
-set background=dark
 
 let g:airline_powerline_fonts = 1
-
-" SourceKit-LSP configuration
-if executable('sourcekit-lsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'sourcekit-lsp',
-        \ 'cmd': {server_info->['sourcekit-lsp']},
-        \ 'whitelist': ['swift'],
-        \ })
-endif
 
 augroup filetype
   au! BufRead,BufNewFile *.swift set ft=swift
