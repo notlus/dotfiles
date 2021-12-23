@@ -86,6 +86,7 @@ let mapleader = " "
 " Edit vimrc configuration file
 nnoremap <Leader>vimrc :e $MYVIMRC<CR>
 nnoremap <Leader>vimrc :e ~/.vimrc<CR>
+nnoremap <Leader>init :e ~/.config/nvim/init.vim<CR>
 
 " Reload vimrc configuration file
 nnoremap <Leader><CR> :source $MYVIMRC<CR>
@@ -124,5 +125,6 @@ if has("gui_vimr")
     imap <D-/> <ESC>gcc
 
     " Find files using Cmd-Shift-f
-    nmap <D-S-f> <cmd>Telescope find_files<cr>
+    nmap <D-S-f> <cmd>Telescope live_grep<cr>
 endif
+
