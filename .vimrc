@@ -46,16 +46,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 
+" Language servers
+Plug 'neovim/nvim-lspconfig'
+Plug 'dart-lang/dart-vim-plugin'
+
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 
 " Completions
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'neovim/nvim-lspconfig'
 
 " tree-sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
