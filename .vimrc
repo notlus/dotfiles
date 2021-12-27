@@ -11,7 +11,9 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set nohlsearch
 set hidden
+set scrolloff=8
 
 " Give more space for displaying messages.
 set cmdheight=2
