@@ -32,7 +32,7 @@ set cursorline
 set smarttab
 set termguicolors
 set splitbelow
-set splitright 
+set splitright
 set completeopt=menu,menuone,noselect
 
 " Max of 10 items in a popup menu
@@ -41,17 +41,18 @@ set pumheight=10
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
 
-" Vim LSP related 
+" Vim LSP related
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Color Schemes
 Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-dracula'
-" Plug 'martinsione/darkplus.nvim'
 Plug 'lunarvim/darkplus.nvim'
 Plug 'ray-x/starry.nvim'
 Plug 'ray-x/aurora'
+
+Plug 'ghifarit53/tokyonight-vim'
 
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -88,13 +89,27 @@ Plug 'preservim/nerdtree' |
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'tpope/vim-fugitive'
+
+Plug 'akinsho/bufferline.nvim'
+
+Plug 'airblade/vim-rooter'
+
+" Formatter
+Plug 'sbdchd/neoformat'
 call plug#end()
 
-colorscheme darkplus 
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
+
+" colorscheme darkplus
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+highlight Normal guibg=none
 let g:gruvbox_invert_selection='0'
 let g:gruvbox_contrast_dark = 'hard'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
 
 augroup filetype
   au! BufRead,BufNewFile *.swift set ft=swift
@@ -123,6 +138,9 @@ xnoremap <M-k> :m .-2<CR>gv=gv
 xnoremap <TAB> >gv
 xnoremap <S-TAB> <gv
 
+" Format buffer
+nnoremap <M-S-f> :Neoformat<CR>
+
 " Navigate between split views
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -134,7 +152,7 @@ nnoremap <S-l> :bnext<CR>
 nnoremap <S-h> :bprevious<CR>
 
 " Hold on to last paste
-" vnoremap p '"_dP' 
+" vnoremap p '"_dP'
 
 " Toggle the NERDTree browser with the leader key
 nnoremap <Leader>0 :NERDTreeToggle<CR>
@@ -145,6 +163,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gst <cmd>Telescope git_status<cr>
 
 " Comment/uncomment lines with leader key
 nmap <Leader>/ gcc
