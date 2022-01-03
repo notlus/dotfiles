@@ -7,5 +7,9 @@ lua <<EOF
   require("notlus.cmp")
   require("notlus.gitsigns")
   require("notlus.lsp")
+  require("notlus.dap")
+  require("notlus.dapui")
+  require("notlus.treesitter")
+  require("notlus.tabnine")
 EOF
 
