@@ -163,7 +163,18 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>gst <cmd>Telescope git_status<cr>
+
+" Git mappings
+nnoremap <leader>gst :G<CR>
+nnoremap <leader>gl :G pull<CR>
+nnoremap <leader>gco :Git checkout
+nnoremap <leader>gb :Git branch
+nnoremap <leader>gbr :Git branch --remote
+nnoremap <leader>gp :Git push
+nnoremap <leader>gpsup :Git push --set-upstream origin $(git_current_branch)
+nnoremap <leader>glog :Git log --oneline --decorate --graph<CR>
+nnoremap <leader>gcd :Git checkout ${git_develop_branch}<CR>
+nnoremap <leader>gcm :Git checkout ${git_main_branch}<CR>
 
 " Comment/uncomment lines with leader key
 nmap <Leader>/ gcc
