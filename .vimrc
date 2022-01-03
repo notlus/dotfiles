@@ -51,7 +51,6 @@ Plug 'crusoexia/vim-dracula'
 Plug 'lunarvim/darkplus.nvim'
 Plug 'ray-x/starry.nvim'
 Plug 'ray-x/aurora'
-
 Plug 'ghifarit53/tokyonight-vim'
 
 " FZF
@@ -97,6 +96,13 @@ Plug 'airblade/vim-rooter'
 
 " Formatter
 Plug 'sbdchd/neoformat'
+
+" DAP for debugging
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+
+" Tabnine
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 call plug#end()
 
 let g:tokyonight_style = 'storm' " available: night, storm
