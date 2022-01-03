@@ -1,3 +1,4 @@
+--acronyms ID,URL,UUID
 --allman false
 --assetliterals visual-width
 --beforemarks 
@@ -5,6 +6,7 @@
 --categorymark "MARK: %c"
 --classthreshold 0
 --closingparen same-line
+--closurevoid remove
 --commas inline
 --conflictmarkers reject
 --decimalgrouping 3,6
@@ -28,8 +30,11 @@
 --importgrouping alpha
 --indent 4
 --indentcase false
+--indentstrings false
 --lifecycle 
+--lineaftermarks true
 --linebreaks lf
+--markcategories true
 --markextensions always
 --marktypes always
 --maxwidth none
@@ -62,7 +67,9 @@
 --wrapconditions preserve
 --wrapparameters preserve
 --wrapreturntype preserve
+--wrapternary default
+--wraptypealiases preserve
 --xcodeindentation disabled
 --yodaswap always
---disable wrapMultilineStatementBraces
+--disable redundantType,wrapMultilineStatementBraces
 --enable isEmpty
