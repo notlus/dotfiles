@@ -201,3 +201,5 @@ if has("gui_vimr")
     " Find files using Cmd-Shift-f
     nmap <D-S-f> <cmd>Telescope live_grep<cr>
 endif
+
+autocmd FileType c,cpp,swift setlocal commentstring=//\ %s
