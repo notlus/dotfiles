@@ -158,8 +158,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
 " Navigate buffers
-nnoremap <S-l> :bnext<CR>
-nnoremap <S-h> :bprevious<CR>
+nnoremap <silent> <S-l> :bnext<CR>
+nnoremap <silent> <S-h> :bprevious<CR>
 
 " Hold on to last paste
 " vnoremap p '"_dP'
