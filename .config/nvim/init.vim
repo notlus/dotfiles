@@ -11,5 +11,6 @@ lua <<EOF
   require("notlus.dapui")
   require("notlus.treesitter")
   require("notlus.tabnine")
+  require("notlus.telescope-file-browser")
 EOF
 
