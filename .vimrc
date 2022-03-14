@@ -83,6 +83,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'cljoly/telescope-repo.nvim'
 
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -169,12 +171,13 @@ nnoremap <silent> <S-h> :bprevious<CR>
 nnoremap <Leader>0 :NERDTreeToggle<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>fl <cmd>Telescope file_browser<cr>
+nnoremap <leader>fb <cmd>Telescope file_browser path=%:p:h<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>repos <cmd>Telescope repo list bin=/opt/homebrew/bin/fd<cr>
 
 " Git mappings
 nnoremap <leader>gst :G<CR>
