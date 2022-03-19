@@ -27,6 +27,7 @@ cask "launchbar"
 cask "swiftformat-for-xcode"
 cask "visual-studio-code"
 cask "zoom"
+cask "xcodes"
 
 
 # Mac App Store
