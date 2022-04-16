@@ -17,6 +17,7 @@ brew "swiftlint"
 brew "swiftplantuml"
 brew "zoxide"
 brew "romkatv/powerlevel10k/powerlevel10k"
+brew "yarn"
 
 # Casks
 cask "brave-browser"
@@ -36,5 +37,4 @@ cask "xcodes"
 mas "Craft - Docs and Notes Editor", id: 1487937127
 mas "Screens 4", id: 1224268771
 mas "Secrets", id: 973049011
-mas "Xcode", id: 497799835
 
