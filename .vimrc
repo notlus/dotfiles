@@ -135,12 +135,12 @@ augroup END
 let mapleader = " "
 
 " Edit vimrc configuration file
-nnoremap <Leader>vimrc :e $MYVIMRC<CR>
-nnoremap <Leader>vimrc :e ~/.vimrc<CR>
-nnoremap <Leader>init :e ~/.config/nvim/init.vim<CR>
+nnoremap <leader>vimrc :e $MYVIMRC<CR>
+nnoremap <leader>vimrc :e ~/.vimrc<CR>
+nnoremap <leader>init :e ~/.config/nvim/init.vim<CR>
 
 " Reload vimrc configuration file
-nnoremap <Leader><CR> :source $MYVIMRC<CR>
+nnoremap <silent> <leader><CR> :source $MYVIMRC<CR>
 
 " Use ESC to exit terminal mode
 tnoremap <ESC> <C-\><C-N>
@@ -170,7 +170,7 @@ nnoremap <silent> <S-h> :bprevious<CR>
 " Hold on to last paste
 " vnoremap p '"_dP'
 
-" Toggle the NERDTree browser with the leader key
+" Toggle nvim-tree with the leader key
 nnoremap <silent> <leader>0 :NvimTreeToggle<CR>
 
 " Find files using Telescope command-line sugar.
@@ -195,11 +195,11 @@ nnoremap <leader>gcd :Git checkout ${git_develop_branch}<CR>
 nnoremap <leader>gcm :Git checkout ${git_main_branch}<CR>
 
 " Comment/uncomment lines with leader key
-nmap <Leader>/ gcc
+nmap <leader>/ gcc
 
 if has("gui_vimr")
     " Toggle the NERDTree browser with the command key
-    nmap <D-0> :NERDTreeToggle<CR>
+    nmap <silent> <D-0> :NvimTreeToggle<CR>
 
     " Comment/uncomment lines with the command key
     vmap <D-/> gc
