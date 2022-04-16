@@ -12,5 +12,6 @@ lua <<EOF
   require("notlus.treesitter")
   require("notlus.tabnine")
   require("notlus.telescope-file-browser")
+  require'nvim-tree'.setup {}
 EOF
 

@@ -89,6 +89,9 @@ Plug 'cljoly/telescope-repo.nvim'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 " Git
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
@@ -168,7 +171,7 @@ nnoremap <silent> <S-h> :bprevious<CR>
 " vnoremap p '"_dP'
 
 " Toggle the NERDTree browser with the leader key
-nnoremap <Leader>0 :NERDTreeToggle<CR>
+nnoremap <silent> <leader>0 :NvimTreeToggle<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>fb <cmd>Telescope file_browser path=%:p:h<cr>
