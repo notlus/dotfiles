@@ -110,10 +110,17 @@ Plug 'rcarriga/nvim-dap-ui'
 " Tabnine
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
+" Markdown
+Plug 'ellisonleao/glow.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 " PlantUML
 Plug 'scrooloose/vim-slumlord'
 Plug 'aklt/plantuml-syntax'
 call plug#end()
+
+let g:mkdp_auto_close = 0
+" let g:mkdp_browser = 'Safari'
 
 let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
