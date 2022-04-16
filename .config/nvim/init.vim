@@ -13,5 +13,6 @@ lua <<EOF
   require("notlus.tabnine")
   require("notlus.telescope-file-browser")
   require'nvim-tree'.setup {}
+  require'lspconfig'.kotlin_language_server.setup{}
 EOF
 
