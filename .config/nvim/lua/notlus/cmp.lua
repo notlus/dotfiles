@@ -102,10 +102,6 @@ cmp.setup({
     { name = 'path' },
   },
 
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
-
   experimental = {
     ghost_text = false,
     native_menu = false,
