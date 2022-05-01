@@ -64,17 +64,17 @@ cmp.setup({
       else
         fallback()
       end
-  end, { "i", "s" }),
+    end, { "i", "s" }),
 
-  ['<S-Tab>'] = cmp.mapping(function(fallback)
-    if cmp.visible() then
-      cmp.select_prev_item()
-    elseif luasnip.jumpable(-1) then
-      luasnip.jump(-1)
-    else
-      fallback()
-    end
-  end, { "i", "s" }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
   },
 
   formatting = {
@@ -110,6 +110,7 @@ cmp.setup({
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
