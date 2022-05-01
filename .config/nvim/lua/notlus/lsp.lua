@@ -41,7 +41,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- Setup lspconfig
 
 -- map buffer local keybindings when the language server attaches
-local servers = { 'sourcekit', 'dartls' }
+local servers = { 'clangd', 'sourcekit', 'dartls', 'kotlin_language_server' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
