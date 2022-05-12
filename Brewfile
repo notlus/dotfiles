@@ -3,6 +3,7 @@ tap "homebrew/cask-fonts"
 
 # Brew
 brew "mas"
+brew "appcleaner"
 brew "clang-format"
 brew "fzf"
 brew "git-lfs"
