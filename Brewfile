@@ -3,7 +3,6 @@ tap "homebrew/cask-fonts"
 
 # Brew
 brew "mas"
-brew "appcleaner"
 brew "clang-format"
 brew "fzf"
 brew "git-lfs"
@@ -21,6 +20,7 @@ brew "romkatv/powerlevel10k/powerlevel10k"
 brew "yarn"
 
 # Casks
+cask "appcleaner"
 cask "brave-browser"
 cask "discord"
 cask "font-fira-code-nerd-font"
@@ -28,6 +28,7 @@ cask "font-fira-mono-nerd-font"
 cask "insomnia"
 cask "iterm2"
 cask "launchbar"
+cask "qlmarkdown"
 cask "swiftformat-for-xcode"
 cask "visual-studio-code"
 cask "zoom"
