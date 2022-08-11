@@ -161,8 +161,8 @@ xnoremap <M-k> :m .-2<CR>gv=gv
 xnoremap <TAB> >gv
 xnoremap <S-TAB> <gv
 
-" Format buffer
-nnoremap <M-S-f> :Neoformat<CR>
+" Format buffer 
+nnoremap <leader>f :Neoformat<CR>
 
 " Navigate between split views
 nnoremap <C-J> <C-W><C-J>
