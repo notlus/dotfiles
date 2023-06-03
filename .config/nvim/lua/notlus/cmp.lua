@@ -52,7 +52,8 @@ cmp.setup({
     }),
     ['<CR>'] = cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Replace,
-        select = true 
+        select = false 
+        -- select = true 
     },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -85,7 +86,7 @@ cmp.setup({
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        cmp_tabnine = "[TN]",
+        copilot = "[CP]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -95,7 +96,7 @@ cmp.setup({
   },
 
   sources = {
-    { name = 'cmp_tabnine' },
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },

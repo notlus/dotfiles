@@ -86,9 +86,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'cljoly/telescope-repo.nvim'
 
-Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 
@@ -98,17 +95,12 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'akinsho/bufferline.nvim'
 
-Plug 'airblade/vim-rooter'
-
 " Formatter
 Plug 'sbdchd/neoformat'
 
 " DAP for debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
-
-" Tabnine
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
 " Markdown
 Plug 'ellisonleao/glow.nvim'
@@ -117,6 +109,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " PlantUML
 Plug 'scrooloose/vim-slumlord'
 Plug 'aklt/plantuml-syntax'
+
+" Copilot
+Plug 'zbirenbaum/copilot.lua'
+Plug 'zbirenbaum/copilot-cmp'
+
 call plug#end()
 
 let g:mkdp_auto_close = 0
@@ -143,7 +140,7 @@ let mapleader = " "
 
 " Edit vimrc configuration file
 nnoremap <leader>vimrc :e $MYVIMRC<CR>
-nnoremap <leader>vimrc :e ~/.vimrc<CR>
+nnoremap <leader>vrc :e ~/.vimrc<CR>
 nnoremap <leader>init :e ~/.config/nvim/init.vim<CR>
 
 " Reload vimrc configuration file
@@ -162,7 +159,7 @@ xnoremap <TAB> >gv
 xnoremap <S-TAB> <gv
 
 " Format buffer 
-nnoremap <leader>f :Neoformat<CR>
+nnoremap <leader>nf :Neoformat<CR>
 
 " Navigate between split views
 nnoremap <C-J> <C-W><C-J>
@@ -175,7 +172,7 @@ nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprevious<CR>
 
 " Hold on to last paste
-" vnoremap p '"_dP'
+vnoremap p '"_dP'
 
 " Toggle nvim-tree with the leader key
 nnoremap <silent> <leader>0 :NvimTreeToggle<CR>
@@ -217,4 +214,4 @@ if has("gui_vimr")
     nmap <D-S-f> <cmd>Telescope live_grep<cr>
 endif
 
-autocmd FileType c,cpp,swift setlocal commentstring=//\ %s
+autocmd FileType c,cpp,objc,objcpp,swift setlocal commentstring=//\ %s
