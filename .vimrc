@@ -215,3 +215,4 @@ if has("gui_vimr")
 endif
 
 autocmd FileType c,cpp,objc,objcpp,swift setlocal commentstring=//\ %s
+set rtp+=/opt/homebrew/opt/fzf
