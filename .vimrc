@@ -41,7 +41,6 @@ set pumheight=10
 " Initialize plugin system
 call plug#begin('~/.vim/plugged')
 
-" Vim LSP related
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -87,7 +86,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'cljoly/telescope-repo.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua', { 'on': 'NvimTreeToggle' }
 
 " Git
 Plug 'lewis6991/gitsigns.nvim'
@@ -104,7 +103,7 @@ Plug 'rcarriga/nvim-dap-ui'
 
 " Markdown
 Plug 'ellisonleao/glow.nvim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " PlantUML
 Plug 'scrooloose/vim-slumlord'
