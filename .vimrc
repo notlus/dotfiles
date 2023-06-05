@@ -59,7 +59,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
 
-" Language servers
+" LSP configuration
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'dart-lang/dart-vim-plugin'
 
