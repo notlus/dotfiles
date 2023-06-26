@@ -115,6 +115,8 @@ Plug 'aklt/plantuml-syntax'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'zbirenbaum/copilot-cmp'
 
+Plug 'nvimdev/lspsaga.nvim'
+
 call plug#end()
 
 let g:mkdp_auto_close = 0
