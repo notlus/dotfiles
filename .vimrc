@@ -63,6 +63,7 @@ Plug 'tpope/vim-commentary'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvimdev/lspsaga.nvim'
 Plug 'dart-lang/dart-vim-plugin'
 
 " Snippets
@@ -115,7 +116,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'zbirenbaum/copilot-cmp'
 
-Plug 'nvimdev/lspsaga.nvim'
+Plug 'xbase-lab/xbase', { 'do': 'make install' }
 
 call plug#end()
 
