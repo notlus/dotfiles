@@ -6,7 +6,7 @@ lua <<EOF
   require("notlus.bufferline")
   require("notlus.cmp")
   require("notlus.gitsigns")
-  require("notlus.lspconfig")
+  require("notlus.lsp")
   require("notlus.dap")
   require("notlus.dapui")
   require("notlus.treesitter")
