@@ -11,27 +11,11 @@ lua <<EOF
   require("notlus.dapui")
   require("notlus.treesitter")
   require("notlus.mason")
+  require("notlus.copilot")
   require'nvim-tree'.setup {}
   require("telescope").load_extension("file_browser")
   require("telescope").load_extension("fzf")
-  require('copilot').setup({
-      suggestion = {enabled = false},
-      panel = {enabled = false},
-  })
-  require('copilot_cmp').setup()
   require('glow').setup()
-  require('lspsaga').setup({
-      -- keybinds for navigation in lspsaga window
-      scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-      -- use enter to open file with definition preview
-      definition = {
-        edit = "<CR>",
-      },
-      ui = {
-        colors = {
-          normal_bg = "#022746",
-        },
-      },
-    })
+  require'xbase'.setup()
 EOF
 
