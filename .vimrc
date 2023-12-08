@@ -118,6 +118,9 @@ Plug 'zbirenbaum/copilot-cmp'
 
 Plug 'stevearc/dressing.nvim'
 
+" Noice
+Plug 'folke/noice.nvim'
+
 " Xcode
 Plug 'wojciech-kulik/xcodebuild.nvim'
 Plug 'MunifTanjim/nui.nvim'

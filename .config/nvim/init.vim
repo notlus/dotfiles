@@ -19,5 +19,6 @@ lua <<EOF
   require('glow').setup()
   require('xbase').setup()
   require('xcodebuild').setup()
+  require("noice").setup()
 EOF
 
