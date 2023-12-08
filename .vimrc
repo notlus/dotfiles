@@ -116,6 +116,11 @@ Plug 'aklt/plantuml-syntax'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'zbirenbaum/copilot-cmp'
 
+Plug 'stevearc/dressing.nvim'
+
+" Xcode
+Plug 'wojciech-kulik/xcodebuild.nvim'
+Plug 'MunifTanjim/nui.nvim'
 Plug 'xbase-lab/xbase', { 'do': 'make install' }
 
 call plug#end()
@@ -201,6 +206,16 @@ nnoremap <leader>gpsup :Git push --set-upstream origin $(git_current_branch)
 nnoremap <leader>glog :Git log --oneline --decorate --graph<CR>
 nnoremap <leader>gcd :Git checkout ${git_develop_branch}<CR>
 nnoremap <leader>gcm :Git checkout ${git_main_branch}<CR>
+
+" Xcode mappings
+nnoremap <leader>xb :XcodebuildBuild<CR>
+nnoremap <leader>xcb :XcodebuildCleanBuild<CR>
+nnoremap <leader>xbr :XcodebuildRun<CR>
+nnoremap <leader>xt :XcodebuildTest<CR>
+nnoremap <leader>xs :XcodebuildSelectScheme<CR>
+nnoremap <leader>xp :XcodebuildPicker<CR>
+nnoremap <leader>xl :XcodebuildRunLast<CR>
+nnoremap <leader>xc :XcodebuildSelectConfig<CR>
 
 " Comment/uncomment lines with leader key
 nmap <leader>/ gcc
