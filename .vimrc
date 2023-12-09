@@ -45,7 +45,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Color Schemes
-Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-dracula'
 Plug 'lunarvim/darkplus.nvim'
 Plug 'ray-x/starry.nvim'
@@ -131,15 +130,13 @@ call plug#end()
 let g:mkdp_auto_close = 0
 " let g:mkdp_browser = 'Safari'
 
-let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
 " colorscheme darkplus
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 highlight Normal guibg=none
-let g:gruvbox_invert_selection='0'
-let g:gruvbox_contrast_dark = 'hard'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 0
 
