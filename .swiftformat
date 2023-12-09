@@ -1,6 +1,7 @@
 --acronyms ID,URL,UUID
 --allman false
 --assetliterals visual-width
+--asynccapturing 
 --beforemarks 
 --binarygrouping 4,8
 --categorymark "MARK: %c"
@@ -12,6 +13,7 @@
 --decimalgrouping 3,6
 --elseposition next-line
 --emptybraces no-space
+--enumnamespaces always
 --enumthreshold 0
 --exponentcase lowercase
 --exponentgrouping disabled
@@ -21,12 +23,13 @@
 --fractiongrouping disabled
 --fragment false
 --funcattributes preserve
+--generictypes 
 --groupedextension "MARK: %c"
 --guardelse auto
 --header ignore
 --hexgrouping 4,8
 --hexliteralcase uppercase
---ifdef indent
+--ifdef outdent
 --importgrouping alpha
 --indent 4
 --indentcase false
@@ -37,7 +40,7 @@
 --markcategories true
 --markextensions always
 --marktypes always
---maxwidth none
+--maxwidth 100
 --modifierorder 
 --nevertrailing 
 --nospaceoperators 
@@ -53,23 +56,28 @@
 --semicolons inline
 --shortoptionals always
 --smarttabs enabled
+--someany true
 --stripunusedargs always
 --structthreshold 0
 --tabwidth unspecified
+--throwcapturing 
 --trailingclosures 
 --trimwhitespace always
 --typeattributes preserve
+--typeblanklines remove
 --typemark "MARK: - %t"
 --varattributes preserve
 --voidtype void
 --wraparguments preserve
 --wrapcollections preserve
 --wrapconditions preserve
+--wrapeffects preserve
+--wrapenumcases always
 --wrapparameters preserve
 --wrapreturntype preserve
 --wrapternary default
 --wraptypealiases preserve
 --xcodeindentation disabled
 --yodaswap always
---disable redundantType,wrapMultilineStatementBraces
+--disable redundantType,wrap,wrapMultilineStatementBraces,wrapSingleLineComments
 --enable isEmpty
