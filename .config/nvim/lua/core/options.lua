@@ -33,4 +33,5 @@ opt.splitbelow = true
 opt.splitright = true
 opt.completeopt = "menu,menuone,noselect"
 opt.pumheight = 10
-opt.number = relative
+opt.number = true
+opt.relativenumber = true

@@ -43,3 +43,11 @@ require("lazy").setup({
 -- Highlight configurations
 vim.cmd([[highlight ColorColumn ctermbg=lightgrey guibg=lightgrey]])
 vim.cmd([[highlight Normal guibg=none]])
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = {"c", "cpp", "objc", "objcpp", "swift"},
+    callback = function()
+        vim.opt_local.commentstring = "// %s"
+    end
+})
+
