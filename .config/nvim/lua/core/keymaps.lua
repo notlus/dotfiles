@@ -9,6 +9,10 @@ keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 -- Format buffer
 keymap.set("n", "<leader>nf", ":Neoformat<CR>")
 
+-- Navigate between buffers
+keymap.set("n", "<TAB>", ":bnext<CR>")
+keymap.set("n", "<S-TAB>", ":bprevious<CR>")
+
 -- Navigate between split views
 keymap.set("n", "<C-J>", "<C-W><C-J>")
 keymap.set("n", "<C-K>", "<C-W><C-K>")
@@ -25,8 +29,6 @@ vim.api.nvim_set_keymap(
 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true }
 )
--- keymap.set("n", "<leader>fb", ':lua require("telescope.builtin").file_browser({ path=%:p:h select_buffer=true })<CR>')
--- keymap.set("n", "<leader>fb", ':lua require("telescope.builtin").file_browser({ path = vim.fn.expand("%:p:h") })<CR>')
 keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>')
 keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>')
 keymap.set("n", "<leader>fs", ':lua require("telescope.builtin").grep_string()<CR>')
