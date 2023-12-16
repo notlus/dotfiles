@@ -57,6 +57,7 @@ keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>")
 keymap.set("n", "<leader>xp", ":XcodebuildPicker<CR>")
 keymap.set("n", "<leader>xl", ":XcodebuildRunLast<CR>")
 keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>")
+keymap.set("n", "<leader>xtp", ":XcodebuildSelectTestPlan<CR>")
 
 keymap.set("n", "<leader>/", ":!gcc %<CR>")
 
@@ -69,3 +70,7 @@ keymap.set("n", "<leader>sj", "<C-w>-") -- make split window height shorter
 keymap.set("n", "<leader>sk", "<C-w>+") -- make split windows height taller
 keymap.set("n", "<leader>sl", "<C-w>>5") -- make split windows width bigger
 keymap.set("n", "<leader>ss", "<C-w><5") -- make split windows width smaller
+
+-- Quickfix
+vim.api.nvim_set_keymap("n", "<leader>q", ":copen<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", ":cclose<CR>", { noremap = true, silent = true })
