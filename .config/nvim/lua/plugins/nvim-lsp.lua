@@ -1,10 +1,6 @@
 -- nvim-lsp.lua
 return {
     "neovim/nvim-lspconfig",
-    requires = {
-        "ray-x/lspsaga.nvim",
-    },
-    after = "cmp-nvim-lsp",
     event = "BufReadPre",
     ft = { "c", "cpp", "objc", "objcpp", "dart", "kotlin", "lua", "swift" },
 

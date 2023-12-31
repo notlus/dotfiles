@@ -1,6 +1,5 @@
 return {
-	"akinsho/bufferline.nvim", -- Replace with the correct repository if necessary
-	requires = "kyazdani42/nvim-web-devicons",
+	"akinsho/bufferline.nvim",
 	event = "BufWinEnter",
 	config = function()
 		require("bufferline").setup({
