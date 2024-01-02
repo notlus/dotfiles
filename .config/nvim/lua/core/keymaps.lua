@@ -68,7 +68,6 @@ keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select sc
 keymap.set("n", "<leader>xp", ":XcodebuildPicker<CR>", { desc = "Picker" })
 keymap.set("n", "<leader>xl", ":XcodebuildRunLast<CR>", { desc = "Run last" })
 keymap.set("n", "<leader>xcs", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
-keymap.set("n", "<leader>xtp", ":XcodebuildSelectTestPlan<CR>", { desc = "Select test plan" })
 
 keymap.set("n", "<leader>/", "gcc<CR>", { desc = "Comment line" })
 
