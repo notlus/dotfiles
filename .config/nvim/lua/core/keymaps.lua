@@ -10,8 +10,10 @@ keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 keymap.set("n", "<leader>nf", ":Neoformat<CR>", { desc = "Format buffer" })
 
 -- Navigate between buffers
-keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Next buffer" })
-keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Previous buffer" })
+-- keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Next buffer" })
+-- keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
 
 -- Navigate between split views
 keymap.set("n", "<C-J>", "<C-W><C-J>")
@@ -63,11 +65,12 @@ keymap.set("n", "<leader>gm", ":Git checkout ${git_main_branch}<CR>", { desc = "
 keymap.set("n", "<leader>xb", ":XcodebuildBuild<CR>", { desc = "Build" })
 keymap.set("n", "<leader>xcb", ":XcodebuildCleanBuild<CR>", { desc = "Clean build" })
 keymap.set("n", "<leader>xr", ":XcodebuildRun<CR>", { desc = "Build and run" })
-keymap.set("n", "<leader>xt", ":XcodebuildTest<CR>", { desc = "Test" })
-keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
+keymap.set("n", "<leader>xta", ":XcodebuildTest<CR>", { desc = "Test" })
+keymap.set("n", "<leader>xtf", ":XcodebuildTestFunc<CR>", { desc = "Test" })
+keymap.set("n", "<leader>xss", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
 keymap.set("n", "<leader>xp", ":XcodebuildPicker<CR>", { desc = "Picker" })
 keymap.set("n", "<leader>xl", ":XcodebuildRunLast<CR>", { desc = "Run last" })
-keymap.set("n", "<leader>xcs", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
+keymap.set("n", "<leader>xsc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
 
 keymap.set("n", "<leader>/", "gcc<CR>", { desc = "Comment line" })
 
@@ -85,12 +88,11 @@ keymap.set("n", "<leader>ss", "<C-w><5", { desc = "Make split windows width smal
 -- vim.api.nvim_set_keymap("n", "<leader>q", ":copen<CR>", { noremap = true, silent = true, desc = "Open quickfix" })
 -- vim.api.nvim_set_keymap("n", "<leader>w", ":cclose<CR>", { noremap = true, silent = true, desc = "Close quickfix" })
 -- Keymap for opening the Quickfix list
-vim.keymap.set('n', '<leader>qo', function()
-  vim.cmd('copen')
-end, { desc = 'Open Quickfix list' })
+vim.keymap.set("n", "<leader>qo", function()
+	vim.cmd("copen")
+end, { desc = "Open Quickfix list" })
 
 -- Keymap for closing the Quickfix list
-vim.keymap.set('n', '<leader>qc', function()
-  vim.cmd('cclose')
-end, { desc = 'Close Quickfix list' })
-
+vim.keymap.set("n", "<leader>qc", function()
+	vim.cmd("cclose")
+end, { desc = "Close Quickfix list" })
