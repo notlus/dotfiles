@@ -128,5 +128,3 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 export PATH=$PATH:/usr/local/bin/kotlin-lsp/bin
-
-eval "$(rtx activate)"
