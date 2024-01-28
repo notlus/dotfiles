@@ -10,8 +10,6 @@ keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 keymap.set("n", "<leader>nf", ":Neoformat<CR>", { desc = "Format buffer" })
 
 -- Navigate between buffers
--- keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Next buffer" })
--- keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
 
@@ -85,8 +83,6 @@ keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Make split windows width bigg
 keymap.set("n", "<leader>ss", "<C-w><5", { desc = "Make split windows width smaller" })
 
 -- Quickfix
--- vim.api.nvim_set_keymap("n", "<leader>q", ":copen<CR>", { noremap = true, silent = true, desc = "Open quickfix" })
--- vim.api.nvim_set_keymap("n", "<leader>w", ":cclose<CR>", { noremap = true, silent = true, desc = "Close quickfix" })
 -- Keymap for opening the Quickfix list
 vim.keymap.set("n", "<leader>qo", function()
 	vim.cmd("copen")
