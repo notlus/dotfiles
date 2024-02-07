@@ -23,7 +23,7 @@ keymap.set("n", "<C-L>", "<C-W><C-L>")
 keymap.set("n", "<leader>0", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
 -- Telescope
-vim.api.nvim_set_keymap(
+keymap.set(
 	"n",
 	"<space>fb",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
@@ -43,34 +43,89 @@ keymap.set(
 )
 
 -- Git
-keymap.set("n", "<leader>gs", ":G<CR>", { desc = "Git status" })
-keymap.set("n", "<leader>gl", ":G pull<CR>", { desc = "Git pull" })
-keymap.set("n", "<leader>gb", ":Git branch", { desc = "Git branch" })
-keymap.set("n", "<leader>gp", ":Git push", { desc = "Git push" })
--- keymap.set(
--- 	"n",
--- 	"<leader>gpsup",
--- 	":!Git push --set-upstream origin $(git_current_branch)<CR>",
--- 	{ desc = "Git push set upstream" }
--- )
--- keymap.set("n", "<leader>glog", ":Git log --oneline --decorate --graph<CR>", { desc = "Git log" })
--- keymap.set("n", "<leader>gco", ":Git checkout", { desc = "Git checkout" })
--- keymap.set("n", "<leader>gbr", ":Git branch --remote", { desc = "Git branch remote" })
-keymap.set("n", "<leader>gd", ":Git checkout ${git_develop_branch}<CR>", { desc = "Git checkout develop" })
-keymap.set("n", "<leader>gm", ":Git checkout ${git_main_branch}<CR>", { desc = "Git checkout main" })
+-- Jump to the next Git change
+keymap.set(
+	"n",
+	"]c",
+	'<cmd>lua require"gitsigns.actions".next_hunk()<CR>',
+	{ silent = true, desc = "Jump to the next Git change" }
+)
+
+-- Jump to the previous Git change
+keymap.set(
+	"n",
+	"[c",
+	'<cmd>lua require"gitsigns.actions".prev_hunk()<CR>',
+	{ silent = true, desc = "Jump to the previous Git change" }
+)
+
+-- Stage the current hunk
+keymap.set("n", "hs", '<cmd>lua require"gitsigns".stage_hunk()<CR>', { silent = true, desc = "Stage the current hunk" })
+
+-- Undo the last change in the current hunk
+keymap.set(
+	"n",
+	"hu",
+	'<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+	{ silent = true, desc = "Undo the last change in the current hunk" }
+)
+
+-- Preview the changes in the current hunk
+keymap.set(
+	"n",
+	"hp",
+	'<cmd>lua require"gitsigns".preview_hunk()<CR>',
+	{ silent = true, desc = "Preview the changes in the current hunk" }
+)
+
+-- Toggle the hunk under the cursor
+keymap.set(
+	"n",
+	"h<space>",
+	'<cmd>lua require"gitsigns".toggle_current_hunk()<CR>',
+	{ silent = true, desc = "Toggle the hunk under the cursor" }
+)
+
+-- Blame the line under the cursor
+keymap.set(
+	"n",
+	"bl",
+	'<cmd>lua require"gitsigns".blame_line()<CR>',
+	{ silent = true, desc = "Blame the line under the cursor" }
+)
+
+-- Show a diff of the current file
+keymap.set(
+	"n",
+	"bd",
+	'<cmd>lua require"gitsigns".preview_diff()<CR>',
+	{ silent = true, desc = "Show a diff of the current file" }
+)
+
+keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "LazyGit" })
 
 -- Xcode
-keymap.set("n", "<leader>xb", ":XcodebuildBuild<CR>", { desc = "Build" })
-keymap.set("n", "<leader>xcb", ":XcodebuildCleanBuild<CR>", { desc = "Clean build" })
+keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
+keymap.set("n", "<leader>xb", ":XcodebuildBuild<CR>", { desc = "Build Project" })
+keymap.set("n", "<leader>xB", ":XcodebuildCleanBuild<CR>", { desc = "Clean build" })
 keymap.set("n", "<leader>xr", ":XcodebuildRun<CR>", { desc = "Build and run" })
-keymap.set("n", "<leader>xta", ":XcodebuildTest<CR>", { desc = "Test" })
+keymap.set("n", "<leader>xt", ":XcodebuildTest<CR>", { desc = "Test" })
 keymap.set("n", "<leader>xtf", ":XcodebuildTestFunc<CR>", { desc = "Test" })
-keymap.set("n", "<leader>xss", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
-keymap.set("n", "<leader>xp", ":XcodebuildPicker<CR>", { desc = "Picker" })
-keymap.set("n", "<leader>xl", ":XcodebuildRunLast<CR>", { desc = "Run last" })
-keymap.set("n", "<leader>xsc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
+keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
+keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
+keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
+keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
+keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
+keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
+keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
+keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 
-keymap.set("n", "<leader>/", "gcc<CR>", { desc = "Comment line" })
+-- Commenting
+-- Normal mode mapping
+keymap.set("n", "<leader>/", ":normal gcc<CR>", { desc = "Comment line" })
+-- Visual mode mapping for commenting selected lines
+vim.keymap.set("x", "<leader>/", ":<C-u>normal gc<CR>", { desc = "Comment selection" })
+-- vim.keymap.set('x', '<leader>/', '<Esc>gv<Cmd>lua vim.cmd(\'normal! gc\')<CR>', { silent = true })
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
