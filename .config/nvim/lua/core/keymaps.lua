@@ -7,7 +7,8 @@ local keymap = vim.keymap
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
 -- Format buffer
-keymap.set("n", "<leader>nf", ":Neoformat<CR>", { desc = "Format buffer" })
+keymap.set("n", "<leader>cf", ":Neoformat<CR>", { silent = true, desc = "Format buffer" })
+keymap.set("v", "<leader>cf", ":<C-u>Neoformat<CR>", { silent = true, desc = "Format selection" })
 
 -- Navigate between buffers
 keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
