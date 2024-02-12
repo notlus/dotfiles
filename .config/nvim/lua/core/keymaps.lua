@@ -106,20 +106,23 @@ keymap.set(
 keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "LazyGit" })
 
 -- Xcode
-keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
+keymap.set("n", "<leader>X", ":XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
+keymap.set("n", "<leader>xf", ":XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
 keymap.set("n", "<leader>xb", ":XcodebuildBuild<CR>", { desc = "Build Project" })
 keymap.set("n", "<leader>xB", ":XcodebuildCleanBuild<CR>", { desc = "Clean build" })
 keymap.set("n", "<leader>xr", ":XcodebuildRun<CR>", { desc = "Build and run" })
 keymap.set("n", "<leader>xt", ":XcodebuildTest<CR>", { desc = "Test" })
 keymap.set("n", "<leader>xtf", ":XcodebuildTestFunc<CR>", { desc = "Test" })
-keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
-keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
-keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
-keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
+keymap.set("v", "<leader>xt", ":XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
+keymap.set("n", "<leader>xT", ":XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
+keymap.set("n", "<leader>xp", ":XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
+keymap.set("n", "<leader>xe", ":XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
 keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
 keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
 keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
-keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
+keymap.set("n", "<leader>xl", ":XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
+keymap.set("n", "<leader>xl", ":XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
+keymap.set("n", "<leader>xp", ":XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
 
 -- Commenting
 -- Normal mode mapping
