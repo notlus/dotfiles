@@ -6,10 +6,6 @@ local keymap = vim.keymap
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
--- Format buffer
-keymap.set("n", "<leader>cf", ":Neoformat<CR>", { silent = true, desc = "Format buffer" })
-keymap.set("v", "<leader>cf", ":<C-u>Neoformat<CR>", { silent = true, desc = "Format selection" })
-
 -- Navigate between buffers
 keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
