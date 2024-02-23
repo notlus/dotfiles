@@ -1,7 +1,15 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local keymap = vim.keymap
 
 -- Key mappings
+
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Remap for dealing with word wrap
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
@@ -29,8 +37,9 @@ keymap.set(
 keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>', { desc = "Find files" })
 keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>', { desc = "Find word" })
 keymap.set("n", "<leader>fr", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
+keymap.set("n", "<leader>s.", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
 keymap.set("n", "<leader>fs", ':lua require("telescope.builtin").grep_string()<CR>', { desc = "Find string" })
-keymap.set("n", "<leader>b", ':lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
+keymap.set("n", "<leader><leader>", ':lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>', { desc = "Find help tags" })
 keymap.set(
 	"n",
