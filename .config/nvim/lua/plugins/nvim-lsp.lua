@@ -4,11 +4,22 @@ return {
 	dependencies = {
 		"hrsh7th/nvim-cmp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+
+		-- Additional lua configuration, makes nvim stuff amazing!
+		"folke/neodev.nvim",
+
+		-- Useful status updates for LSP.
+		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+		{ "j-hui/fidget.nvim", opts = {} },
 	},
 	event = { "BufReadPre", "BufNewFile" },
 	ft = { "c", "cpp", "objc", "objcpp", "dart", "kotlin", "lua", "swift" },
 
 	config = function() -- Global mappings.
+		-- First, enable neodev. This is helpful for auto-configuring the Lua LSP
+		-- to understand your Neovim environment
+		require("neodev").setup()
+
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
@@ -101,7 +112,7 @@ return {
 				if server == "sourcekit" then
 					opts = {
 						cmd = {
-							"/usr/bin/sourcekit-lsp",
+							"/usr/local/bin/sourcekit-lsp",
 						},
 						root_dir = function(filename)
 							return util.root_pattern("buildServer.json")(filename)
