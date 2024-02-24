@@ -1,5 +1,6 @@
 return {
 	"j-hui/fidget.nvim",
+    opts = {},
 	event = "VeryLazy",
 	config = function()
 		local fidget = require("fidget")
