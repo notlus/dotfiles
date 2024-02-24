@@ -36,17 +36,19 @@ keymap.set(
 )
 keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>', { desc = "Find files" })
 keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>', { desc = "Find word" })
-keymap.set("n", "<leader>fr", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
 keymap.set("n", "<leader>s.", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
 keymap.set("n", "<leader>fs", ':lua require("telescope.builtin").grep_string()<CR>', { desc = "Find string" })
+keymap.set("n", "<leader>sr", ':lua require("telescope.builtin").resume()<CR>', { desc = "Open previous search" })
 keymap.set("n", "<leader><leader>", ':lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>', { desc = "Find help tags" })
-keymap.set(
-	"n",
-	"<leader>lr",
-	':lua require("telescope.builtin").repo.list({ bin = "/opt/homebrew/bin/fd" })<CR>',
-	{ desc = "Find repos" }
-)
+
+-- Search in the current buffer
+keymap.set("n", "<leader>/", function()
+	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+		winblend = 10,
+		previewer = false,
+	}))
+end, { desc = "[/] Fuzzily search in current buffer" })
 
 -- Git
 -- Jump to the next Git change
@@ -126,13 +128,6 @@ keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>", { desc = "Select co
 keymap.set("n", "<leader>xl", ":XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>xq", ":Telescope quickfix<CR>", { desc = "Show QuickFix List" })
 
--- Commenting
--- Normal mode mapping
-keymap.set("n", "<leader>/", ":normal gcc<CR>", { desc = "Comment line" })
--- Visual mode mapping for commenting selected lines
-vim.keymap.set("x", "<leader>/", ":<C-u>normal gc<CR>", { desc = "Comment selection" })
--- vim.keymap.set('x', '<leader>/', '<Esc>gv<Cmd>lua vim.cmd(\'normal! gc\')<CR>', { silent = true })
-
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
@@ -144,12 +139,11 @@ keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Make split windows width bigg
 keymap.set("n", "<leader>ss", "<C-w><5", { desc = "Make split windows width smaller" })
 
 -- Quickfix
--- Keymap for opening the Quickfix list
-vim.keymap.set("n", "<leader>qo", function()
-	vim.cmd("copen")
-end, { desc = "Open Quickfix list" })
+keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
--- Keymap for closing the Quickfix list
-vim.keymap.set("n", "<leader>qc", function()
-	vim.cmd("cclose")
-end, { desc = "Close Quickfix list" })
+-- Shortcut for searching your neovim configuration files
+keymap.set("n", "<leader>sn", function()
+	require("telescope.builtin").find_files({
+		cwd = vim.fn.stdpath("config"),
+	})
+end, { desc = " Search Neovim files" })
