@@ -11,12 +11,11 @@ opt.relativenumber = true
 opt.wrap = false
 opt.swapfile = false
 opt.backup = false
-opt.undodir = vim.fn.expand("~/.vim/undodir")
 opt.undofile = true
 opt.incsearch = true
 opt.hlsearch = false
 opt.hidden = true
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.cmdheight = 2
 opt.ignorecase = true
 opt.smartcase = true
@@ -35,3 +34,6 @@ opt.completeopt = "menu,menuone,noselect"
 opt.pumheight = 10
 opt.updatetime = 250
 opt.timeoutlen = 300
+
+-- Preview substitutions live, as you type.
+opt.inccommand = 'split'
