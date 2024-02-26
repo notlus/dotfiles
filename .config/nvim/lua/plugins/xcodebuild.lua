@@ -41,4 +41,7 @@ return {
 			end
 		end,
 	},
+	quickfix = {
+		show_warnings_on_quickfixlist = false,
+	},
 }
