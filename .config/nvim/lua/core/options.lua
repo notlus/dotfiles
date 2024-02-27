@@ -34,6 +34,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.pumheight = 10
 opt.updatetime = 250
 opt.timeoutlen = 300
+opt.title = true
 
 -- Preview substitutions live, as you type.
 opt.inccommand = 'split'
