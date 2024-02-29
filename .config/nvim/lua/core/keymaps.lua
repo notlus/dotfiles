@@ -126,6 +126,7 @@ keymap.set("n", "<leader>xe", ":XcodebuildTestExplorerToggle<CR>", { desc = "Tog
 keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
 keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
 keymap.set("n", "<leader>xl", ":XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
+keymap.set("n", "<leader>x.", ":XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xq", ":Telescope quickfix<CR>", { desc = "Show QuickFix List" })
 
 -- Split window management
@@ -147,3 +148,6 @@ keymap.set("n", "<leader>sn", function()
 		cwd = vim.fn.stdpath("config"),
 	})
 end, { desc = " Search Neovim files" })
+
+-- Restart LSP
+keymap.set("n", "<leader>rl", ":LspRestart<CR>", { desc = "Restart LSP" })
