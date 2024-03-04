@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local keymap = vim.keymap
 
 -- Key mappings
@@ -25,22 +22,23 @@ keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
 -- Toggle nvim-tree with the leader key
-keymap.set("n", "<leader>0", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
 -- Telescope
 keymap.set(
 	"n",
 	"<space>fb",
 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-	{ noremap = true, desc = "Open file browser" }
+	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
-keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>', { desc = "Find files" })
-keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>', { desc = "Find word" })
+keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>', { desc = "[F]ind [F]iles" })
+keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>', { desc = "Find by [G]rep" })
 keymap.set("n", "<leader>s.", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
-keymap.set("n", "<leader>fs", ':lua require("telescope.builtin").grep_string()<CR>', { desc = "Find string" })
-keymap.set("n", "<leader>sr", ':lua require("telescope.builtin").resume()<CR>', { desc = "Open previous search" })
+keymap.set("n", "<leader>fw", ':lua require("telescope.builtin").grep_string()<CR>', { desc = "[F]ind [W]ord" })
+keymap.set('n', '<leader>fd', ':lua require("telescope.builtin").diagnostics()<CR>', { desc = '[F]ind [D]iagnostics' })
+keymap.set("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>', { desc = "[Find] [R]esume" })
 keymap.set("n", "<leader><leader>", ':lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
-keymap.set("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>', { desc = "Find help tags" })
+keymap.set("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>', { desc = "[F]ind [H]elp" })
 
 -- Search in the current buffer
 keymap.set("n", "<leader>/", function()
