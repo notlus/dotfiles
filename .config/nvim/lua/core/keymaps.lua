@@ -22,7 +22,7 @@ keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
 -- Toggle nvim-tree with the leader key
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
+keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
 -- Telescope
 keymap.set(
