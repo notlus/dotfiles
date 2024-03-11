@@ -98,8 +98,8 @@ return {
 					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 					vim_item.menu = ({
 						-- This holds the display name for all possible sources
-						nvim_lsp = "[LSP]",
 						copilot = "[CP]",
+						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
 						path = "[Path]",
@@ -116,6 +116,15 @@ return {
 				{ name = "path" },
 				-- Add more sources if needed
 			}),
+			window = {
+				completion = {
+					border = "rounded",
+					scrollbar = false,
+				},
+				documentation = {
+					border = "rounded",
+				},
+			},
 			experimental = {
 				ghost_text = false, -- This shows a preview of the selected item in the background
 				native_menu = false, -- This disables the native completion menu in favor of nvim-cmp's
