@@ -147,5 +147,7 @@ keymap.set("n", "<leader>sn", function()
 	})
 end, { desc = " Search Neovim files" })
 
--- Restart LSP
-keymap.set("n", "<leader>rl", ":LspRestart<CR>", { desc = "Restart LSP" })
+-- LSP
+keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "LSP Info" })
+keymap.set("n", "<leader>ls", ":LspStart<CR>", { desc = "Start LSP" })
+keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP" })
