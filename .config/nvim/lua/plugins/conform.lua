@@ -19,6 +19,7 @@ return {
 	opts = {
 		formatters_by_ft = {
 			clang = { "clang_format" },
+            json = { "jq" },
 			lua = { "stylua" },
 			swift = { "swiftformat_ext" },
 		},
