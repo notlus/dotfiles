@@ -2,11 +2,11 @@ local keymap = vim.keymap
 
 -- Key mappings
 
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
@@ -31,14 +31,19 @@ keymap.set(
 	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
-keymap.set("n", "<leader>ff", ':lua require("telescope.builtin").find_files()<CR>', { desc = "[F]ind [F]iles" })
-keymap.set("n", "<leader>fg", ':lua require("telescope.builtin").live_grep()<CR>', { desc = "Find by [G]rep" })
-keymap.set("n", "<leader>s.", ':lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
-keymap.set("n", "<leader>fw", ':lua require("telescope.builtin").grep_string()<CR>', { desc = "[F]ind [W]ord" })
-keymap.set('n', '<leader>fd', ':lua require("telescope.builtin").diagnostics()<CR>', { desc = '[F]ind [D]iagnostics' })
-keymap.set("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>', { desc = "[Find] [R]esume" })
-keymap.set("n", "<leader><leader>", ':lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
-keymap.set("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>', { desc = "[F]ind [H]elp" })
+keymap.set("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = "[F]ind [F]iles" })
+keymap.set("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', { desc = "Find by [G]rep" })
+keymap.set("n", "<leader>s.", '<cmd>lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
+keymap.set("n", "<leader>fw", '<cmd>lua require("telescope.builtin").grep_string()<CR>', { desc = "[F]ind [W]ord" })
+keymap.set(
+	"n",
+	"<leader>fd",
+	'<cmd>lua require("telescope.builtin").diagnostics()<CR>',
+	{ desc = "[F]ind [D]iagnostics" }
+)
+keymap.set("n", "<leader>fr", '<cmd>lua require("telescope.builtin").resume()<CR>', { desc = "[Find] [R]esume" })
+keymap.set("n", "<leader><leader>", '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
+keymap.set("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', { desc = "[F]ind [H]elp" })
 
 -- Search in the current buffer
 keymap.set("n", "<leader>/", function()
@@ -73,6 +78,14 @@ keymap.set(
 	"n",
 	"hu",
 	'<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
+	{ silent = true, desc = "Undo the last change in the current hunk" }
+)
+
+-- Reset the current hunk
+keymap.set(
+	"n",
+	"hr",
+	"<cmd>:Gitsigns reset_hunk<CR>",
 	{ silent = true, desc = "Undo the last change in the current hunk" }
 )
 
@@ -111,20 +124,21 @@ keymap.set(
 keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "LazyGit" })
 
 -- Xcode
-keymap.set("n", "<leader>X", ":XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
-keymap.set("n", "<leader>xf", ":XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
-keymap.set("n", "<leader>xb", ":XcodebuildBuild<CR>", { desc = "Build Project" })
-keymap.set("n", "<leader>xB", ":XcodebuildCleanBuild<CR>", { desc = "Clean build" })
-keymap.set("n", "<leader>xr", ":XcodebuildRun<CR>", { desc = "Build and run" })
-keymap.set("n", "<leader>xt", ":XcodebuildTest<CR>", { desc = "Test" })
-keymap.set("v", "<leader>xt", ":XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
-keymap.set("n", "<leader>xT", ":XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
-keymap.set("n", "<leader>xp", ":XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
-keymap.set("n", "<leader>xe", ":XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
-keymap.set("n", "<leader>xs", ":XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
-keymap.set("n", "<leader>xc", ":XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
-keymap.set("n", "<leader>xl", ":XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
-keymap.set("n", "<leader>x.", ":XcodebuildCancel<CR>", { desc = "Cancel build" })
+keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
+keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
+keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<CR>", { desc = "Build Project" })
+keymap.set("n", "<leader>xu", "<cmd>XcodebuildBuildForTesting<CR>", { desc = "Build Project for Testing" })
+keymap.set("n", "<leader>xB", "<cmd>XcodebuildCleanBuild<CR>", { desc = "Clean build" })
+keymap.set("n", "<leader>xr", "<cmd>XcodebuildRun<CR>", { desc = "Build and run" })
+keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<CR>", { desc = "Test" })
+keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
+keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
+keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
+keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
+keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
+keymap.set("n", "<leader>xc", "<cmd>XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
+keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
+keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xq", ":Telescope quickfix<CR>", { desc = "Show QuickFix List" })
 
 -- Split window management
