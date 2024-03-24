@@ -165,3 +165,9 @@ end, { desc = " Search Neovim files" })
 keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "LSP Info" })
 keymap.set("n", "<leader>ls", ":LspStart<CR>", { desc = "Start LSP" })
 keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP" })
+
+-- LSP Saga
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" })
+keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "[C]ode [O]utline" })
+keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "[R]ename" })
+keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "[P]eek [D]efinition" })
