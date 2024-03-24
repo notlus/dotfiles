@@ -12,8 +12,8 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
 -- Navigate between buffers
-keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous buffer" })
-keymap.set("n", "]b", ":bnext<CR>", { desc = "Next buffer" })
+keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
 
 -- Navigate between split views
 keymap.set("n", "<C-J>", "<C-W><C-J>")
@@ -22,13 +22,13 @@ keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
 -- Toggle nvim-tree with the leader key
-keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
+keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
 -- Telescope
 keymap.set(
 	"n",
 	"<space>fb",
-	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+	"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
 keymap.set("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = "[F]ind [F]iles" })
@@ -85,7 +85,7 @@ keymap.set(
 keymap.set(
 	"n",
 	"hr",
-	"<cmd>:Gitsigns reset_hunk<CR>",
+	"<cmd>Gitsigns reset_hunk<CR>",
 	{ silent = true, desc = "Undo the last change in the current hunk" }
 )
 
@@ -121,7 +121,7 @@ keymap.set(
 	{ silent = true, desc = "Show a diff of the current file" }
 )
 
-keymap.set("n", "<leader>lg", ":LazyGit<CR>", { desc = "LazyGit" })
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 
 -- Xcode
 keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
@@ -139,13 +139,13 @@ keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Selec
 keymap.set("n", "<leader>xc", "<cmd>XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
-keymap.set("n", "<leader>xq", ":Telescope quickfix<CR>", { desc = "Show QuickFix List" })
+keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make split windows equal width" })
-keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close split window" })
+keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close split window" })
 keymap.set("n", "<leader>sj", "<C-w>-", { desc = "Make split window height shorter" })
 keymap.set("n", "<leader>sk", "<C-w>+", { desc = "Make split windows height taller" })
 keymap.set("n", "<leader>sl", "<C-w>>5", { desc = "Make split windows width bigger" })
@@ -162,9 +162,9 @@ keymap.set("n", "<leader>sn", function()
 end, { desc = " Search Neovim files" })
 
 -- LSP
-keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "LSP Info" })
-keymap.set("n", "<leader>ls", ":LspStart<CR>", { desc = "Start LSP" })
-keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "Restart LSP" })
+keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LSP Info" })
+keymap.set("n", "<leader>ls", "<cmd>LspStart<CR>", { desc = "Start LSP" })
+keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
 -- LSP Saga
 keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" })
