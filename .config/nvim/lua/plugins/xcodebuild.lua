@@ -3,8 +3,8 @@ local progress_handle
 return {
 	"wojciech-kulik/xcodebuild.nvim",
 	commands = {
-		extra_build_args = "-parallelizeTargets",
-		extra_test_args = "-parallelizeTargets",
+		extra_build_args = "-parallelizeTargets -toolchain swift-latest",
+		extra_test_args = "-parallelizeTargets -toolchain swift-latest",
 	},
 	opts = {
 		quickfix = {
