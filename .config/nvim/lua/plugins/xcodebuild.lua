@@ -2,6 +2,10 @@ local progress_handle
 
 return {
 	"wojciech-kulik/xcodebuild.nvim",
+	commands = {
+		extra_build_args = "-parallelizeTargets",
+		extra_test_args = "-parallelizeTargets",
+	},
 	opts = {
 		quickfix = {
 			show_warnings_on_quickfixlist = false,
