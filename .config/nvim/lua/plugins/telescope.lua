@@ -32,12 +32,6 @@ return {
 				},
 			},
 			pickers = {
-				live_grep = {
-					theme = "dropdown",
-				},
-				grep_string = {
-					theme = "dropdown",
-				},
 				find_files = {
 					theme = "dropdown",
 					previewer = false,
