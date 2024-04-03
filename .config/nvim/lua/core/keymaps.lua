@@ -136,7 +136,6 @@ keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This
 keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
 keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
 keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
-keymap.set("n", "<leader>xc", "<cmd>XcodebuildSelectConfig<CR>", { desc = "Select configuration" })
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
