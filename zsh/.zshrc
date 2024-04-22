@@ -111,8 +111,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dtfs='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias v="nvim"
 alias vim="nvim"
 
