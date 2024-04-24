@@ -67,7 +67,7 @@ return {
 					c = cmp.mapping.close(),
 				},
 				["<C-y>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
+					behavior = cmp.ConfirmBehavior.Insert,
 					select = true,
 				}),
 				["<C-n>"] = cmp.mapping(function(fallback)
