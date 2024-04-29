@@ -125,7 +125,7 @@ return {
 				if server == "sourcekit" then
 					opts = {
 						cmd = {
-							"/usr/local/bin/sourcekit-lsp",
+							"/usr/bin/sourcekit-lsp",
 						},
 						root_dir = function(filename)
 							return util.root_pattern("buildServer.json")(filename)

@@ -11,6 +11,9 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
+keymap.set("n", "<leader>d", "<cmd>:bp|bd#<CR>", { desc = "Close buffer" })
+-- keymap.set("n", "<leader>d", "<cmd>:bp|bd#<CR>", { desc = "Close buffer" })
+
 -- Navigate between buffers
 keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
@@ -21,7 +24,7 @@ keymap.set("n", "<C-K>", "<C-W><C-K>")
 keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
--- Toggle nvim-tree with the leader key
+-- Toggle nvim-tree
 keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
 -- Telescope
