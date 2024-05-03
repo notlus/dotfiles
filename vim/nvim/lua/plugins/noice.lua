@@ -34,7 +34,7 @@ return {
 						kind = "",
 						find = "change",
 					},
-                    opts = { skip = true },
+					opts = { skip = true },
 				},
 			},
 		})
