@@ -27,34 +27,26 @@ keymap.set("n", "<C-L>", "<C-W><C-L>")
 -- Toggle nvim-tree
 keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
 
--- Telescope
+-- FzfLua and Telescope
 keymap.set(
 	"n",
 	"<space>fb",
 	"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
-keymap.set("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = "[F]ind [F]iles" })
-keymap.set("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<CR>', { desc = "Find by [G]rep" })
-keymap.set("n", "<leader>s.", '<cmd>lua require("telescope.builtin").oldfiles()<CR>', { desc = "Open recent files" })
-keymap.set("n", "<leader>fw", '<cmd>lua require("telescope.builtin").grep_string()<CR>', { desc = "[F]ind [W]ord" })
-keymap.set(
-	"n",
-	"<leader>fd",
-	'<cmd>lua require("telescope.builtin").diagnostics()<CR>',
-	{ desc = "[F]ind [D]iagnostics" }
-)
-keymap.set("n", "<leader>fr", '<cmd>lua require("telescope.builtin").resume()<CR>', { desc = "[Find] [R]esume" })
-keymap.set("n", "<leader><leader>", '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc = "Find buffers" })
-keymap.set("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<CR>', { desc = "[F]ind [H]elp" })
+keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "[F]ind [F]iles" })
+keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", { desc = "[F]ind by [G]rep" })
+keymap.set("n", "<leader>s.", "<cmd>FzfLua oldfiles<CR>", { desc = "Open recent files" })
+keymap.set("n", "<leader>fw", "<cmd>FzfLua grep_cword<CR>", { desc = "[F]ind [W]ord" })
+keymap.set("n", "<leader>fd", "<cmd><cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "[F]ind [D]iagnostics" })
+keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<CR>", { desc = "[F]ind [R]esume" })
+keymap.set("n", "<leader><leader>", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
+keymap.set("n", "<leader>fh", "<cmd>FzfLua helptags<CR>", { desc = "[F]ind [H]elp" })
+keymap.set("n", "<leader>ds", "<cmd>FzfLua lsp_document_symbols<CR>", { desc = "Document symbols" })
+
 
 -- Search in the current buffer
-keymap.set("n", "<leader>/", function()
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = false,
-	}))
-end, { desc = "[/] Fuzzily search in current buffer" })
+keymap.set("n", "<leader>/", "<cmd>FzfLua grep_curbuf<CR>", { desc = "Fuzziy search in current buffer" })
 
 -- Git
 -- Jump to the next Git change
