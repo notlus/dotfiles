@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load lazy.nvim and its plugins
 
-require("lazy").setup({
+require("lazy").setup("plugins", {
 	"folke/which-key.nvim",
 	{ "folke/neoconf.nvim", cmd = "Neoconf" },
 	"folke/neodev.nvim",
@@ -25,17 +25,14 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		opts = {},
-		config = function()
-			vim.cmd([[colorscheme tokyonight]])
-		end,
-	},
-
-	require("lazy").setup("plugins", {
 		change_detection = {
 			enabled = true, -- automatically check for config file changes and reload the ui
 			notify = false, -- turn off notifications whenever plugin changes are made
 		},
-	}),
+		config = function()
+			vim.cmd([[colorscheme tokyonight]])
+		end,
+	},
 
 	require("core.options"),
 	require("core.keymaps"),
