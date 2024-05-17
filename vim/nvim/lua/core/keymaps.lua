@@ -24,8 +24,8 @@ keymap.set("n", "<C-K>", "<C-W><C-K>")
 keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
--- Toggle nvim-tree
-keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvim-tree" })
+-- Toggle Oil
+keymap.set("n", "<leader>t", "<cmd>Oil<CR>", { desc = "Toggle Oil" })
 
 -- FzfLua and Telescope
 keymap.set(
