@@ -78,13 +78,12 @@ return {
 				vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
 
 				-- Fuzzy find all the symbols in the current file.
-				opts.desc = "Document symbols"
-				vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, opts)
+                vim.keymap.set("n", "<leader>ds", "<cmd>FzfLua lsp_document_symbols<CR>", { desc = "[D]ocument [S]ymbols" })
 
 				-- Fuzzy find all the symbols in the current workspace
 				--  Similar to document symbols, except searches over the whole project.
-				opts.desc = "Workspace symbols"
-				vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, opts)
+				opts.desc = "[W]orkspace [S]ymbols"
+				vim.keymap.set("n", "<leader>ws", "<cmd>FzfLua lsp_workspace_symbols<CR>", opts)
 
 				-- opts.desc = "Format the current buffer"
 				-- vim.keymap.set("n", "<space>f", function()

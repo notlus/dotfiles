@@ -42,7 +42,6 @@ keymap.set("n", "<leader>fd", "<cmd><cmd>FzfLua lsp_document_diagnostics<CR>", {
 keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<CR>", { desc = "[F]ind [R]esume" })
 keymap.set("n", "<leader><leader>", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", "<cmd>FzfLua helptags<CR>", { desc = "[F]ind [H]elp" })
-keymap.set("n", "<leader>ds", "<cmd>FzfLua lsp_document_symbols<CR>", { desc = "Document symbols" })
 
 
 -- Search in the current buffer
