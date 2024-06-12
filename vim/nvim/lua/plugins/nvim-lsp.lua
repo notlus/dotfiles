@@ -13,7 +13,7 @@ return {
 		{ "j-hui/fidget.nvim", opts = {} },
 	},
 	event = { "BufReadPre", "BufNewFile" },
-	ft = { "c", "cpp", "objc", "objcpp", "dart", "kotlin", "lua", "swift" },
+	ft = { "c", "cpp", "objc", "objcpp", "dart", "kotlin", "lua", "python", "swift" },
 
 	config = function() -- Global mappings.
 		-- First, enable neodev. This is helpful for auto-configuring the Lua LSP
@@ -99,7 +99,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-		local servers = { "clangd", "sourcekit", "dartls", "kotlin_language_server", "lua_ls" }
+		local servers = { "clangd", "sourcekit", "dartls", "kotlin_language_server", "lua_ls", "pyright" }
 		local function setup_servers()
 			for _, server in ipairs(servers) do
 				capabilities = capabilities
