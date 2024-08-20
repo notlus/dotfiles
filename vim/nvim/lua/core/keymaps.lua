@@ -11,7 +11,6 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
-keymap.set("n", "<leader>d", "<cmd>:bp|bd#<CR>", { desc = "Close buffer" })
 -- keymap.set("n", "<leader>d", "<cmd>:bp|bd#<CR>", { desc = "Close buffer" })
 
 -- Navigate between buffers
