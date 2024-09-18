@@ -128,9 +128,7 @@ return {
 				end
 				if server == "sourcekit" then
 					opts = {
-						cmd = {
-							"/usr/bin/sourcekit-lsp",
-						},
+						cmd = vim.trim(vim.fn.system("xcrun -f sourcekit-lsp")),
 						root_dir = function(filename)
 							return util.root_pattern("buildServer.json")(filename)
 								or util.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
