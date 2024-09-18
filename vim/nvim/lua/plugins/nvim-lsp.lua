@@ -136,6 +136,14 @@ return {
 								or util.root_pattern("Package.swift")(filename)
 						end,
 					}
+
+					capabilities = {
+						workspace = {
+							didChangeWatchedFiles = {
+								dynamicRegistration = true,
+							},
+						},
+					}
 				end
 				lspconfig[server].setup(opts)
 			end
