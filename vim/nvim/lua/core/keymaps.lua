@@ -42,6 +42,11 @@ keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<CR>", { desc = "[F]ind [R]esum
 keymap.set("n", "<leader><leader>", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
 keymap.set("n", "<leader>fh", "<cmd>FzfLua helptags<CR>", { desc = "[F]ind [H]elp" })
 
+-- Close current buffer
+keymap.set("n", "<leader>bd", "<cmd>:bd<CR>", { desc = "Close current buffer" })
+
+-- Close all buffers
+keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
 
 -- Search in the current buffer
 keymap.set("n", "<leader>/", "<cmd>FzfLua grep_curbuf<CR>", { desc = "Fuzziy search in current buffer" })
