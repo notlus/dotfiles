@@ -98,6 +98,7 @@ return {
 					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 					vim_item.menu = ({
 						-- This holds the display name for all possible sources
+						supermaven = "[SM]",
 						copilot = "[CP]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
