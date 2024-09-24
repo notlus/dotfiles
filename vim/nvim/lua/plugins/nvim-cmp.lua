@@ -99,7 +99,6 @@ return {
 					vim_item.menu = ({
 						-- This holds the display name for all possible sources
 						supermaven = "[SM]",
-						copilot = "[CP]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
@@ -110,7 +109,7 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "copilot" },
+				{ name = "supermaven" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
