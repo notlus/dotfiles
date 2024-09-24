@@ -121,3 +121,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export GEM_HOME=$HOME/.gem
 export PATH=$HOME/bin:/usr/local/bin:$GEM_HOME/bin:$HOME/bin:$PATH
+source <(fzf --zsh)
