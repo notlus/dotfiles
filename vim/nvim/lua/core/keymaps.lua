@@ -11,7 +11,13 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 -- Use ESC to exit terminal mode
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
--- keymap.set("n", "<leader>d", "<cmd>:bp|bd#<CR>", { desc = "Close buffer" })
+-- Delete single character without copying to clipboard
+keymap.set("n", "x", '"_x')
+keymap.set("n", "X", '"_X')
+
+-- Keep last yanked text when pasting
+keymap.set("v", "p", '"_dP')
+
 
 -- Navigate between buffers
 keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
