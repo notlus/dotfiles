@@ -48,5 +48,6 @@ return {
 		ft = { "objc", "objc++", "swift", "c", "cpp" },
 		show_build_progress_bar = false,
 		debug = false,
+		project_search_depth = 10,
 	},
 }
