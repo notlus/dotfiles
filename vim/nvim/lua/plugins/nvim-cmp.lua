@@ -94,16 +94,15 @@ return {
 			},
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
+				expandable_indicator = true,
 				format = function(entry, vim_item)
 					vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 					vim_item.menu = ({
-						-- This holds the display name for all possible sources
 						supermaven = "[SM]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snippet]",
 						buffer = "[Buffer]",
 						path = "[Path]",
-						-- Add or modify source names as necessary
 					})[entry.source.name]
 					return vim_item
 				end,
