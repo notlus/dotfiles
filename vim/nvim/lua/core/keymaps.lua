@@ -18,7 +18,6 @@ keymap.set("n", "X", '"_X')
 -- Keep last yanked text when pasting
 keymap.set("v", "p", '"_dP')
 
-
 -- Navigate between buffers
 keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
@@ -126,6 +125,10 @@ keymap.set(
 )
 
 keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+
+-- Neogit
+keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
+keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>", { desc = "Neogit Status" })
 
 -- Xcode
 keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
