@@ -2,6 +2,8 @@ local progress_handle
 
 return {
 	"wojciech-kulik/xcodebuild.nvim",
+    -- branch = "main",
+    branch = "feat/issue-127",
 	commands = {
 		extra_build_args = "-parallelizeTargets -toolchain swift-latest",
 		extra_test_args = "-parallelizeTargets -toolchain swift-latest",
