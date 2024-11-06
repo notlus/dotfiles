@@ -146,6 +146,19 @@ keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Selec
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
+keymap.set("n", "<leader>xo", function()
+	vim.fn.system({
+		"open",
+		vim.fs.dirname(require("xcodebuild.project.config").settings.appPath),
+	})
+end, { desc = "Open project directory" })
+
+keymap.set("n", "<leader>xd", function()
+	vim.system({
+		"open",
+		vim.fs.dirname(require("xcodebuild.project.config").settings.appPath) .. "/../../../..",
+	})
+end, { desc = "Open derived data directory" })
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
