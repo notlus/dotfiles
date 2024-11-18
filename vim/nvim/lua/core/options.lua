@@ -110,3 +110,5 @@ opt.title = true
 opt.inccommand = "split"
 
 opt.virtualedit = "block"
+
+opt.laststatus = 3
