@@ -5,6 +5,7 @@ return {
 	commands = {
 		extra_build_args = "-parallelizeTargets -toolchain swift-latest",
 		extra_test_args = "-parallelizeTargets -toolchain swift-latest",
+		keep_device_cache = true,
 	},
 	opts = {
 		quickfix = {
