@@ -52,7 +52,7 @@
                                         "value": 1
                                     },
                                     {
-                                        "name": "hyper_sublayer_x",
+                                        "name": "hyper_sublayer_f",
                                         "type": "variable_if",
                                         "value": 0
                                     }
@@ -211,7 +211,7 @@
                         ]
                     },
                     {
-                        "description": "Hyper Key sublayer x (eXplore)",
+                        "description": "Hyper Key sublayer f (Finder)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -226,15 +226,15 @@
                                         "value": 0
                                     }
                                 ],
-                                "description": "Toggle Hyper sublayer x",
+                                "description": "Toggle Hyper sublayer f",
                                 "from": {
-                                    "key_code": "x",
+                                    "key_code": "f",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "hyper_sublayer_x",
+                                            "name": "hyper_sublayer_f",
                                             "value": 1
                                         }
                                     }
@@ -242,7 +242,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "hyper_sublayer_x",
+                                            "name": "hyper_sublayer_f",
                                             "value": 0
                                         }
                                     }
@@ -252,7 +252,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hyper_sublayer_x",
+                                        "name": "hyper_sublayer_f",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -268,7 +268,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hyper_sublayer_x",
+                                        "name": "hyper_sublayer_f",
                                         "type": "variable_if",
                                         "value": 1
                                     }
