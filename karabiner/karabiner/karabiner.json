@@ -280,6 +280,22 @@
                                 },
                                 "to": [{ "shell_command": "open -a 'Finder.app' ~/Downloads/" }],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_f",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open dev (Source)",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Finder.app' ~/dev" }],
+                                "type": "basic"
                             }
                         ]
                     }
