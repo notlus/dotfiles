@@ -18,6 +18,9 @@ keymap.set("n", "X", '"_X')
 -- Keep last yanked text when pasting
 keymap.set("v", "p", '"_dP')
 
+-- Create a new file
+keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
+
 -- Navigate between buffers
 keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
