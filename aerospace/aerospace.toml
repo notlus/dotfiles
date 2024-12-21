@@ -171,6 +171,10 @@ if.app-id = 'com.apple.MobileSMS'
 run = "move-node-to-workspace M"
 
 [[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = "move-node-to-workspace M"
+
+[[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace T"
 
