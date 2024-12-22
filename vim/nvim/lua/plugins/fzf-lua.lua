@@ -1,9 +1,28 @@
 return {
 	"ibhagwan/fzf-lua",
-	-- optional for icon support
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function()
-		-- calling `setup` is optional for customization
-		require("fzf-lua").setup({})
-	end,
+	opts = {
+		previewers = {
+			bat = {
+				cmd = "bat",
+				args = "--color=always --style=numbers,changes",
+				theme = "tokyonight_moon",
+			},
+		},
+		files = {
+			prompt = "Files> ",
+			previewer = "bat",
+			formatter = "path.filename_first",
+		},
+		grep = {
+			prompt = "Find> ",
+			previewer = "bat",
+			formatter = "path.filename_first",
+		},
+		buffers = {
+			prompt = "Buffers> ",
+			previewer = "bat",
+			formatter = "path.filename_first",
+		},
+	},
 }
