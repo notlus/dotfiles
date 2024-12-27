@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+source "$CONFIG_DIR/environment"
+source "$THEME_DIR/tokyonight"
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+# Bar Appearance
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+# sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar height=$BAR_HEIGHT \
+                 blur_radius=$BAR_BLUR_RADIUS  \
+                 corner_radius=$BAR_CORNER_RADIUS \
+                 position=$BAR_POSITION \
+                 sticky=off       \
+                 padding_left=$BAR_PADDING  \
+                 padding_right=$BAR_PADDING \
+                 color=$BAR_COLOR \
+                 y_offset=$BAR_Y_OFFSET
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  icon.font="$ICON_FONT"
+  label.font="$LABEL_FONT"
+  icon.color=$LABEL_COLOR
+  label.color=$LABEL_COLOR
+  padding_left=5
+  padding_right=5
+  icon.padding_left=4
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+  # background.corner_radius=$BACKGROUND_CORNER_RADIUS
+)
+sketchybar --default "${default[@]}"
+
+# Left Items
+sketchybar --add item logo left \
+           --set logo icon=􀣺 \
+                 icon.font="$ICON_FONT" \
+                 icon.padding_left=16 \
+                 icon.color=$LABEL_COLOR \
+                 icon.padding_right=10 \
+                 background.color=$BAR_COLOR \
+                 background.padding_right=8 \
+                 background.padding_left=4 \
+                 click_script="sketchybar --update"
+
+source "$ITEM_DIR/aerospace.sh"
+# source "$ITEM_DIR/spacer.sh"
+source "$ITEM_DIR/front_app.sh"
+
+# Right Items
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/battery.sh"
+
+# Automatically apply configuration changes
+sketchybar --hotload on
+
+# Force all scripts to run the first time (never do this in a script)
+sketchybar --update
