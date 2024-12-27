@@ -195,3 +195,4 @@ keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Act
 keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "[C]ode [O]utline" })
 keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "[R]ename" })
 keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "[P]eek [D]efinition" })
+keymap.set("n", "K", "<cmd>Lspsaga hover_doc")
