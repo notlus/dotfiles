@@ -127,3 +127,7 @@ source <(fzf --zsh)
 if [[ -f ~/.zsh_secrets ]]; then
     source ~/.zsh_secrets
 fi
+
+eval "$(rbenv init -)"
+
+export BAT_THEME="tokyonight_moon"
