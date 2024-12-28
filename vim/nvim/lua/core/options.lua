@@ -64,9 +64,6 @@ opt.ruler = true
 -- Enable mouse support in all modes
 opt.mouse = "a"
 
--- Fix a vertical line at the 100th character for aligning text
-opt.colorcolumn = "100"
-
 -- Always display the sign column
 opt.signcolumn = "yes"
 
