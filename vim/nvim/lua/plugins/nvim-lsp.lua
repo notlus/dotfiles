@@ -2,14 +2,13 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"hrsh7th/nvim-cmp",
+		"saghen/blink.cmp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 
 		-- Additional lua configuration, makes nvim stuff amazing!
 		"folke/neodev.nvim",
 
 		-- Useful status updates for LSP.
-		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 		{ "j-hui/fidget.nvim", opts = {} },
 	},
 	event = { "BufReadPre", "BufNewFile" },
@@ -102,7 +101,7 @@ return {
 
 		-- Add additional capabilities supported by nvim-cmp
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 		local servers = { "clangd", "sourcekit", "dartls", "kotlin_language_server", "lua_ls", "pyright" }
 		local function setup_servers()
