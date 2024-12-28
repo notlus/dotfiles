@@ -2,16 +2,17 @@
 font-family = "Symbols Nerd Font Mono"
 font-family = "Fira Code"
 
-theme = tokyonight-storm
+theme = tokyonight-moon
 
 # Mouse
 mouse-hide-while-typing = true
 
 # Keybindings
-keybind = clear
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
 keybind = ctrl+l=goto_split:right
 
 copy-on-select = true
+unfocused-split-opacity = 0.60
+window-colorspace = display-p3
