@@ -128,6 +128,9 @@ if [[ -f ~/.zsh_secrets ]]; then
     source ~/.zsh_secrets
 fi
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 export BAT_THEME="tokyonight_moon"
