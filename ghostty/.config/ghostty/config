@@ -18,3 +18,5 @@ keybind = ctrl+s>h=new_split:down
 copy-on-select = true
 unfocused-split-opacity = 0.60
 window-colorspace = display-p3
+background-opacity = 0.9
+background-blur-radius = 20
