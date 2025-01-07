@@ -11,8 +11,8 @@ for sid in $(aerospace list-workspaces --all); do
         --set space.$sid \
         label.color=$white \
         background.color=$BAR_COLOR \
-        background.corner_radius=5 \
-        background.height=20 \
+        background.corner_radius=$BAR_CORNER_RADIUS \
+        background.height=$BAR_HEIGHT \
         background.drawing=off \
         padding_left=0\
         padding_right=0\
