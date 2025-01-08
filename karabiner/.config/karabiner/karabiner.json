@@ -679,6 +679,7 @@
                     "manipulate_caps_lock_led": false
                 }
             ],
+            "name": "Default",
             "selected": true,
             "virtual_hid_keyboard": {
                 "country_code": 0,
