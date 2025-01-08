@@ -1,0 +1,58 @@
+{
+  "title": "Raycast Commands",
+  "rules": [
+    {
+      "description": "Raycast Commands",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "hyper",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Raycast Emoji Picker",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "hyper",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Raycast Clipboard History",
+          "from": {
+            "key_code": "backslash",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

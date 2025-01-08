@@ -1,0 +1,219 @@
+{
+  "title": "App Layer",
+  "rules": [
+    {
+      "description": "[A]pp Layer",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "hyper",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 1
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "org.pqrs.app_layer",
+                "text": "App Layer Activated"
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "app_layer_active",
+                  "value": 0
+                }
+              },
+              {
+                "key_code": "a"
+              },
+              {
+                "set_notification_message": {
+                  "id": "org.pqrs.app_layer",
+                  "text": ""
+                }
+              }
+            ],
+            "to_if_invoked": [
+              {
+                "set_notification_message": {
+                  "id": "org.pqrs.app_layer",
+                  "text": ""
+                }
+              }
+            ]
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "App Commands",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Brave",
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Brave Browser.app'"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Ghostty",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "shell_command": "open -a Ghostty.app"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Messages",
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "shell_command": "open -a Messages.app"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Obsidian",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "shell_command": "open -a Obsidian.app"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Safari",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "shell_command": "open -a Safari.app"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "app_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Open Xcode",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "shell_command": "open -a Xcode-16.2.0.app"
+            },
+            {
+              "set_variable": {
+                "name": "app_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

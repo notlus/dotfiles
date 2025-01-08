@@ -7,10 +7,360 @@
         {
             "complex_modifications": {
                 "parameters": {
+                    "basic.to_delayed_action_delay_milliseconds": 200,
                     "basic.to_if_alone_timeout_milliseconds": 200,
                     "basic.to_if_held_down_threshold_milliseconds": 200
                 },
                 "rules": [
+                    {
+                        "description": "Raycast Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Emoji Picker",
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Clipboard History",
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[F]ile System Layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "mandatory": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "finder_layer_active",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "org.pqrs.app_layer",
+                                            "text": "Finder Layer Activated"
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "finder_layer_active",
+                                                "value": 0
+                                            }
+                                        },
+                                        { "key_code": "f" },
+                                        {
+                                            "set_notification_message": {
+                                                "id": "org.pqrs.app_layer",
+                                                "text": ""
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_notification_message": {
+                                                "id": "org.pqrs.app_layer",
+                                                "text": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Finder Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "finder_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Finder",
+                                "from": { "key_code": "h" },
+                                "to": [
+                                    { "shell_command": "open -a 'Finder.app'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "finder_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "finder_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Downloads",
+                                "from": { "key_code": "d" },
+                                "to": [
+                                    { "shell_command": "open -a 'Finder.app' ~/Downloads/" },
+                                    {
+                                        "set_variable": {
+                                            "name": "finder_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "finder_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open dev (Source)",
+                                "from": { "key_code": "s" },
+                                "to": [
+                                    { "shell_command": "open -a 'Finder.app' ~/dev" },
+                                    {
+                                        "set_variable": {
+                                            "name": "finder_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[A]pp Layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "a" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "org.pqrs.app_layer",
+                                            "text": "App Layer Activated"
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_canceled": [
+                                        {
+                                            "set_variable": {
+                                                "name": "app_layer_active",
+                                                "value": 0
+                                            }
+                                        },
+                                        { "key_code": "a" },
+                                        {
+                                            "set_notification_message": {
+                                                "id": "org.pqrs.app_layer",
+                                                "text": ""
+                                            }
+                                        }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_notification_message": {
+                                                "id": "org.pqrs.app_layer",
+                                                "text": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "App Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Brave",
+                                "from": { "key_code": "b" },
+                                "to": [
+                                    { "shell_command": "open -a 'Brave Browser.app'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Ghostty",
+                                "from": { "key_code": "g" },
+                                "to": [
+                                    { "shell_command": "open -a Ghostty.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Messages",
+                                "from": { "key_code": "m" },
+                                "to": [
+                                    { "shell_command": "open -a Messages.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Obsidian",
+                                "from": { "key_code": "o" },
+                                "to": [
+                                    { "shell_command": "open -a Obsidian.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Safari",
+                                "from": { "key_code": "s" },
+                                "to": [
+                                    { "shell_command": "open -a Safari.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Xcode",
+                                "from": { "key_code": "x" },
+                                "to": [
+                                    { "shell_command": "open -a Xcode-16.2.0.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "Caps Lock -> Hyper Key | Escape if alone | Use fn + caps lock to enable caps lock",
                         "manipulators": [
@@ -43,6 +393,7 @@
                     },
                     {
                         "description": "Hyper Key sublayer a (Apps)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -195,7 +546,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hyper_sublayer_a",
+                                        "name": "hyper",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -211,7 +562,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hyper_sublayer_a",
+                                        "name": "hyper",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -228,6 +579,7 @@
                     },
                     {
                         "description": "Hyper Key sublayer f (Finder)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -327,6 +679,7 @@
                     "manipulate_caps_lock_led": false
                 }
             ],
+            "selected": true,
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "keyboard_type_v2": "ansi"
