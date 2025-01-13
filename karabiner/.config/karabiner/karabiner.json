@@ -7,48 +7,11 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.to_delayed_action_delay_milliseconds": 200,
+                    "basic.to_delayed_action_delay_milliseconds": 1000,
                     "basic.to_if_alone_timeout_milliseconds": 200,
                     "basic.to_if_held_down_threshold_milliseconds": 200
                 },
                 "rules": [
-                    {
-                        "description": "Raycast Commands",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Emoji Picker",
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Clipboard History",
-                                "from": {
-                                    "key_code": "backslash",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
                     {
                         "description": "[F]ile System Layer",
                         "manipulators": [
@@ -64,41 +27,21 @@
                                     "key_code": "f",
                                     "modifiers": { "mandatory": ["any"] }
                                 },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
                                 "to": [
                                     {
                                         "set_variable": {
                                             "name": "finder_layer_active",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "org.pqrs.app_layer",
-                                            "text": "Finder Layer Activated"
-                                        }
                                     }
                                 ],
                                 "to_delayed_action": {
-                                    "to_if_canceled": [
+                                    "to_if_invoked": [
                                         {
                                             "set_variable": {
                                                 "name": "finder_layer_active",
                                                 "value": 0
-                                            }
-                                        },
-                                        { "key_code": "f" },
-                                        {
-                                            "set_notification_message": {
-                                                "id": "org.pqrs.app_layer",
-                                                "text": ""
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_notification_message": {
-                                                "id": "org.pqrs.app_layer",
-                                                "text": ""
                                             }
                                         }
                                     ]
@@ -187,41 +130,21 @@
                                     }
                                 ],
                                 "from": { "key_code": "a" },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
                                 "to": [
                                     {
                                         "set_variable": {
                                             "name": "app_layer_active",
                                             "value": 1
                                         }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "org.pqrs.app_layer",
-                                            "text": "App Layer Activated"
-                                        }
                                     }
                                 ],
                                 "to_delayed_action": {
-                                    "to_if_canceled": [
+                                    "to_if_invoked": [
                                         {
                                             "set_variable": {
                                                 "name": "app_layer_active",
                                                 "value": 0
-                                            }
-                                        },
-                                        { "key_code": "a" },
-                                        {
-                                            "set_notification_message": {
-                                                "id": "org.pqrs.app_layer",
-                                                "text": ""
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_notification_message": {
-                                                "id": "org.pqrs.app_layer",
-                                                "text": ""
                                             }
                                         }
                                     ]
@@ -357,6 +280,43 @@
                                         }
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Raycast Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Emoji Picker",
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Clipboard History",
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history" }],
                                 "type": "basic"
                             }
                         ]
