@@ -26,40 +26,20 @@
                 "name": "finder_layer_active",
                 "value": 1
               }
-            },
-            {
-              "set_notification_message": {
-                "id": "org.pqrs.app_layer",
-                "text": "Finder Layer Activated"
-              }
             }
           ],
           "to_delayed_action": {
-            "to_if_canceled": [
+            "to_if_invoked": [
               {
                 "set_variable": {
                   "name": "finder_layer_active",
                   "value": 0
                 }
-              },
-              {
-                "key_code": "f"
-              },
-              {
-                "set_notification_message": {
-                  "id": "org.pqrs.app_layer",
-                  "text": ""
-                }
-              }
-            ],
-            "to_if_invoked": [
-              {
-                "set_notification_message": {
-                  "id": "org.pqrs.app_layer",
-                  "text": ""
-                }
               }
             ]
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 1000
           },
           "type": "basic"
         }
