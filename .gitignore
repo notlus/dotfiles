@@ -69,5 +69,5 @@ Package.resolved
 # Certbot generated files
 data/
 
-karabiner/karabiner/automatic_backups
+karabiner/.config/karabiner/automatic_backups
 # End of https://www.gitignore.io/api/swift,xcode
