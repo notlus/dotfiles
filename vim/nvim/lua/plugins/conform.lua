@@ -21,6 +21,7 @@ return {
 			clang = { "clang_format" },
             json = { "jq" },
 			lua = { "stylua" },
+			python = { "black" },
 			swift = { "swiftformat_ext" },
 		},
 		log_level = vim.log.levels.ERROR,
