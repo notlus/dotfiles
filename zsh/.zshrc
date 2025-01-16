@@ -81,7 +81,6 @@ plugins=(
     swiftpm
     xcode
     zoxide
-    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
