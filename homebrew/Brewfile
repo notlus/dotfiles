@@ -29,6 +29,7 @@ brew "tldr"
 brew "tmux"
 brew "yarn"
 brew "yazi"
+brew "zsh-autosuggestions"
 
 # Casks
 cask "appcleaner"
