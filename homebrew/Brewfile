@@ -5,6 +5,7 @@ tap "FelixKratz/formulae"
 # Brew
 brew "mas"
 brew "bat"
+brew "black"
 brew "clang-format"
 brew "fzf"
 brew "git-lfs"
