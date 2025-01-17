@@ -40,18 +40,12 @@ return {
 				opts.desc = "Show declaration for what is under cursor"
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
-				opts.desc = "Show definition for what is under cursor"
-				vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, opts)
-
 				-- Jump to the implementation of the word under your cursor.
 				opts.desc = "Jump to implementation"
 				vim.keymap.set("n", "gI", require("telescope.builtin").lsp_implementations, opts)
 
 				opts.desc = "Show documentation for what is under cursor"
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-				opts.desc = "Show implementation for what is under cursor"
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 
 				opts.desc = "Add workspace folder"
 				vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
@@ -64,25 +58,11 @@ return {
 					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 				end, opts)
 
-				opts.desc = "Show type definition for what is under cursor"
-				vim.keymap.set("n", "<leader>D", require("telescope.builtin").lsp_type_definitions, opts)
-
 				opts.desc = "Rename what is under cursor"
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
 				opts.desc = "Show code actions for what is under cursor"
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-
-				opts.desc = "Show references for what is under cursor"
-				vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
-
-				-- Fuzzy find all the symbols in the current file.
-				vim.keymap.set(
-					"n",
-					"<leader>ds",
-					"<cmd>FzfLua lsp_document_symbols<CR>",
-					{ desc = "[D]ocument [S]ymbols" }
-				)
 
 				-- Fuzzy find all the symbols in the current workspace
 				--  Similar to document symbols, except searches over the whole project.
