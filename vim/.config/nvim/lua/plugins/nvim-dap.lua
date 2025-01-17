@@ -49,7 +49,7 @@ return {
 		vim.keymap.set("n", "<leader>dr", xcodebuild.debug_without_build, { desc = "Debug Without Building" })
 
 		vim.keymap.set("n", "<leader>dc", dap.continue)
-		vim.keymap.set("n", "<leader>ds", dap.step_over)
+		-- vim.keymap.set("n", "<leader>ds", dap.step_over)
 		vim.keymap.set("n", "<leader>di", dap.step_into)
 		vim.keymap.set("n", "<leader>do", dap.step_out)
 		vim.keymap.set("n", "<C-b>", dap.toggle_breakpoint)
