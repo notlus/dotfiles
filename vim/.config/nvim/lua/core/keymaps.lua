@@ -39,9 +39,6 @@ keymap.set(
 )
 keymap.set("n", "<leader>fd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "[F]ind [D]iagnostics" })
 
--- Close current buffer
--- keymap.set("n", "<leader>bd", "<cmd>:bd<CR>", { desc = "Close current buffer" })
-
 -- Close all buffers
 keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
 
