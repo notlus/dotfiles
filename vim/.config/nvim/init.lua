@@ -39,7 +39,6 @@ require("lazy").setup("plugins", {
 })
 
 -- Highlight configurations
-vim.cmd([[highlight ColorColumn ctermbg=lightgrey guibg=lightgrey]])
 vim.cmd([[highlight Normal guibg=none]])
 
 vim.api.nvim_create_autocmd("FileType", {
