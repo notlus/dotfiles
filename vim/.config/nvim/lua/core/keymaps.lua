@@ -21,18 +21,14 @@ keymap.set("v", "p", '"_dP')
 -- Create a new file
 keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
 
--- Navigate between buffers
-keymap.set("n", "[b", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-keymap.set("n", "]b", "<cmd>bnext<CR>", { desc = "Next buffer" })
-
 -- Navigate between split views
 keymap.set("n", "<C-J>", "<C-W><C-J>")
 keymap.set("n", "<C-K>", "<C-W><C-K>")
 keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
--- Toggle Oil
-keymap.set("n", "<leader>t", "<cmd>Oil<CR>", { desc = "Toggle Oil" })
+-- Toggle MiniFiles
+keymap.set("n", "<leader>m", ":lua MiniFiles.open()<CR>", { silent = true, desc = "Toggle MiniFiles" })
 
 -- FzfLua and Telescope
 keymap.set(
