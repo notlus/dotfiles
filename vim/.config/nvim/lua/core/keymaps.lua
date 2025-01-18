@@ -123,10 +123,6 @@ keymap.set(
 	{ silent = true, desc = "Show a diff of the current file" }
 )
 
--- Neogit
-keymap.set("n", "<leader>gg", "<cmd>Neogit<CR>", { desc = "Neogit" })
-keymap.set("n", "<leader>gs", "<cmd>Neogit<CR>", { desc = "Neogit Status" })
-
 -- Xcode
 keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
 keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
