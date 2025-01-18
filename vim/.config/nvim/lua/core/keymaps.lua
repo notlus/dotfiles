@@ -37,23 +37,13 @@ keymap.set(
 	"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
--- keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "[F]ind [F]iles" })
--- keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", { desc = "[F]ind by [G]rep" })
--- keymap.set("n", "<leader>s.", "<cmd>FzfLua oldfiles<CR>", { desc = "Open recent files" })
--- keymap.set("n", "<leader>fw", "<cmd>FzfLua grep_cword<CR>", { desc = "[F]ind [W]ord" })
 keymap.set("n", "<leader>fd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "[F]ind [D]iagnostics" })
--- keymap.set("n", "<leader>fr", "<cmd>FzfLua resume<CR>", { desc = "[F]ind [R]esume" })
--- keymap.set("n", "<leader><leader>", "<cmd>FzfLua buffers<CR>", { desc = "Find buffers" })
-keymap.set("n", "<leader>fh", "<cmd>FzfLua helptags<CR>", { desc = "[F]ind [H]elp" })
 
 -- Close current buffer
 -- keymap.set("n", "<leader>bd", "<cmd>:bd<CR>", { desc = "Close current buffer" })
 
 -- Close all buffers
 keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
-
--- Search in the current buffer
--- keymap.set("n", "<leader>/", "<cmd>FzfLua grep_curbuf<CR>", { desc = "Fuzzily search in current buffer" })
 
 -- Git
 -- Jump to the next Git change
