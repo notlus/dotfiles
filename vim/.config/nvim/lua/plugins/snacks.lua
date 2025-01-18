@@ -51,12 +51,13 @@ return {
 	keys = {
         -- Files
 	    { "<leader><leader>", function() Snacks.picker.buffers() end, desc = "Buffers" },
-	    { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
-	    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+	    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
+	    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "[F]ind by [G]it" },
 	    { "<leader>f.", function() Snacks.picker.recent() end, desc = "Recent" },
-	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
-	    { "<leader>/", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
-	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
+	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
+	    { "<leader>/", function() Snacks.picker.lines() end, desc = "Search in current buffer" },
+	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
+        { "<leader>fr", function() Snacks.picker.resume() end, desc = "[F]ind [R]esume" },
 
         -- LSP
 	    { "<leader>ds", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
