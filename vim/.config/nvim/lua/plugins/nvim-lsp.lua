@@ -64,11 +64,6 @@ return {
 				opts.desc = "Show code actions for what is under cursor"
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
-				-- Fuzzy find all the symbols in the current workspace
-				--  Similar to document symbols, except searches over the whole project.
-				opts.desc = "[W]orkspace [S]ymbols"
-				vim.keymap.set("n", "<leader>ws", "<cmd>FzfLua lsp_workspace_symbols<CR>", opts)
-
 				-- opts.desc = "Format the current buffer"
 				-- vim.keymap.set("n", "<space>f", function()
 				-- 	vim.lsp.buf.format({ async = true })
