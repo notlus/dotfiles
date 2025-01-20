@@ -127,7 +127,6 @@ keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Selec
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xC", "<cmd>XcodebuildSetup<CR>", { desc = "Show Configuration Wizard" })
-keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<CR>", { desc = "Show QuickFix List" })
 keymap.set("n", "<leader>xo", function()
 	vim.fn.system({
 		"open",

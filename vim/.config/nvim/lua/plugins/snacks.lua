@@ -62,6 +62,7 @@ return {
         { "<leader>fr", function() Snacks.picker.resume() end, desc = "[F]ind [R]esume" },
         { "<leader>fh", function() Snacks.picker.help() end, desc = "[F]ind [H]elp" },
         { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "[F]ind [D]iagnostics" },
+        { "<leader>fq", function() Snacks.picker.qflist() end, desc = "[F]ind in [Q]uickfix List" },
 
         -- LSP
 	    { "<leader>ds", function() Snacks.picker.lsp_symbols() end, desc = "[D]ocument Symbols" },
