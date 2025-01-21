@@ -30,14 +30,13 @@ keymap.set("n", "<C-L>", "<C-W><C-L>")
 -- Toggle MiniFiles
 keymap.set("n", "<leader>m", ":lua MiniFiles.open()<CR>", { silent = true, desc = "Toggle MiniFiles" })
 
--- FzfLua and Telescope
+-- Telescope
 keymap.set(
 	"n",
 	"<space>fb",
 	"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
 	{ noremap = true, desc = "[F]ile [B]rowser" }
 )
-keymap.set("n", "<leader>fd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "[F]ind [D]iagnostics" })
 
 -- Close all buffers
 keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
