@@ -9,12 +9,12 @@ theme = tokyonight-moon
 mouse-hide-while-typing = true
 
 # Keybindings
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
-keybind = ctrl+s>v=new_split:right
-keybind = ctrl+s>h=new_split:down
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:bottom
+# keybind = ctrl+k=goto_split:top
+# keybind = ctrl+l=goto_split:right
+# keybind = ctrl+s>v=new_split:right
+# keybind = ctrl+s>h=new_split:down
 
 copy-on-select = true
 unfocused-split-opacity = 0.60
