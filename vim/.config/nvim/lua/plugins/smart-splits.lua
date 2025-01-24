@@ -1,6 +1,7 @@
 return {
 	"mrjones2014/smart-splits.nvim",
 	lazy = false,
+    enabled = false,
 	keys = {
 		-- Moving between splits
 		{
