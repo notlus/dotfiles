@@ -28,7 +28,7 @@ keymap.set("n", "<C-H>", "<C-W><C-H>")
 keymap.set("n", "<C-L>", "<C-W><C-L>")
 
 -- Toggle MiniFiles
-keymap.set("n", "<leader>m", ":lua MiniFiles.open()<CR>", { silent = true, desc = "Toggle MiniFiles" })
+keymap.set("n", "<leader>m", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", { silent = true, desc = "Toggle MiniFiles" })
 
 -- Telescope
 keymap.set(
