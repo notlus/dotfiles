@@ -70,4 +70,5 @@ Package.resolved
 data/
 
 karabiner/.config/karabiner/automatic_backups
+vim/.config/nvim/lazy-lock.json
 # End of https://www.gitignore.io/api/swift,xcode
