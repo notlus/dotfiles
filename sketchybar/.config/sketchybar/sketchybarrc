@@ -55,7 +55,7 @@ sketchybar --add item logo left \
                  background.padding_left=4 \
                  click_script="sketchybar --update"
 
-source "$ITEM_DIR/aerospace.sh"
+source "$ITEM_DIR/flashspace.sh"
 # source "$ITEM_DIR/spacer.sh"
 source "$ITEM_DIR/front_app.sh"
 
