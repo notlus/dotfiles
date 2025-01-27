@@ -30,7 +30,7 @@ return {
 			nerd_font_variant = "mono",
 			kind_icons = {
 				Copilot = "",
-				Supermaven = "",
+				Supermaven = "",
 				Text = "󰉿",
 				Method = "󰊕",
 				Function = "󰊕",
@@ -82,7 +82,7 @@ return {
 				supermaven = {
 					name = "supermaven",
 					module = "blink.compat.source",
-					score_offset = 100,
+					score_offset = 1,
 					async = true,
 					transform_items = function(_, items)
 						local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
@@ -94,8 +94,12 @@ return {
 						return items
 					end,
 				},
+				lsp = {
+					score_offset = 0,
+				},
 				copilot = {
 					name = "copilot",
+					enabled = false,
 					module = "blink-cmp-copilot",
 					score_offset = 100,
 					async = true,
@@ -120,7 +124,7 @@ return {
 		},
 		completion = {
 			keyword = { range = "full" },
-			ghost_text = { enabled = true },
+			ghost_text = { enabled = false },
 			menu = {
 				border = "single",
 			},
