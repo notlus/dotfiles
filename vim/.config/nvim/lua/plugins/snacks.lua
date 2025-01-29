@@ -35,6 +35,12 @@ return {
 				grep = {
 					hidden = true,
 				},
+                recent = {
+                    hidden = true,
+                },
+                grep_word = {
+                    hidden = true,
+                },
 			},
 		},
 		scratch = {
