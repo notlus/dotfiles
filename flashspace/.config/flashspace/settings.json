@@ -1,0 +1,43 @@
+{
+  "runScriptOnLaunch" : "",
+  "focusPreviousWorkspaceApp" : {
+    "keyCode" : 37,
+    "modifiers" : 655360
+  },
+  "runScriptOnWorkspaceChange" : "sketchybar --trigger flashspace_workspace_change ",
+  "enableIntegrations" : true,
+  "focusUp" : {
+    "modifiers" : 524288,
+    "keyCode" : 40
+  },
+  "focusLeft" : {
+    "keyCode" : 4,
+    "modifiers" : 524288
+  },
+  "centerCursorOnWorkspaceChange" : false,
+  "checkForUpdatesAutomatically" : true,
+  "enableFocusManagement" : true,
+  "focusNextWorkspaceApp" : {
+    "keyCode" : 4,
+    "modifiers" : 655360
+  },
+  "floatTheFocusedApp" : {
+    "keyCode" : 3,
+    "modifiers" : 655360
+  },
+  "runScriptOnProfileChange" : "sketchybar --reload",
+  "focusRight" : {
+    "keyCode" : 37,
+    "modifiers" : 524288
+  },
+  "focusDown" : {
+    "modifiers" : 524288,
+    "keyCode" : 38
+  },
+  "showFloatingNotifications" : true,
+  "switchToRecentWorkspace" : {
+    "keyCode" : 48,
+    "modifiers" : 524288
+  },
+  "centerCursorOnFocusChange" : true
+}
