@@ -95,7 +95,7 @@ return {
 					end,
 				},
 				lsp = {
-					score_offset = 0,
+					score_offset = 2,
 				},
 				copilot = {
 					name = "copilot",
