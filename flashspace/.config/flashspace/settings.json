@@ -1,43 +1,43 @@
 {
-  "checkForUpdatesAutomatically" : true,
-  "centerCursorOnFocusChange" : true,
-  "focusUp" : {
-    "modifiers" : 524288,
-    "keyCode" : 40
+  "focusPreviousWorkspaceApp" : {
+    "modifiers" : 655360,
+    "keyCode" : 37
   },
+  "enableFocusManagement" : true,
+  "centerCursorOnFocusChange" : true,
+  "centerCursorOnWorkspaceChange" : false,
+  "checkForUpdatesAutomatically" : true,
+  "showFloatingNotifications" : true,
   "switchToRecentWorkspace" : {
     "modifiers" : 524288,
     "keyCode" : 48
   },
-  "focusNextWorkspaceApp" : {
-    "keyCode" : 4,
-    "modifiers" : 655360
-  },
-  "focusDown" : {
-    "keyCode" : 38,
-    "modifiers" : 524288
-  },
   "runScriptOnWorkspaceChange" : "\/opt\/homebrew\/bin\/sketchybar --trigger flashspace_workspace_change  WORKSPACE=$WORKSPACE",
   "focusLeft" : {
-    "modifiers" : 524288,
-    "keyCode" : 4
+    "keyCode" : 4,
+    "modifiers" : 524288
+  },
+  "enableIntegrations" : true,
+  "focusRight" : {
+    "keyCode" : 37,
+    "modifiers" : 524288
   },
   "floatTheFocusedApp" : {
     "keyCode" : 3,
     "modifiers" : 655360
   },
-  "centerCursorOnWorkspaceChange" : false,
-  "focusRight" : {
-    "keyCode" : 37,
+  "runScriptOnLaunch" : "\/opt\/homebrew\/opt\/sketchybar\/bin\/sketchybar",
+  "focusUp" : {
+    "keyCode" : 40,
     "modifiers" : 524288
   },
-  "enableFocusManagement" : true,
-  "focusPreviousWorkspaceApp" : {
-    "keyCode" : 37,
-    "modifiers" : 655360
-  },
-  "enableIntegrations" : true,
   "runScriptOnProfileChange" : "\/opt\/homebrew\/bin\/sketchybar --reload",
-  "showFloatingNotifications" : true,
-  "runScriptOnLaunch" : ""
+  "focusDown" : {
+    "modifiers" : 524288,
+    "keyCode" : 38
+  },
+  "focusNextWorkspaceApp" : {
+    "modifiers" : 655360,
+    "keyCode" : 4
+  }
 }
