@@ -9,6 +9,9 @@ return {
 		dashboard = {
 			enabled = true,
 		},
+        explorer = {
+            enabled = true,
+        },
 		gitbrowse = {
 			enabled = true,
 		},
@@ -61,6 +64,7 @@ return {
 	    { "<leader>f.", function() Snacks.picker.recent() end, desc = "Recent" },
 	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
 	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
+        { "<leader>fb", function() Snacks.picker.explorer() end, desc = "[F]ind [Browser" },
 
         -- Search
 	    { "<leader><leader>", function() Snacks.picker.buffers() end, desc = "Buffers" },
