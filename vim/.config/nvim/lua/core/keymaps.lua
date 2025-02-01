@@ -103,12 +103,12 @@ keymap.set(
 
 -- Xcode
 keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
-keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
+keymap.set("n", "<leader>xm", "<cmd>XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
 keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<CR>", { desc = "Build Project" })
-keymap.set("n", "<leader>xu", "<cmd>XcodebuildBuildForTesting<CR>", { desc = "Build Project for Testing" })
+keymap.set("n", "<leader>xu", "<cmd>XcodebuildBuildForTesting<CR>", { desc = "Build for Testing" })
 keymap.set("n", "<leader>xB", "<cmd>XcodebuildCleanBuild<CR>", { desc = "Clean build" })
 keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<CR>", { desc = "Build and run" })
-keymap.set("n", "<leader>xR", "<cmd>XcodebuildRun<CR>", { desc = "Build and run" })
+keymap.set("n", "<leader>xR", "<cmd>XcodebuildRun<CR>", { desc = "Run without building" })
 keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<CR>", { desc = "Test" })
 keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
 keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
@@ -118,6 +118,8 @@ keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Selec
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
 keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel build" })
 keymap.set("n", "<leader>xC", "<cmd>XcodebuildSetup<CR>", { desc = "Show Configuration Wizard" })
+keymap.set("n", "<leader>xf", "<cmd>XcodebuildQuickfixLine<CR>", { desc = "Quickfix Line" })
+keymap.set("n", "<leader>xa", "<cmd>XcodebuildCodeActions<CR>", { desc = "Show code actions" })
 keymap.set("n", "<leader>xo", function()
 	vim.fn.system({
 		"open",
