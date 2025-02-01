@@ -47,7 +47,8 @@ return {
 		-- integration with xcodebuild.nvim
 		vim.keymap.set("n", "<leader>dd", xcodebuild.build_and_debug, { desc = "Build & Debug" })
 		vim.keymap.set("n", "<leader>dr", xcodebuild.debug_without_build, { desc = "Debug Without Building" })
-
+		vim.keymap.set("n", "<leader>dt", xcodebuild.debug_tests, { desc = "Debug Tests" })
+		vim.keymap.set("n", "<leader>dT", xcodebuild.debug_class_tests, { desc = "Debug Class Tests" })
 		vim.keymap.set("n", "<leader>dc", dap.continue)
 		-- vim.keymap.set("n", "<leader>ds", dap.step_over)
 		vim.keymap.set("n", "<leader>di", dap.step_into)
@@ -56,14 +57,6 @@ return {
 		vim.keymap.set("n", "<C-s-b>", function()
 			dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 		end)
-		vim.keymap.set("n", "<Leader>dx", function()
-			dap.terminate()
-			require("xcodebuild.actions").cancel()
-
-			local success, dapui = pcall(require, "dapui")
-			if success then
-				dapui.close()
-			end
-		end)
+		vim.keymap.set("n", "<leader>dx", xcodebuild.terminate_session, { desc = "Terminate Debugger" })
 	end,
 }
