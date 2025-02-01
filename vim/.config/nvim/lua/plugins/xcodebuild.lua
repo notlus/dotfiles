@@ -8,6 +8,14 @@ return {
 		keep_device_cache = true,
 	},
 	opts = {
+		code_coverage = {
+			enabled = true,
+			file_pattern = "*.swift", -- coverage will be shown in files matching this pattern
+			covered_sign = "",
+			partially_covered_sign = "┃",
+			not_covered_sign = "┃",
+			not_executable_sign = "",
+		},
 		quickfix = {
 			show_warnings_on_quickfixlist = false,
 		},
