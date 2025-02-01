@@ -1,97 +1,100 @@
 [
   {
-    "display" : "Studio Display",
-    "shortcut" : {
-      "keyCode" : 17,
-      "modifiers" : 524288
-    },
-    "symbolIconName" : "apple.terminal",
     "apps" : [
       "Ghostty"
     ],
-    "name" : "T",
-    "id" : "C734A4C2-A6FE-46CA-8719-F29635FB1B00"
+    "shortcut" : {
+      "modifiers" : 524288,
+      "keyCode" : 17
+    },
+    "symbolIconName" : "apple.terminal",
+    "display" : "Built-in Retina Display",
+    "id" : "1FE5DC45-6B56-4B8B-B46F-B3C8DD1135DA",
+    "name" : "T"
   },
   {
     "name" : "B",
+    "id" : "A7EBD6B3-02BB-4F30-BEC5-C85E4659E15E",
+    "display" : "Built-in Retina Display",
+    "apps" : [
+      "Safari",
+      "Brave Browser",
+      "Zen Browser"
+    ],
+    "symbolIconName" : "pencil.circle.fill",
     "shortcut" : {
       "modifiers" : 524288,
       "keyCode" : 11
-    },
-    "symbolIconName" : "pencil.circle.fill",
-    "id" : "71A67445-50E9-4202-BCC0-8E37A26B0E28",
-    "display" : "Studio Display",
-    "apps" : [
-      "Safari"
-    ]
+    }
   },
   {
+    "symbolIconName" : "mail.and.text.magnifyingglass",
+    "display" : "Built-in Retina Display",
     "shortcut" : {
       "modifiers" : 524288,
       "keyCode" : 46
     },
+    "name" : "M",
+    "id" : "B30127B1-C667-475B-9F38-DE587018974F",
     "apps" : [
       "Messages",
       "Microsoft Outlook",
       "Slack"
-    ],
-    "symbolIconName" : "mail.and.text.magnifyingglass",
-    "name" : "M",
-    "id" : "4D2F6529-0DE5-463C-AFB6-91A504B57FE8",
-    "display" : "Studio Display"
+    ]
   },
   {
-    "name" : "X",
+    "id" : "A498ED37-6367-4FEE-AF9E-551AED6AC51D",
     "apps" : [
       "Xcode"
     ],
-    "shortcut" : {
-      "keyCode" : 7,
-      "modifiers" : 524288
-    },
-    "display" : "Studio Display",
-    "id" : "B115B080-D9BB-4E1E-857C-A8409A9AF8CF",
+    "symbolIconName" : "swift",
     "appToFocus" : "Xcode",
-    "symbolIconName" : "swift"
-  },
-  {
-    "display" : "Studio Display",
+    "display" : "Built-in Retina Display",
     "shortcut" : {
       "modifiers" : 524288,
-      "keyCode" : 9
+      "keyCode" : 7
     },
-    "id" : "9BCE3504-2321-4E0E-B948-0EB4200761E5",
-    "apps" : [
-      "Screens"
-    ],
-    "name" : "V",
-    "symbolIconName" : "desktopcomputer.and.macbook"
+    "name" : "X"
   },
   {
-    "display" : "Studio Display",
-    "symbolIconName" : "brain.head.profile",
+    "shortcut" : {
+      "modifiers" : 524288,
+      "keyCode" : 35
+    },
     "name" : "P",
     "apps" : [
       "Obsidian",
       "Things"
     ],
-    "id" : "8BD7F1AF-95BF-4CC0-B11D-86969B58C842",
-    "shortcut" : {
-      "keyCode" : 35,
-      "modifiers" : 524288
-    }
+    "id" : "070553AB-26A4-4BD6-A96A-FCB971BDEEE0",
+    "symbolIconName" : "brain.head.profile",
+    "display" : "Built-in Retina Display"
   },
   {
-    "symbolIconName" : "video.bubble.fill",
-    "name" : "Z",
     "shortcut" : {
-      "modifiers" : 524288,
-      "keyCode" : 6
+      "keyCode" : 6,
+      "modifiers" : 524288
     },
-    "display" : "Studio Display",
-    "id" : "65621C7F-31AC-43EB-8AD0-FC45CBCCCF1C",
     "apps" : [
       "zoom.us"
-    ]
+    ],
+    "id" : "49E6FA45-DD51-4C73-A61B-B9AE6BADE2E7",
+    "symbolIconName" : "video.bubble.fill",
+    "display" : "Built-in Retina Display",
+    "name" : "Z"
+  },
+  {
+    "shortcut" : {
+      "keyCode" : 9,
+      "modifiers" : 524288
+    },
+    "apps" : [
+      "Screens",
+      "Parallels Desktop"
+    ],
+    "name" : "V",
+    "display" : "Built-in Retina Display",
+    "symbolIconName" : "desktopcomputer.and.macbook",
+    "id" : "5B6AE09B-3E1C-46E7-B831-08D5E4670043"
   }
 ]
