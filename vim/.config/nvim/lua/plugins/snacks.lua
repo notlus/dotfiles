@@ -65,6 +65,7 @@ return {
 	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
 	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
         { "<leader>fb", function() Snacks.picker.explorer() end, desc = "[F]ind [Browser" },
+        { "<leader>fp", function() Snacks.picker.projects() end, desc = "[F]ind [P]rojects" },
 
         -- Search
 	    { "<leader><leader>", function() Snacks.picker.buffers() end, desc = "Buffers" },
