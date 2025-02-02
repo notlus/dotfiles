@@ -133,3 +133,7 @@ if command -v rbenv >/dev/null 2>&1; then
 fi
 
 export BAT_THEME="tokyonight_moon"
+
+if [[ -d ~/.lmstudio ]]; then
+    export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
