@@ -44,6 +44,9 @@ return {
                 grep_word = {
                     hidden = true,
                 },
+                explorer = {
+                    hidden = true,
+                },
 			},
 		},
 		scratch = {
