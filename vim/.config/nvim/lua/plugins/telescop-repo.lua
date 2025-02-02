@@ -1,3 +1,4 @@
 return {
-  "cljoly/telescope-repo.nvim"
+	"cljoly/telescope-repo.nvim",
+	enabled = false,
 }
