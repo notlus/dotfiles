@@ -9,9 +9,9 @@ return {
 		dashboard = {
 			enabled = true,
 		},
-        explorer = {
-            enabled = true,
-        },
+		explorer = {
+			enabled = true,
+		},
 		gitbrowse = {
 			enabled = true,
 		},
@@ -38,15 +38,18 @@ return {
 				grep = {
 					hidden = true,
 				},
-                recent = {
-                    hidden = true,
-                },
-                grep_word = {
-                    hidden = true,
-                },
-                explorer = {
-                    hidden = true,
-                },
+				recent = {
+					hidden = true,
+				},
+				grep_word = {
+					hidden = true,
+				},
+				explorer = {
+					hidden = true,
+				},
+			},
+			matcher = {
+				frecency = true,
 			},
 		},
 		scratch = {
