@@ -142,6 +142,31 @@
             }
           ],
           "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "window_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Set up windows",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "shell_command": "shortcuts run 'setup-windows'"
+            },
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
         }
       ]
     }
