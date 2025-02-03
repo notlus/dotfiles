@@ -13,6 +13,233 @@
                 },
                 "rules": [
                     {
+                        "description": "Window Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Maximize Window",
+                                "from": { "key_code": "m" },
+                                "to": [
+                                    { "shell_command": "open -g 'raycast://extensions/raycast/window-management/maximize'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "window_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Window Left Half",
+                                "from": { "key_code": "h" },
+                                "to": [
+                                    { "shell_command": "open -g 'raycast://extensions/raycast/window-management/left-half'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "window_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Window Right Half",
+                                "from": { "key_code": "l" },
+                                "to": [
+                                    { "shell_command": "open -g raycast://extensions/raycast/window-management/right-half" },
+                                    {
+                                        "set_variable": {
+                                            "name": "window_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "window_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "messaging-home",
+                                "from": { "key_code": "y" },
+                                "to": [
+                                    { "shell_command": "open -g 'raycast://customWindowManagementCommand?&name=m-nova-mobile'" },
+                                    {
+                                        "set_variable": {
+                                            "name": "window_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[R]aycast Layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "r" },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "raycast_layer_active",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "raycast_layer_active",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Raycast Commands",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "raycast_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Emoji Picker",
+                                "from": { "key_code": "e" },
+                                "to": [
+                                    { "shell_command": "open -g raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" },
+                                    {
+                                        "set_variable": {
+                                            "name": "raycast_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "raycast_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Clipboard History",
+                                "from": { "key_code": "c" },
+                                "to": [
+                                    { "shell_command": "open -g raycast://extensions/raycast/clipboard-history/clipboard-history" },
+                                    {
+                                        "set_variable": {
+                                            "name": "raycast_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "raycast_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Confetti",
+                                "from": { "key_code": "f" },
+                                "to": [
+                                    { "shell_command": "open -g raycast://confetti" },
+                                    {
+                                        "set_variable": {
+                                            "name": "raycast_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[W]indow Layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "w" },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "window_layer_active",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "window_layer_active",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "[F]ile System Layer",
                         "manipulators": [
                             {
@@ -280,43 +507,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Raycast Commands",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Emoji Picker",
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Raycast Clipboard History",
-                                "from": {
-                                    "key_code": "backslash",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history" }],
                                 "type": "basic"
                             }
                         ]
