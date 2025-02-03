@@ -92,6 +92,31 @@
             }
           ],
           "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "raycast_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Raycast Confetti",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "shell_command": "open -g raycast://confetti"
+            },
+            {
+              "set_variable": {
+                "name": "raycast_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
         }
       ]
     }
