@@ -1,0 +1,99 @@
+{
+  "title": "Raycast Layer",
+  "rules": [
+    {
+      "description": "[R]aycast Layer",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "hyper",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "raycast_layer_active",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "raycast_layer_active",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 1000
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Raycast Commands",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "raycast_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Raycast Emoji Picker",
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "shell_command": "open -g raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+            },
+            {
+              "set_variable": {
+                "name": "raycast_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "raycast_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Raycast Clipboard History",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "shell_command": "open -g raycast://extensions/raycast/clipboard-history/clipboard-history"
+            },
+            {
+              "set_variable": {
+                "name": "raycast_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
