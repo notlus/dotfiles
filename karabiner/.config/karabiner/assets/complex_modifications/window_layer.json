@@ -1,0 +1,149 @@
+{
+  "title": "Window Layer",
+  "rules": [
+    {
+      "description": "[W]indow Layer",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "name": "hyper",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "window_layer_active",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 1000
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Window Commands",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "window_layer_active",
+              "value": 1
+            }
+          ],
+          "description": "Maximize Window",
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "shell_command": "open -g 'raycast://extensions/raycast/window-management/maximize'"
+            },
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 0
+              }
+            }
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "name": "window_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Window Left Half",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "shell_command": "open -g 'raycast://extensions/raycast/window-management/left-half'"
+            },
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "window_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Window Right Half",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "shell_command": "open -g raycast://extensions/raycast/window-management/right-half"
+            },
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "window_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "messaging-home",
+          "from": {
+            "key_code": "y"
+          },
+          "to": [
+            {
+              "shell_command": "open -g 'raycast://customWindowManagementCommand?&name=m-nova-mobile'"
+            },
+            {
+              "set_variable": {
+                "name": "window_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
