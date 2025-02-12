@@ -11,6 +11,5 @@ source "$THEME_DIR/tokyonight"
 if [ "$SENDER" = "front_app_switched" ]; then
   sketchybar --set $NAME \
                    label="$INFO" \
-                   label.color=$LABEL_HIGHLIGHT_COLOR \
-                   icon="$($CONFIG_DIR/plugins/icon_map_fn.sh "$INFO")"
+                   icon.background.image="app.$INFO"
 fi
