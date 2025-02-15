@@ -1,43 +1,50 @@
 {
-  "focusPreviousWorkspaceApp" : {
-    "modifiers" : 655360,
-    "keyCode" : 37
-  },
-  "enableFocusManagement" : true,
-  "centerCursorOnFocusChange" : true,
-  "centerCursorOnWorkspaceChange" : false,
-  "checkForUpdatesAutomatically" : true,
-  "showFloatingNotifications" : true,
   "switchToRecentWorkspace" : {
     "modifiers" : 524288,
     "keyCode" : 48
   },
-  "runScriptOnWorkspaceChange" : "\/opt\/homebrew\/bin\/sketchybar --trigger flashspace_workspace_change  WORKSPACE=$WORKSPACE",
-  "focusLeft" : {
-    "keyCode" : 4,
-    "modifiers" : 524288
-  },
   "enableIntegrations" : true,
+  "focusPreviousWorkspaceApp" : {
+    "modifiers" : 655360,
+    "keyCode" : 37
+  },
   "focusRight" : {
     "keyCode" : 37,
     "modifiers" : 524288
   },
+  "showMenuBarTitle" : true,
+  "focusNextWorkspaceApp" : {
+    "keyCode" : 4,
+    "modifiers" : 655360
+  },
+  "menuBarTitleTemplate" : "$WORKSPACE",
+  "enableFocusManagement" : true,
+  "menuBarDisplayAliases" : "",
+  "showFloatingNotifications" : true,
+  "checkForUpdatesAutomatically" : true,
+  "spaceControlCurrentDisplayWorkspaces" : false,
+  "enableSpaceControlAnimations" : true,
+  "focusUp" : {
+    "modifiers" : 524288,
+    "keyCode" : 40
+  },
+  "centerCursorOnFocusChange" : true,
+  "focusDown" : {
+    "keyCode" : 38,
+    "modifiers" : 524288
+  },
+  "changeWorkspaceOnAppAssign" : true,
+  "runScriptOnWorkspaceChange" : "\/opt\/homebrew\/bin\/sketchybar --trigger flashspace_workspace_change  WORKSPACE=$WORKSPACE",
+  "centerCursorOnWorkspaceChange" : false,
+  "enableSpaceControl" : true,
   "floatTheFocusedApp" : {
     "keyCode" : 3,
     "modifiers" : 655360
   },
-  "runScriptOnLaunch" : "\/opt\/homebrew\/opt\/sketchybar\/bin\/sketchybar",
-  "focusUp" : {
-    "keyCode" : 40,
+  "runScriptOnProfileChange" : "\/opt\/homebrew\/bin\/sketchybar --reload",
+  "focusLeft" : {
+    "keyCode" : 4,
     "modifiers" : 524288
   },
-  "runScriptOnProfileChange" : "\/opt\/homebrew\/bin\/sketchybar --reload",
-  "focusDown" : {
-    "modifiers" : 524288,
-    "keyCode" : 38
-  },
-  "focusNextWorkspaceApp" : {
-    "modifiers" : 655360,
-    "keyCode" : 4
-  }
+  "runScriptOnLaunch" : "\/opt\/homebrew\/opt\/sketchybar\/bin\/sketchybar"
 }
