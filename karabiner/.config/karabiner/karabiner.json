@@ -13,6 +13,41 @@
                 },
                 "rules": [
                     {
+                        "description": "[A]pp Layer",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "a" },
+                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_delayed_action": {
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "app_layer_active",
+                                                "value": 0
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "App Commands",
                         "manipulators": [
                             {
@@ -129,9 +164,30 @@
                                     }
                                 ],
                                 "description": "Open Slack",
-                                "from": { "key_code": "u" },
+                                "from": { "key_code": "k" },
                                 "to": [
                                     { "shell_command": "open -a Slack.app" },
+                                    {
+                                        "set_variable": {
+                                            "name": "app_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "app_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open Things",
+                                "from": { "key_code": "t" },
+                                "to": [
+                                    { "shell_command": "open -a Things3.app" },
                                     {
                                         "set_variable": {
                                             "name": "app_layer_active",
@@ -181,41 +237,6 @@
                                         }
                                     }
                                 ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "[A]pp Layer",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "hyper",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "a" },
-                                "parameters": { "basic.to_delayed_action_delay_milliseconds": 1000 },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "app_layer_active",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "app_layer_active",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
                                 "type": "basic"
                             }
                         ]
