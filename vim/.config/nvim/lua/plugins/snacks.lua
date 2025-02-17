@@ -15,6 +15,9 @@ return {
 		gitbrowse = {
 			enabled = true,
 		},
+        image = {
+            enabled = true,
+        },
 		indent = {
 			enabled = true,
 		},
