@@ -1,72 +1,47 @@
 return {
 	"saghen/blink.cmp",
-	-- "onsails/lspkind.nvim",
 	dependencies = {
+		"onsails/lspkind-nvim",
+		"nvim-tree/nvim-web-devicons",
 		"saghen/blink.compat",
 		{
 			"saghen/blink.compat",
 			"giuxtaposition/blink-cmp-copilot",
-			-- use the latest release, via version = '*', if you also use the latest release for blink.cmp
 			version = "*",
-			-- lazy.nvim will automatically load the plugin when it's required by blink.cmp
 			lazy = true,
-			-- make sure to set opts so that lazy.nvim calls blink.compat's setup
 			opts = {},
 		},
 	},
-
-	version = "v0.*",
-	event = "InsertEnter",
+	version = "*",
 	opts = {
 		-- 'default' for mappings similar to built-in completion
 		-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
 		-- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-		-- see the "default configuration" section below for full documentation on how to define
-		-- your own keymap.
+		-- See the full "keymap" documentation for information on defining your own keymap.
 		keymap = { preset = "super-tab" },
-
 		appearance = {
-			use_nvim_cmp_as_default = false,
+			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
+			-- Useful for when your theme doesn't support blink.cmp
+			-- Will be removed in a future release
+			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
-			kind_icons = {
-				Copilot = "",
-				Supermaven = "",
-				Text = "󰉿",
-				Method = "󰊕",
-				Function = "󰊕",
-				Constructor = "󰒓",
-
-				Field = "󰜢",
-				Variable = "󰆦",
-				Property = "󰖷",
-
-				Class = "󱡠",
-				Interface = "󱡠",
-				Struct = "󱡠",
-				Module = "󰅩",
-
-				Unit = "󰪚",
-				Value = "󰦨",
-				Enum = "󰦨",
-				EnumMember = "󰦨",
-
-				Keyword = "󰻾",
-				Constant = "󰏿",
-
-				Snippet = "󱄽",
-				Color = "󰏘",
-				File = "󰈔",
-				Reference = "󰬲",
-				Folder = "󰉋",
-				Event = "󱐋",
-				Operator = "󰪚",
-				TypeParameter = "󰬛",
+		},
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer", "supermaven" },
+			providers = {
+				supermaven = {
+					name = "supermaven",
+					module = "blink.compat.source",
+					score_offset = 0,
+					async = true,
+				},
+				lsp = {
+					score_offset = 2,
+				},
 			},
 		},
-
-		sources = {
-			default = { "lsp", "path", "buffer", "snippets", "supermaven" },
-			cmdline = function()
+		cmdline = {
+			sources = function()
 				local type = vim.fn.getcmdtype()
 				-- Search forward and backward
 				if type == "/" or type == "?" then
@@ -78,54 +53,50 @@ return {
 				end
 				return {}
 			end,
-			providers = {
-				supermaven = {
-					name = "supermaven",
-					module = "blink.compat.source",
-					score_offset = 1,
-					async = true,
-					transform_items = function(_, items)
-						local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-						local kind_idx = #CompletionItemKind + 1
-						CompletionItemKind[kind_idx] = "Supermaven"
-						for _, item in ipairs(items) do
-							item.kind = kind_idx
-						end
-						return items
-					end,
-				},
-				lsp = {
-					score_offset = 2,
-				},
-				copilot = {
-					name = "copilot",
-					enabled = false,
-					module = "blink-cmp-copilot",
-					score_offset = 100,
-					async = true,
-					transform_items = function(_, items)
-						local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-						local kind_idx = #CompletionItemKind + 1
-						CompletionItemKind[kind_idx] = "Copilot"
-						for _, item in ipairs(items) do
-							item.kind = kind_idx
-						end
-						return items
-					end,
-				},
-			},
-		},
-
-		signature = {
-			enabled = true,
-			window = {
-				border = "single",
-			},
 		},
 		completion = {
-			keyword = { range = "full" },
-			ghost_text = { enabled = false },
 			menu = {
+				draw = {
+					components = {
+						kind_icon = {
+							ellipsis = false,
+							text = function(ctx)
+								local icon = ctx.kind_icon
+								if vim.tbl_contains({ "Path" }, ctx.source_name) then
+									local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
+									if dev_icon then
+										icon = dev_icon
+									end
+								else
+									icon = require("lspkind").symbolic(ctx.kind, {
+										mode = "symbol",
+									})
+								end
+
+								return icon .. ctx.icon_gap
+							end,
+
+							-- Optionally, use the highlight groups from nvim-web-devicons
+							-- You can also add the same function for `kind.highlight` if you want to
+							-- keep the highlight groups in sync with the icons.
+							highlight = function(ctx)
+								local hl = "BlinkCmpKind" .. ctx.kind
+									or require("blink.cmp.completion.windows.render.tailwind").get_hl(ctx)
+								if vim.tbl_contains({ "Path" }, ctx.source_name) then
+									local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
+									if dev_icon then
+										hl = dev_hl
+									end
+								end
+								return hl
+							end,
+						},
+					},
+					-- columns = {
+					-- 	{ "label", "label_description", gap = 1 },
+					-- 	{ "kind_icon", "kind" },
+					-- },
+				},
 				border = "single",
 			},
 			documentation = {
@@ -135,11 +106,18 @@ return {
 					border = "single",
 				},
 			},
+			list = {
+				selection = {
+					preselect = false,
+				},
+			},
+		},
+		signature = {
+			enabled = true,
+			window = {
+				border = "single",
+			},
 		},
 	},
-	opts_extend = {
-		"sources.completion.enabled_providers",
-		"sources.compat",
-		"sources.default",
-	},
+	opts_extend = { "sources.default" },
 }
