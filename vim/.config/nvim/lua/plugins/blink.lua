@@ -32,7 +32,7 @@ return {
 				supermaven = {
 					name = "supermaven",
 					module = "blink.compat.source",
-					score_offset = 0,
+					score_offset = 100,
 					async = true,
 				},
 				lsp = {
@@ -108,7 +108,8 @@ return {
 			},
 			list = {
 				selection = {
-					preselect = false,
+					preselect = true,
+					auto_insert = true,
 				},
 			},
 		},
