@@ -1,0 +1,448 @@
+{
+  "profiles" : [
+    {
+      "id" : "E9705AD8-1F33-4345-B9D7-A90370B71D91",
+      "name" : "nebula-desk",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "C734A4C2-A6FE-46CA-8719-F29635FB1B00",
+          "name" : "T",
+          "shortcut" : "opt+t",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen Browser"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "71A67445-50E9-4202-BCC0-8E37A26B0E28",
+          "name" : "B",
+          "shortcut" : "opt+b",
+          "symbolIconName" : "pencil.circle.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            },
+            {
+              "bundleIdentifier" : "com.microsoft.Outlook",
+              "iconPath" : "/Applications/Microsoft Outlook.app/Contents/Resources/Outlook.icns",
+              "name" : "Microsoft Outlook"
+            },
+            {
+              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+              "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
+              "name" : "Slack"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "4D2F6529-0DE5-463C-AFB6-91A504B57FE8",
+          "name" : "M",
+          "shortcut" : "opt+m",
+          "symbolIconName" : "mail.and.text.magnifyingglass"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.apple.dt.Xcode",
+            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "name" : "Xcode"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "B115B080-D9BB-4E1E-857C-A8409A9AF8CF",
+          "name" : "X",
+          "shortcut" : "opt+x",
+          "symbolIconName" : "swift"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.parallels.desktop.console",
+              "iconPath" : "/Applications/Parallels Desktop.app/Contents/Resources/Parallels.icns",
+              "name" : "Parallels Desktop"
+            },
+            {
+              "bundleIdentifier" : "com.parallels.macvm",
+              "iconPath" : "/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Mac VM.app/Contents/Resources/AppIcon.icns",
+              "name" : "macOS VM"
+            },
+            {
+              "bundleIdentifier" : "com.edovia.screens4.mac",
+              "iconPath" : "/Applications/Screens 4.app/Contents/Resources/AppIcon.icns",
+              "name" : "Screens"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+v",
+          "display" : "Studio Display",
+          "id" : "9BCE3504-2321-4E0E-B948-0EB4200761E5",
+          "name" : "V",
+          "shortcut" : "opt+v",
+          "symbolIconName" : "desktopcomputer.and.macbook"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.culturedcode.ThingsMac",
+              "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
+              "name" : "Things"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "8BD7F1AF-95BF-4CC0-B11D-86969B58C842",
+          "name" : "P",
+          "shortcut" : "opt+p",
+          "symbolIconName" : "brain.head.profile"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "us.zoom.xos",
+              "iconPath" : "/Applications/zoom.us.app/Contents/Resources/ZPLogo.icns",
+              "name" : "zoom.us"
+            }
+          ],
+          "display" : "Studio Display",
+          "id" : "65621C7F-31AC-43EB-8AD0-FC45CBCCCF1C",
+          "name" : "Z",
+          "shortcut" : "opt+z",
+          "symbolIconName" : "video.bubble.fill"
+        }
+      ]
+    },
+    {
+      "id" : "DF3FC0A4-0F14-44F2-89EA-DA738EEF3E52",
+      "name" : "nebula-mobile",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "1FE5DC45-6B56-4B8B-B46F-B3C8DD1135DA",
+          "name" : "T",
+          "shortcut" : "opt+t",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen Browser"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "A7EBD6B3-02BB-4F30-BEC5-C85E4659E15E",
+          "name" : "B",
+          "shortcut" : "opt+b",
+          "symbolIconName" : "pencil.circle.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            },
+            {
+              "bundleIdentifier" : "com.microsoft.Outlook",
+              "iconPath" : "/Applications/Microsoft Outlook.app/Contents/Resources/Outlook.icns",
+              "name" : "Microsoft Outlook"
+            },
+            {
+              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+              "iconPath" : "/Applications/Slack.app/Contents/Resources/electron.icns",
+              "name" : "Slack"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "B30127B1-C667-475B-9F38-DE587018974F",
+          "name" : "M",
+          "shortcut" : "opt+m",
+          "symbolIconName" : "mail.and.text.magnifyingglass"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.apple.dt.Xcode",
+            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "name" : "Xcode"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "A498ED37-6367-4FEE-AF9E-551AED6AC51D",
+          "name" : "X",
+          "shortcut" : "opt+x",
+          "symbolIconName" : "swift"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.culturedcode.ThingsMac",
+              "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
+              "name" : "Things"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "070553AB-26A4-4BD6-A96A-FCB971BDEEE0",
+          "name" : "P",
+          "shortcut" : "opt+p",
+          "symbolIconName" : "brain.head.profile"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "us.zoom.xos",
+              "iconPath" : "/Applications/zoom.us.app/Contents/Resources/ZPLogo.icns",
+              "name" : "zoom.us"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "49E6FA45-DD51-4C73-A61B-B9AE6BADE2E7",
+          "name" : "Z",
+          "shortcut" : "opt+z",
+          "symbolIconName" : "video.bubble.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.parallels.desktop.console",
+              "iconPath" : "/Applications/Parallels Desktop.app/Contents/Resources/Parallels.icns",
+              "name" : "Parallels Desktop"
+            },
+            {
+              "bundleIdentifier" : "com.parallels.macvm",
+              "iconPath" : "/Applications/Parallels Desktop.app/Contents/MacOS/Parallels Mac VM.app/Contents/Resources/AppIcon.icns",
+              "name" : "macOS VM"
+            },
+            {
+              "bundleIdentifier" : "com.edovia.screens4.mac",
+              "iconPath" : "/Applications/Screens 4.app/Contents/Resources/AppIcon.icns",
+              "name" : "Screens"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+v",
+          "display" : "Built-in Retina Display",
+          "id" : "5B6AE09B-3E1C-46E7-B831-08D5E4670043",
+          "name" : "V",
+          "shortcut" : "opt+v",
+          "symbolIconName" : "desktopcomputer.and.macbook"
+        }
+      ]
+    },
+    {
+      "id" : "9C571ED5-FB69-469F-B448-09D95EA1F993",
+      "name" : "nova-mobile",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "82BACFB9-1A62-4AD9-881A-A2F9A8130D0F",
+          "name" : "T",
+          "shortcut" : "opt+t",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen Browser"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "7FC25A9F-334B-4034-B9F2-D34F99ACDA01",
+          "name" : "B",
+          "shortcut" : "opt+b",
+          "symbolIconName" : "pencil.circle.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.mail",
+              "iconPath" : "/System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns",
+              "name" : "Mail"
+            },
+            {
+              "bundleIdentifier" : "com.apple.iCal",
+              "iconPath" : "/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns",
+              "name" : "Calendar"
+            },
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "49AF81FE-3845-4C18-839A-0DE732842D79",
+          "name" : "M",
+          "shortcut" : "opt+m",
+          "symbolIconName" : "mail.and.text.magnifyingglass"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.apple.dt.Xcode",
+            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "name" : "Xcode"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "9EDE67DA-383B-4944-A455-8D0E2D26E44D",
+          "name" : "X",
+          "shortcut" : "opt+x",
+          "symbolIconName" : "swift"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.culturedcode.ThingsMac",
+              "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
+              "name" : "Things"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "86ED5A17-C193-40CB-9D80-4ED5846ECC7C",
+          "name" : "P",
+          "shortcut" : "opt+p",
+          "symbolIconName" : "brain.head.profile"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "us.zoom.xos",
+              "iconPath" : "/Applications/zoom.us.app/Contents/Resources/ZPLogo.icns",
+              "name" : "zoom.us"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "CFAB8C4E-EEF8-438E-9A6C-CF8A3950CA32",
+          "name" : "Z",
+          "shortcut" : "opt+z",
+          "symbolIconName" : "video.bubble.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.edovia.screens4.mac",
+              "iconPath" : "/Applications/Screens 4.app/Contents/Resources/AppIcon.icns",
+              "name" : "Screens"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "B4A0403C-12FE-4E5A-BAD9-2FFF2CD9F306",
+          "name" : "V",
+          "shortcut" : "opt+v",
+          "symbolIconName" : "appletvremote.gen1"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Notes",
+              "iconPath" : "/System/Applications/Notes.app/Contents/Resources/AppIcon.icns",
+              "name" : "Notes"
+            },
+            {
+              "bundleIdentifier" : "com.apple.ScreenContinuity",
+              "iconPath" : "/System/Applications/iPhone Mirroring.app/Contents/Resources/AppIcon.icns",
+              "name" : "iPhone Mirroring"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+a",
+          "display" : "Built-in Retina Display",
+          "id" : "15B8A327-1900-4390-87B5-4769D544D4C5",
+          "name" : "A",
+          "shortcut" : "opt+a"
+        }
+      ]
+    }
+  ],
+  "selectedProfileId" : "E9705AD8-1F33-4345-B9D7-A90370B71D91"
+}

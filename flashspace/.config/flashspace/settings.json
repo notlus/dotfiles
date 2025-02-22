@@ -1,0 +1,32 @@
+{
+  "centerCursorOnFocusChange" : true,
+  "centerCursorOnWorkspaceChange" : false,
+  "changeWorkspaceOnAppAssign" : true,
+  "checkForUpdatesAutomatically" : true,
+  "enableFocusManagement" : true,
+  "enableIntegrations" : true,
+  "enablePictureInPictureSupport" : true,
+  "enableSpaceControl" : true,
+  "enableSpaceControlAnimations" : true,
+  "floatTheFocusedApp" : "opt+shift+f",
+  "floatingApps" : [
+
+  ],
+  "focusDown" : "opt+j",
+  "focusLeft" : "opt+h",
+  "focusNextWorkspaceApp" : "opt+shift+h",
+  "focusNextWorkspaceWindow" : "ctrl+opt+h",
+  "focusPreviousWorkspaceApp" : "opt+shift+l",
+  "focusPreviousWorkspaceWindow" : "ctrl+opt+l",
+  "focusRight" : "opt+l",
+  "focusUp" : "opt+k",
+  "menuBarDisplayAliases" : "",
+  "menuBarTitleTemplate" : "$WORKSPACE",
+  "runScriptOnLaunch" : "/opt/homebrew/opt/sketchybar/bin/sketchybar",
+  "runScriptOnProfileChange" : "/opt/homebrew/bin/sketchybar --reload",
+  "runScriptOnWorkspaceChange" : "/opt/homebrew/bin/sketchybar --trigger flashspace_workspace_change  WORKSPACE=$WORKSPACE",
+  "showFloatingNotifications" : true,
+  "showMenuBarTitle" : true,
+  "spaceControlCurrentDisplayWorkspaces" : false,
+  "switchToRecentWorkspace" : "opt+tab"
+}
