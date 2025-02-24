@@ -9,15 +9,10 @@
   "enableSpaceControl" : true,
   "enableSpaceControlAnimations" : true,
   "floatTheFocusedApp" : "opt+shift+f",
-  "floatingApps" : [
-
-  ],
   "focusDown" : "opt+j",
   "focusLeft" : "opt+h",
-  "focusNextWorkspaceApp" : "opt+shift+h",
-  "focusNextWorkspaceWindow" : "ctrl+opt+h",
-  "focusPreviousWorkspaceApp" : "opt+shift+l",
-  "focusPreviousWorkspaceWindow" : "ctrl+opt+l",
+  "focusNextWorkspaceWindow" : "opt+shift+h",
+  "focusPreviousWorkspaceWindow" : "opt+shift+l",
   "focusRight" : "opt+l",
   "focusUp" : "opt+k",
   "menuBarDisplayAliases" : "",
