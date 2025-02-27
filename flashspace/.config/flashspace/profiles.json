@@ -442,7 +442,142 @@
           "shortcut" : "opt+a"
         }
       ]
+    },
+    {
+      "id" : "F6E67D3B-9AD7-44B9-9C5D-BFBAA08B5978",
+      "name" : "pumpkin",
+      "workspaces" : [
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "name" : "Ghostty"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "E90CA84E-ECAF-4C8A-9CC2-E49DFE8AA726",
+          "name" : "T",
+          "shortcut" : "opt+t",
+          "symbolIconName" : "apple.terminal"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.Safari",
+              "iconPath" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns",
+              "name" : "Safari"
+            },
+            {
+              "bundleIdentifier" : "app.zen-browser.zen",
+              "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
+              "name" : "Zen Browser"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "B875CB15-5180-4C7A-BE87-5A642AB47640",
+          "name" : "B",
+          "shortcut" : "opt+b",
+          "symbolIconName" : "pencil.circle.fill"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.MobileSMS",
+              "iconPath" : "/System/Applications/Messages.app/Contents/Resources/AppIcon.icns",
+              "name" : "Messages"
+            },
+            {
+              "bundleIdentifier" : "com.apple.mail",
+              "iconPath" : "/System/Applications/Mail.app/Contents/Resources/ApplicationIcon.icns",
+              "name" : "Mail"
+            },
+            {
+              "bundleIdentifier" : "com.apple.iCal",
+              "iconPath" : "/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns",
+              "name" : "Calendar"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "D1B65305-C7CE-4461-B653-13057C4863C8",
+          "name" : "M",
+          "shortcut" : "opt+m",
+          "symbolIconName" : "mail.and.text.magnifyingglass"
+        },
+        {
+          "appToFocus" : {
+            "bundleIdentifier" : "com.apple.dt.Xcode",
+            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "name" : "Xcode"
+          },
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.apple.dt.Xcode",
+              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "name" : "Xcode"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "04F3BA8F-A0AA-44A0-B195-8F50D48C007C",
+          "name" : "X",
+          "shortcut" : "opt+x",
+          "symbolIconName" : "swift"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.edovia.screens4.mac",
+              "iconPath" : "/Applications/Screens 4.app/Contents/Resources/AppIcon.icns",
+              "name" : "Screens"
+            }
+          ],
+          "assignAppShortcut" : "opt+shift+v",
+          "display" : "LG UltraFine",
+          "id" : "6A771FA4-682F-4D18-8FC8-10820080177C",
+          "name" : "V",
+          "shortcut" : "opt+v",
+          "symbolIconName" : "desktopcomputer.and.macbook"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+              "name" : "Obsidian"
+            },
+            {
+              "bundleIdentifier" : "com.culturedcode.ThingsMac",
+              "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
+              "name" : "Things"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "4DE972BA-D051-426E-9DFD-BFC4D73BA20A",
+          "name" : "P",
+          "shortcut" : "opt+p",
+          "symbolIconName" : "brain.head.profile"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "us.zoom.xos",
+              "iconPath" : "/Applications/zoom.us.app/Contents/Resources/ZPLogo.icns",
+              "name" : "zoom.us"
+            }
+          ],
+          "display" : "LG UltraFine",
+          "id" : "B1F21BB8-9786-4537-A068-41C165338992",
+          "name" : "Z",
+          "shortcut" : "opt+z",
+          "symbolIconName" : "video.bubble.fill"
+        }
+      ]
     }
   ],
-  "selectedProfileId" : "E9705AD8-1F33-4345-B9D7-A90370B71D91"
+  "selectedProfileId" : "F6E67D3B-9AD7-44B9-9C5D-BFBAA08B5978"
 }
