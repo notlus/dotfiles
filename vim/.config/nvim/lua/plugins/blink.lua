@@ -27,9 +27,10 @@ return {
 			nerd_font_variant = "mono",
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "supermaven" },
+			default = { "lsp", "path", "snippets", "buffer", "copilot" },
 			providers = {
 				supermaven = {
+					enabled = false,
 					name = "supermaven",
 					module = "blink.compat.source",
 					score_offset = 100,
@@ -37,6 +38,13 @@ return {
 				},
 				lsp = {
 					score_offset = 2,
+				},
+				copilot = {
+					name = "copilot",
+					enabled = true,
+					module = "blink.compat.source",
+					score_offset = 100,
+					async = true,
 				},
 			},
 		},
@@ -55,6 +63,9 @@ return {
 			end,
 		},
 		completion = {
+			ghost_text = {
+				enabled = true,
+			},
 			menu = {
 				draw = {
 					components = {
