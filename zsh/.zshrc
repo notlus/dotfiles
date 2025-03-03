@@ -40,6 +40,7 @@ if command -v eza &>/dev/null; then
     alias l='eza -lah'
     alias ll='eza -lh'
     alias tree='eza --tree'
+    export EZA_CONFIG_DIR=$HOME/.config/eza
 fi
 
 # zoxide
