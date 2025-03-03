@@ -67,6 +67,7 @@ fi
 
 if command -v bat >/dev/null 2>&1; then
     alias cat="bat --paging=never --style=plain"
+    export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
 # fzf
@@ -97,9 +98,9 @@ export FZF_CTRL_T_OPTS="
     --preview 'bat -n --color=always {}'
     --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
+# Paths
 export GEM_HOME=$HOME/.gem
 export PATH=$HOME/bin:/usr/local/bin:$GEM_HOME/bin:$HOME/bin:$PATH
-# export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # Load secrets, if they exist
 if [[ -f ~/.zsh_secrets ]]; then
