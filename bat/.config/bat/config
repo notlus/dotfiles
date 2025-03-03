@@ -1,3 +1,3 @@
 # Show line numbers, Git modifications and file header (but no grid)
 --style="numbers,changes,header"
---theme="tokyonight_night"
+--theme="tokyonight_moon"
