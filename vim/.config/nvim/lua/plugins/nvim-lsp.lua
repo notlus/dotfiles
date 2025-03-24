@@ -78,7 +78,15 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
-		local servers = { "clangd", "sourcekit", "dartls", "kotlin_language_server", "lua_ls", "pyright" }
+		local servers = {
+			"bashls",
+			"clangd",
+			"sourcekit",
+			"dartls",
+			"kotlin_language_server",
+			"lua_ls",
+			"pyright",
+		}
 		local function setup_servers()
 			for _, server in ipairs(servers) do
 				capabilities = capabilities
