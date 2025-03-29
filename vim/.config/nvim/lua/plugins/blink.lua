@@ -4,6 +4,7 @@ return {
 		"onsails/lspkind-nvim",
 		"nvim-tree/nvim-web-devicons",
 		"Kaiser-Yang/blink-cmp-avante",
+		"fang2hou/blink-copilot",
 		"saghen/blink.compat",
 		{
 			"saghen/blink.compat",
@@ -41,14 +42,14 @@ return {
 					score_offset = 2,
 				},
 				copilot = {
-					name = "copilot",
 					enabled = true,
-					module = "blink.compat.source",
+					name = "copilot",
+					module = "blink-copilot",
 					score_offset = 100,
 					async = true,
 				},
 				avante = {
-                    enabled = true,
+					enabled = true,
 					module = "blink-cmp-avante",
 					name = "Avante",
 					opts = {},
