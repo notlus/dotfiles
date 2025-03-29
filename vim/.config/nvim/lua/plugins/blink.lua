@@ -14,7 +14,7 @@ return {
 			opts = {},
 		},
 	},
-	version = "*",
+	version = "1.*",
 	opts = {
 		-- 'default' for mappings similar to built-in completion
 		-- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
