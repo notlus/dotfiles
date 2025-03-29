@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"onsails/lspkind-nvim",
 		"nvim-tree/nvim-web-devicons",
+		"Kaiser-Yang/blink-cmp-avante",
 		"saghen/blink.compat",
 		{
 			"saghen/blink.compat",
@@ -27,7 +28,7 @@ return {
 			nerd_font_variant = "mono",
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "copilot" },
+			default = { "lsp", "path", "snippets", "buffer", "copilot", "avante" },
 			providers = {
 				supermaven = {
 					enabled = false,
@@ -45,6 +46,12 @@ return {
 					module = "blink.compat.source",
 					score_offset = 100,
 					async = true,
+				},
+				avante = {
+                    enabled = true,
+					module = "blink-cmp-avante",
+					name = "Avante",
+					opts = {},
 				},
 			},
 		},
