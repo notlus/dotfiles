@@ -69,13 +69,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -214,13 +214,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -359,13 +359,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -512,13 +512,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-16.2.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-16.3.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
