@@ -22,7 +22,7 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=45
+  height=36
   color=$BAR_COLOR
   border_width=2
   border_color=$BAR_BORDER_COLOR
