@@ -93,6 +93,11 @@ if [[ -e $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.z
     source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fi
 
+# zsh-autosuggestions
+if [[ -e $(brew --prefix)/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source $(brew --prefix)/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
 if command -v mise >/dev/null 2>&1; then
     eval "$(mise activate zsh)"
 fi
