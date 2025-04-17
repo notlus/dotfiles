@@ -1,4 +1,4 @@
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never --syntax-theme tokyonight_moon -s
+    pager: delta --dark --paging=never --line-numbers --syntax-theme tokyonight_moon -s
