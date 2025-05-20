@@ -3,6 +3,7 @@ tap "FelixKratz/formulae"
 
 # Brew
 brew "mas"
+brew "bash"
 brew "bat"
 brew "black"
 brew "btop"
