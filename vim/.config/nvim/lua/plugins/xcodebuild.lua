@@ -9,7 +9,7 @@ return {
 	},
 	opts = {
 		code_coverage = {
-			enabled = true,
+			enabled = false,
 			file_pattern = "*.swift", -- coverage will be shown in files matching this pattern
 			covered_sign = "",
 			partially_covered_sign = "┃",
