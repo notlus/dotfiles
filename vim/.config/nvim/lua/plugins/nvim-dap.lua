@@ -26,7 +26,8 @@ return {
 			type = "server",
 			port = "13000",
 			executable = {
-				command = os.getenv("HOME") .. "/dev/codelldb/extension/adapter/codelldb",
+				command = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/codelldb/codelldb",
+				-- command = os.getenv("HOME") .. "/dev/codelldb/extension/adapter/codelldb",
 				args = {
 					"--port",
 					"13000",
