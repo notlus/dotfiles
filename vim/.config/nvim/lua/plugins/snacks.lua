@@ -15,9 +15,9 @@ return {
 		gitbrowse = {
 			enabled = true,
 		},
-        image = {
-            enabled = true,
-        },
+		image = {
+			enabled = true,
+		},
 		indent = {
 			enabled = true,
 		},
@@ -70,7 +70,29 @@ return {
         -- Files
 	    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
 	    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "[F]ind by [G]it" },
-	    { "<leader>f.", function() Snacks.picker.recent() end, desc = "Recent" },
+	    { "<leader>f.", function() 
+			local cwd = vim.fn.getcwd()
+			local recent_files = vim.v.oldfiles or {}
+			local project_files = {}
+			
+			for _, file in ipairs(recent_files) do
+				if vim.startswith(file, cwd) and vim.fn.filereadable(file) == 1 then
+					table.insert(project_files, file)
+				end
+			end
+			
+			if #project_files == 0 then
+				vim.notify("No recent files found in current project", vim.log.levels.INFO)
+				return
+			end
+			
+			Snacks.picker.pick({
+				source = "files",
+				items = project_files,
+				title = "Recent Files (Project)",
+			})
+		end, desc = "Recent (project)" },
+	    { "<leader>fR", function() Snacks.picker.recent() end, desc = "Recent (all)" },
 	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
 	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
         { "<leader>fb", function() Snacks.picker.explorer() end, desc = "[F]ind [Browser" },
