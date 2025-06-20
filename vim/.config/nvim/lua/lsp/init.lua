@@ -21,8 +21,6 @@ vim.diagnostic.config({
 })
 
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
--- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
--- vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
 -- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Set location list" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -42,9 +40,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- opts.desc = "Jump to implementation"
 		-- vim.keymap.set("n", "gI", require("telescope.builtin").lsp_implementations, opts)
 
-		-- opts.desc = "Show documentation for what is under cursor"
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-		-- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc")
+		vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" }, opts)
+		vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "[C]ode [O]utline" }, opts)
+		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "[R]ename" }, opts)
+		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "[P]eek [D]efinition" }, opts)
+		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show documentation for what is under cursor"}, opts)
 
 		opts.desc = "Add workspace folder"
 		vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
