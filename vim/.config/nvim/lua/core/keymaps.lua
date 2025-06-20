@@ -165,3 +165,16 @@ keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "[C]ode [O]ut
 keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "[R]ename" })
 keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "[P]eek [D]efinition" })
 keymap.set("n", "K", "<cmd>Lspsaga hover_doc")
+
+-- Copilot partial completion keymaps
+keymap.set("i", "<C-l>", function()
+	require("copilot.suggestion").accept()
+end, { silent = true, desc = "Accept Copilot suggestion" })
+
+keymap.set("i", "<C-j>", function()
+	require("copilot.suggestion").accept_word()
+end, { silent = true, desc = "Accept Copilot word" })
+
+keymap.set("i", "<C-k>", function()
+	require("copilot.suggestion").accept_line()
+end, { silent = true, desc = "Accept Copilot line" })
