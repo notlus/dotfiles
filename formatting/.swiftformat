@@ -1,20 +1,28 @@
 --acronyms ID,URL,UUID
 --allman false
+--anonymousforeach convert
 --assetliterals visual-width
 --asynccapturing 
 --beforemarks 
 --binarygrouping 4,8
+--callsiteparen default
 --categorymark "MARK: %c"
 --classthreshold 0
---closingparen same-line
+--closingparen balanced
 --closurevoid remove
 --commas inline
+--complexattrs preserve
+--computedvarattrs preserve
+--condassignment after-property
 --conflictmarkers reject
+--dateformat system
 --decimalgrouping 3,6
---elseposition next-line
+--doccomments before-declarations
+--elseposition same-line
 --emptybraces no-space
 --enumnamespaces always
 --enumthreshold 0
+--equatablemacro none
 --exponentcase lowercase
 --exponentgrouping disabled
 --extensionacl on-extension
@@ -24,6 +32,7 @@
 --fragment false
 --funcattributes preserve
 --generictypes 
+--groupblanklines true
 --groupedextension "MARK: %c"
 --guardelse auto
 --header ignore
@@ -34,6 +43,9 @@
 --indent 4
 --indentcase false
 --indentstrings false
+--inferredtypes always
+--initcodernil false
+--inlinedforeach ignore
 --lifecycle 
 --lineaftermarks true
 --linebreaks lf
@@ -43,30 +55,44 @@
 --maxwidth 100
 --modifierorder 
 --nevertrailing 
+--nilinit remove
+--noncomplexattrs 
 --nospaceoperators 
 --nowrapoperators 
 --octalgrouping 4,8
 --operatorfunc spaced
+--organizationmode visibility
 --organizetypes actor,class,enum,struct
 --patternlet hoist
+--preserveacronyms 
+--preservedecls 
+--preservedsymbols Package
+--propertytypes inferred
 --ranges spaced
---redundanttype inferred
 --self remove
 --selfrequired 
 --semicolons inline
 --shortoptionals always
 --smarttabs enabled
 --someany true
+--sortedpatterns 
+--sortswiftuiprops none
+--storedvarattrs preserve
 --stripunusedargs always
 --structthreshold 0
 --tabwidth unspecified
 --throwcapturing 
+--timezone system
 --trailingclosures 
 --trimwhitespace always
 --typeattributes preserve
 --typeblanklines remove
+--typedelimiter space-after
 --typemark "MARK: - %t"
---varattributes preserve
+--typemarks 
+--typeorder 
+--visibilitymarks 
+--visibilityorder 
 --voidtype void
 --wraparguments preserve
 --wrapcollections preserve
@@ -78,6 +104,7 @@
 --wrapternary default
 --wraptypealiases preserve
 --xcodeindentation disabled
+--xctestsymbols 
 --yodaswap always
---disable redundantType,wrap,wrapMultilineStatementBraces,wrapSingleLineComments
+--disable linebreakAtEndOfFile,redundantType,wrap,wrapMultilineStatementBraces,wrapSingleLineComments
 --enable isEmpty
