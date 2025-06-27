@@ -1,9 +1,9 @@
 vim.diagnostic.config({
-	virtual_text = false,
-	virtual_lines = { current_line = true },
+	virtual_text = true,
+	-- virtual_lines = { current_line = true },
 	underline = true,
 	update_in_insert = false,
-	-- severity_sort = true,
+	severity_sort = true,
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "",
@@ -22,6 +22,17 @@ vim.diagnostic.config({
 
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 -- vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Set location list" })
+
+-- Toggle virtual_lines for current line
+local virtual_lines_enabled = false
+vim.keymap.set("n", "<space>l", function()
+	virtual_lines_enabled = not virtual_lines_enabled
+	if virtual_lines_enabled then
+		vim.diagnostic.config({ virtual_lines = { current_line = true } })
+	else
+		vim.diagnostic.config({ virtual_lines = false })
+	end
+end, { desc = "Toggle diagnostic virtual lines" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
