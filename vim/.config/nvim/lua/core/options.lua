@@ -68,7 +68,9 @@ opt.mouse = "a"
 opt.signcolumn = "yes"
 
 -- Use the system clipboard for all yank, delete, change, and put operations
-opt.clipboard = "unnamedplus"
+vim.schedule(function()
+	opt.clipboard = "unnamedplus"
+end)
 
 -- Show tabs at the top when there are at least two
 opt.showtabline = 2
@@ -109,3 +111,9 @@ opt.inccommand = "split"
 opt.virtualedit = "block"
 
 opt.laststatus = 3
+
+opt.confirm = true
+
+opt.breakindent = true
+
+opt.showmode = false
