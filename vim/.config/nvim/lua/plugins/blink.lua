@@ -6,6 +6,7 @@ return {
 		"Kaiser-Yang/blink-cmp-avante",
 		"fang2hou/blink-copilot",
 		"saghen/blink.compat",
+		"nvim-lua/plenary.nvim",
 		{
 			"saghen/blink.compat",
 			"giuxtaposition/blink-cmp-copilot",
@@ -29,7 +30,7 @@ return {
 			nerd_font_variant = "mono",
 		},
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "copilot", "avante" },
+			default = { "lsp", "path", "snippets", "buffer", "copilot" },
 			providers = {
 				supermaven = {
 					enabled = false,
@@ -49,10 +50,22 @@ return {
 					async = true,
 				},
 				avante = {
-					enabled = true,
+					enabled = false,
 					module = "blink-cmp-avante",
 					name = "Avante",
 					opts = {},
+				},
+				lmstudio = {
+					enabled = false,
+					name = "LLM",
+					module = "blink-cmp-lmstudio",
+					score_offset = 90,
+					async = true,
+					opts = {
+						model = "qwen/qwen2.5-coder-14b",
+						max_tokens = 300,
+						temperature = 0.2,
+					},
 				},
 			},
 		},
@@ -111,10 +124,11 @@ return {
 							end,
 						},
 					},
-					-- columns = {
-					-- 	{ "label", "label_description", gap = 1 },
-					-- 	{ "kind_icon", "kind" },
-					-- },
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind", gap = 1 },
+						{ "source_name" },
+					},
 				},
 				border = "single",
 			},
