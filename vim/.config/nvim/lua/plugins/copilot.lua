@@ -8,8 +8,8 @@ return {
 		-- Setting up copilot
 		vim.defer_fn(function()
 			require("copilot").setup({
-				suggestion = { 
-					enabled = true,
+				suggestion = {
+					enabled = false,
 					auto_trigger = true,
 					debounce = 75,
 					keymap = {
