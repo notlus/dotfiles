@@ -49,6 +49,9 @@ opt.hidden = true
 -- Number of screen lines to keep above and below the cursor
 opt.scrolloff = 10
 
+-- Enable EditorConfig support (Neovim 0.9+)
+vim.g.editorconfig = true
+
 -- Set command-line height to 2 lines, giving more room when viewing messages
 opt.cmdheight = 2
 
@@ -117,3 +120,4 @@ opt.confirm = true
 opt.breakindent = true
 
 opt.showmode = false
+
