@@ -11,6 +11,9 @@ return {
 		},
 		explorer = {
 			enabled = true,
+			layout = {
+				cycle = false,
+			},
 		},
 		gitbrowse = {
 			enabled = true,
@@ -30,6 +33,9 @@ return {
 		},
 		picker = {
 			enabled = true,
+			layout = {
+				cycle = false,
+			},
 			formatters = {
 				file = {
 					filename_first = true,
@@ -54,6 +60,7 @@ return {
 			},
 			matcher = {
 				frecency = true,
+				cwd_bonus = true,
 			},
 		},
 		scratch = {
