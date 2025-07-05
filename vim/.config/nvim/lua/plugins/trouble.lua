@@ -33,5 +33,7 @@ return {
 			desc = "Quickfix List (Trouble)",
 		},
 	},
-	opts = {}, -- for default options, refer to the configuration section for custom setup.
+	opts = {
+		focus = true, -- Focus the Trouble window when it opens
+	}, -- for default options, refer to the configuration section for custom setup.
 }
