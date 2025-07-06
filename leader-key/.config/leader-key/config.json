@@ -1,0 +1,162 @@
+{
+  "actions" : [
+    {
+      "actions" : [
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Safari.app"
+        },
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/System/Applications/Music.app"
+        },
+        {
+          "key" : "m",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "b",
+          "type" : "application",
+          "value" : "/Applications/Brave Browser.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Obsidian.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Things3.app"
+        },
+        {
+          "key" : "g",
+          "type" : "application",
+          "value" : "/Applications/Ghostty.app"
+        },
+        {
+          "key" : "x",
+          "type" : "application",
+          "value" : "/Applications/Xcode-16.4.0.app"
+        }
+      ],
+      "key" : "a",
+      "label" : "Apps",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "e",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+        },
+        {
+          "key" : "p",
+          "type" : "url",
+          "value" : "raycast://confetti"
+        },
+        {
+          "key" : "c",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+        }
+      ],
+      "key" : "r",
+      "label" : "Raycast",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "h",
+          "label" : "Left Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/left-half"
+        },
+        {
+          "key" : "l",
+          "label" : "Right Half",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/right-half"
+        },
+        {
+          "key" : "m",
+          "label" : "Maximize",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/maximize"
+        },
+        {
+          "key" : "c",
+          "label" : "Center",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/center"
+        },
+        {
+          "key" : "s",
+          "label" : "Setup",
+          "type" : "command",
+          "value" : "shortcuts run 'setup-windows'"
+        }
+      ],
+      "key" : "w",
+      "label" : "Windows",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "d",
+          "type" : "folder",
+          "value" : "~/Downloads"
+        },
+        {
+          "key" : "h",
+          "type" : "folder",
+          "value" : "~"
+        },
+        {
+          "key" : "p",
+          "type" : "folder",
+          "value" : "~/dev"
+        },
+        {
+          "key" : "a",
+          "type" : "folder",
+          "value" : "/Applications"
+        }
+      ],
+      "key" : "f",
+      "label" : "Finder",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "g",
+          "label" : "Google",
+          "type" : "url",
+          "value" : "https://google.com"
+        },
+        {
+          "key" : "d",
+          "label" : "DuckDuckGo",
+          "type" : "url",
+          "value" : "https://duckduckgo.com"
+        }
+      ],
+      "key" : "s",
+      "label" : "Search",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
