@@ -20,6 +20,7 @@ return {
 			show_warnings_on_quickfixlist = false,
 		},
 		logs = {
+            auto_open_on_failed_build = false,
 			notify = function(message, severity)
 				local fidget = require("fidget")
 				if progress_handle then
