@@ -9,6 +9,7 @@ theme = tokyonight-moon
 mouse-hide-while-typing = true
 
 # Keybindings
+keybind = global:cmd+option+t=toggle_quick_terminal
 # keybind = ctrl+h=goto_split:left
 # keybind = ctrl+j=goto_split:bottom
 # keybind = ctrl+k=goto_split:top
