@@ -109,7 +109,7 @@ export FZF_CTRL_T_OPTS="
 
 # Paths
 export GEM_HOME=$HOME/.gem
-export PATH=$HOME/bin:/usr/local/bin:$GEM_HOME/bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$GEM_HOME/bin:$HOME/bin:$PATH:$HOME/.local/bin/
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Load secrets, if they exist
