@@ -56,6 +56,7 @@
       "actions" : [
         {
           "key" : "e",
+          "label" : "Emoji",
           "type" : "url",
           "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
@@ -66,8 +67,15 @@
         },
         {
           "key" : "c",
+          "label" : "Clipboard",
           "type" : "url",
           "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+        },
+        {
+          "key" : "t",
+          "label" : "Translate",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/translator/translate"
         }
       ],
       "key" : "r",
@@ -126,7 +134,7 @@
         {
           "key" : "p",
           "type" : "folder",
-          "value" : "~/dev"
+          "value" : "~/projects"
         },
         {
           "key" : "a",
