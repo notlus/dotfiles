@@ -78,9 +78,7 @@ return {
         -- Files
 	    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
 	    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "[F]ind by [G]it" },
-	    { "<leader>f.", function() 
-			Snacks.picker.recent({ filter = { cwd = true } })
-		end, desc = "Recent (project)" },
+	    { "<leader>f.", function() Snacks.picker.recent({ filter = { cwd = true } }) end, desc = "Recent (project)" },
 	    { "<leader>fR", function() Snacks.picker.recent() end, desc = "Recent (all)" },
 	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
 	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
