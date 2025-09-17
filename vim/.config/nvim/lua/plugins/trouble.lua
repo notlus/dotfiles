@@ -8,7 +8,7 @@ return {
 			desc = "Diagnostics (Trouble)",
 		},
 		{
-			"<leader>xX",
+			"<leader>tT",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer Diagnostics (Trouble)",
 		},
@@ -34,6 +34,6 @@ return {
 		},
 	},
 	opts = {
-		focus = true, -- Focus the Trouble window when it opens
-	}, -- for default options, refer to the configuration section for custom setup.
+		focus = true,
+	},
 }
