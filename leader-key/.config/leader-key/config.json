@@ -168,6 +168,32 @@
       "key" : "s",
       "label" : "Search",
       "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "actions" : [
+            {
+              "key" : "d",
+              "label" : "Desk",
+              "type" : "command",
+              "value" : "/usr/local/bin/flashspace profile pulsar-desk"
+            },
+            {
+              "key" : "m",
+              "label" : "Mobile",
+              "type" : "command",
+              "value" : "/usr/local/bin/flashspace profile pulsar-mobile"
+            }
+          ],
+          "key" : "p",
+          "label" : "Pulsar",
+          "type" : "group"
+        }
+      ],
+      "key" : "p",
+      "label" : "Profiles",
+      "type" : "group"
     }
   ],
   "type" : "group"
