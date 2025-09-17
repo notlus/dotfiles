@@ -123,21 +123,25 @@
       "actions" : [
         {
           "key" : "d",
+          "label" : "Downloads",
           "type" : "folder",
           "value" : "~/Downloads"
         },
         {
           "key" : "h",
+          "label" : "Home",
           "type" : "folder",
           "value" : "~"
         },
         {
           "key" : "p",
+          "label" : "Projects",
           "type" : "folder",
           "value" : "~/projects"
         },
         {
           "key" : "a",
+          "label" : "Applications",
           "type" : "folder",
           "value" : "/Applications"
         }
