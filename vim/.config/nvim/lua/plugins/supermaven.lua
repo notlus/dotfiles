@@ -1,6 +1,6 @@
 return {
 	"supermaven-inc/supermaven-nvim",
-    enabled = false,
+    enabled = true,
 	opts = {
 		disable_inline_completions = true,
 		-- disable_keymaps = true,
