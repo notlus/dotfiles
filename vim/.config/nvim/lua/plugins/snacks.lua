@@ -33,6 +33,7 @@ return {
 		},
 		picker = {
 			enabled = true,
+			focus = "list",
 			layout = {
 				cycle = false,
 			},
