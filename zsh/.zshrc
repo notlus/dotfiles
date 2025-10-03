@@ -124,3 +124,8 @@ fi
 if [[ -d /opt/homebrew/share/powerlevel10k ]]; then
     source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jeffrey_sulton/.lmstudio/bin"
+# End of LM Studio CLI section
+

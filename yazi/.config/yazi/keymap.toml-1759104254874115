@@ -1,4 +1,4 @@
-[mgr]
+[manager]
 prepend_keymap = [
     { on = "T", run = "shell --orphan --confirm wezterm", desc = "Open terminal at current dir" },
     { on = "F", run = "shell --orphan --confirm 'open -a Finder' '$@'", desc = "Open in Finder" },

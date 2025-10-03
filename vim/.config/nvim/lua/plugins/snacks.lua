@@ -48,6 +48,7 @@ return {
 				},
 				grep = {
 					hidden = true,
+					focus = "input",
 				},
 				recent = {
 					hidden = true,
@@ -57,6 +58,12 @@ return {
 				},
 				explorer = {
 					hidden = true,
+				},
+				lsp_symbols = {
+					focus = "input",
+				},
+				lsp_workspace_symbols = {
+					focus = "input",
 				},
 			},
 			matcher = {
@@ -95,8 +102,8 @@ return {
         { "<leader>fq", function() Snacks.picker.qflist() end, desc = "[F]ind in [Q]uickfix List" },
 
         -- LSP
-	    { "<leader>ds", function() Snacks.picker.lsp_symbols({ focus = "input" }) end, desc = "[D]ocument Symbols" },
-	    { "<leader>ws", function() Snacks.picker.lsp_workspace_symbols({ focus = "input" }) end, desc = "[W]orkspace Symbols" },
+	    { "<leader>ds", function() Snacks.picker.lsp_symbols() end, desc = "[D]ocument Symbols" },
+	    { "<leader>ws", function() Snacks.picker.lsp_workspace_symbols() end, desc = "[W]orkspace Symbols" },
 	    { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
 	    { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
 	    { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
