@@ -7,25 +7,22 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "buffer_font_family": "FiraCode Nerd Font Propo",
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-latest"
-    },
-    "version": "2"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4.5"
+    }
   },
   "theme": "Tokyo Night",
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "ui_font_size": 14,
+  "buffer_font_size": 12,
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "vim": {
-    "toggle_relative_line_numbers": true,
-    "command_aliases": {
-       "space space": "ls"
-     }
+    "toggle_relative_line_numbers": true
   },
   "column": {
     "width": 100
@@ -47,12 +44,31 @@
           "arguments": ["--stdin", "{buffer_path}", "--config", "${HOME}/.swiftformat"]
         }
       }
+    },
+    "objc": {
+      "language_servers": ["clangd"],
+      "enable_language_server": true
     }
   },
   "lsp": {
     "sourcekit-lsp": {
       "command": "sourcekit-lsp",
       "enabled": true
+    },
+    "clangd": {
+      "initialization_options": {
+        "compilationDatabasePath": "build"
+      },
+      "binary": {
+        "path": "/usr/local/bin/clangd",
+        "arguments": ["--background-index"],
+        "env": {
+          "CLANGD_FLAGS": "--log=verbose"
+        }
+      }
     }
+  },
+  "file_types": {
+    "objc": ["m", "mm"]
   }
 }
