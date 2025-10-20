@@ -18,23 +18,23 @@ return {
 		local session_file = MiniSessions.config.file
 
 		-- Save current session to local Session.vim
-		vim.keymap.set("n", "<leader>Sw", function()
+		vim.keymap.set("n", "<leader>qs", function()
 			MiniSessions.write(session_file, { force = true })
 			vim.notify("Session saved")
 		end, { desc = "Save session" })
 
 		-- Load session from local Session.vim
-		vim.keymap.set("n", "<leader>Sr", function()
+		vim.keymap.set("n", "<leader>ql", function()
 			if vim.fn.filereadable(session_file) == 1 then
 				MiniSessions.read(session_file, { force = true })
 				vim.notify("Session loaded")
 			else
 				vim.notify("No " .. session_file .. " found")
 			end
-		end, { desc = "Load session" })
+		end, { desc = "Load last session" })
 
 		-- Delete local session
-		vim.keymap.set("n", "<leader>Sd", function()
+		vim.keymap.set("n", "<leader>qd", function()
 			if vim.fn.filereadable(session_file) == 1 then
 				MiniSessions.delete(session_file, { force = true })
 				vim.notify("Session deleted")
