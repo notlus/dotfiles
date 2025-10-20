@@ -53,6 +53,7 @@ keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel buil
 keymap.set("n", "<leader>xC", "<cmd>XcodebuildSetup<CR>", { desc = "Show Configuration Wizard" })
 keymap.set("n", "<leader>xf", "<cmd>XcodebuildQuickfixLine<CR>", { desc = "Quickfix Line" })
 keymap.set("n", "<leader>xa", "<cmd>XcodebuildCodeActions<CR>", { desc = "Show code actions" })
+keymap.set("n", "<leader>xp", "<cmd>XcodebuildOpenInXcode<CR>", { desc = "Open in Xcode"})
 keymap.set("n", "<leader>xo", function()
 	vim.fn.system({
 		"open",
