@@ -82,18 +82,18 @@ return {
 	-- stylua: ignore
 	keys = {
         -- Files
-	    { "<leader>ff", function() Snacks.picker.files() end, desc = "[F]ind [F]iles" },
+	    { "<leader><space>", function() Snacks.picker.files() end, desc = "Find files" },
 	    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "[F]ind by [G]it" },
 	    { "<leader>f.", function() Snacks.picker.recent() end, desc = "Recent (project)" },
 	    { "<leader>fR", function() Snacks.picker.recent() end, desc = "Recent (all)" },
-	    { "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
+	    { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep (root dir)" },
 	    { "<leader>fw", function() Snacks.picker.grep_word() end, desc = "[F]ind [W]ord", mode = { "n", "x" } },
         { "<leader>fb", function() Snacks.picker.explorer() end, desc = "[F]ind [Browser" },
         { "<leader>fp", function() Snacks.picker.projects() end, desc = "[F]ind [P]rojects" },
 
         -- Search
-	    { "<leader><leader>", function() Snacks.picker.buffers() end, desc = "Buffers" },
-	    { "<leader>/", function() Snacks.picker.lines() end, desc = "Search in current buffer" },
+	    { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
+	    { "<leader>sb", function() Snacks.picker.lines() end, desc = "Search in current buffer" },
         { "<leader>fr", function() Snacks.picker.resume() end, desc = "[F]ind [R]esume" },
         { "<leader>fh", function() Snacks.picker.help() end, desc = "[F]ind [H]elp" },
         { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "[F]ind [D]iagnostics" },
