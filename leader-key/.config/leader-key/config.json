@@ -172,23 +172,16 @@
     {
       "actions" : [
         {
-          "actions" : [
-            {
-              "key" : "d",
-              "label" : "Desk",
-              "type" : "command",
-              "value" : "/usr/local/bin/flashspace profile pulsar-desk"
-            },
-            {
-              "key" : "m",
-              "label" : "Mobile",
-              "type" : "command",
-              "value" : "/usr/local/bin/flashspace profile pulsar-mobile"
-            }
-          ],
-          "key" : "p",
-          "label" : "Pulsar",
-          "type" : "group"
+          "key" : "m",
+          "label" : "Mobile",
+          "type" : "command",
+          "value" : "/usr/local/bin/flashspace profile pulsar-mobile"
+        },
+        {
+          "key" : "d",
+          "label" : "Desk",
+          "type" : "command",
+          "value" : "/usr/local/bin/flashspace profile pulsar-desk"
         }
       ],
       "key" : "p",
