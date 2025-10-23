@@ -9,7 +9,7 @@ return {
 		require("mini.icons").setup()
 		require("mini.sessions").setup({
 			autoread = false, -- Don't auto-read sessions on startup
-			autowrite = false, -- Don't auto-write sessions
+			autowrite = true,
 			directory = "", -- Disable global sessions directory
 			file = ".nvim.session", -- Use hidden local session files
 		})
@@ -17,7 +17,7 @@ return {
 		local MiniSessions = require("mini.sessions")
 		local session_file = MiniSessions.config.file
 
-		-- Save current session to local Session.vim
+		-- Save local session
 		vim.keymap.set("n", "<leader>qs", function()
 			MiniSessions.write(session_file, { force = true })
 			vim.notify("Session saved")

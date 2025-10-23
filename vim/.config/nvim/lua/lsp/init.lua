@@ -25,7 +25,7 @@ vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Show line d
 
 -- Toggle virtual_lines for current line
 local virtual_lines_enabled = false
-vim.keymap.set("n", "<space>l", function()
+vim.keymap.set("n", "<space>tv", function()
 	virtual_lines_enabled = not virtual_lines_enabled
 	if virtual_lines_enabled then
 		vim.diagnostic.config({ virtual_lines = { current_line = true } })
