@@ -88,6 +88,9 @@ keymap.set("n", "<leader>sn", function()
 	})
 end, { desc = " Search Neovim files" })
 
+-- Lazy
+keymap.set("n", "<leader>l", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
+
 -- LSP
 keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LSP Info" })
 keymap.set("n", "<leader>ls", "<cmd>LspStart<CR>", { desc = "Start LSP" })
