@@ -96,6 +96,11 @@ keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "LSP Info" })
 keymap.set("n", "<leader>ls", "<cmd>LspStart<CR>", { desc = "Start LSP" })
 keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
+-- Quitting
+keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
+keymap.set("n", "<leader>qQ", "<cmd>qa!<CR>", { desc = "Quit all without saving" })
+keymap.set("n", "<leader>qw", "<cmd>wq<CR>", { desc = "Save and quit" })
+
 -- Copilot partial completion keymaps
 keymap.set("i", "<C-l>", function()
 	require("copilot.suggestion").accept()
