@@ -1,6 +1,7 @@
 -- Status line
 return {
 	"nvim-lualine/lualine.nvim",
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons", -- fancy icons
 		"linrongbin16/lsp-progress.nvim", -- LSP loading progress

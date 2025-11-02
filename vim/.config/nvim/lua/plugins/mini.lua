@@ -1,6 +1,7 @@
 return {
 	"echasnovski/mini.nvim",
 	version = false,
+	event = "VeryLazy",
 	config = function()
 		require("mini.bracketed").setup({
 			comment = { suffix = "" },
@@ -9,7 +10,7 @@ return {
 		require("mini.icons").setup()
 		require("mini.sessions").setup({
 			autoread = false, -- Don't auto-read sessions on startup
-			autowrite = true,
+			-- autowrite = true,
 			directory = "", -- Disable global sessions directory
 			file = ".nvim.session", -- Use hidden local session files
 		})
