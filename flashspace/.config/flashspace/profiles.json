@@ -69,13 +69,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -214,13 +214,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -359,13 +359,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
@@ -516,7 +516,7 @@
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             },
             {
@@ -662,19 +662,21 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
+          "assignAppShortcut" : "opt+shift+x",
           "display" : "Built-in Retina Display",
           "id" : "4CEA6BED-3140-4FDC-90B1-4475F20354A6",
           "name" : "X",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+x",
           "symbolIconName" : "swift"
         },
@@ -807,13 +809,13 @@
         {
           "appToFocus" : {
             "bundleIdentifier" : "com.apple.dt.Xcode",
-            "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+            "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
             "name" : "Xcode"
           },
           "apps" : [
             {
               "bundleIdentifier" : "com.apple.dt.Xcode",
-              "iconPath" : "/Applications/Xcode-26.0.0.app/Contents/Resources/Xcode.icns",
+              "iconPath" : "/Applications/Xcode-26.2.0.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
             }
           ],
