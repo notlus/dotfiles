@@ -1,4 +1,10 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - "#292e42"
+    selectedRangeBgColor:
+      - "#292e42"
 git:
   pagers:
-    - colorArg: always
-      pager: delta --dark --paging=never --line-numbers --syntax-theme tokyonight_night -s
+    - pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --syntax-theme tokyonight_night --side-by-side
+      colorArg: always
