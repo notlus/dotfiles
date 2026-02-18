@@ -2,8 +2,8 @@
 --allman false
 --anonymousforeach convert
 --assetliterals visual-width
---asynccapturing 
---beforemarks 
+--asynccapturing
+--beforemarks
 --binarygrouping 4,8
 --callsiteparen default
 --categorymark "MARK: %c"
@@ -31,7 +31,7 @@
 --fractiongrouping disabled
 --fragment false
 --funcattributes preserve
---generictypes 
+--generictypes
 --groupblanklines true
 --groupedextension "MARK: %c"
 --guardelse auto
@@ -46,53 +46,53 @@
 --inferredtypes always
 --initcodernil false
 --inlinedforeach ignore
---lifecycle 
+--lifecycle
 --lineaftermarks true
 --linebreaks lf
 --markcategories true
 --markextensions always
 --marktypes always
---maxwidth 100
---modifierorder 
---nevertrailing 
+--maxwidth 120
+--modifierorder
+--nevertrailing
 --nilinit remove
---noncomplexattrs 
---nospaceoperators 
---nowrapoperators 
+--noncomplexattrs
+--nospaceoperators
+--nowrapoperators
 --octalgrouping 4,8
 --operatorfunc spaced
 --organizationmode visibility
 --organizetypes actor,class,enum,struct
 --patternlet hoist
---preserveacronyms 
---preservedecls 
+--preserveacronyms
+--preservedecls
 --preservedsymbols Package
 --propertytypes inferred
 --ranges spaced
 --self remove
---selfrequired 
+--selfrequired
 --semicolons inline
 --shortoptionals always
 --smarttabs enabled
 --someany true
---sortedpatterns 
+--sortedpatterns
 --sortswiftuiprops none
 --storedvarattrs preserve
 --stripunusedargs always
 --structthreshold 0
 --tabwidth unspecified
---throwcapturing 
+--throwcapturing
 --timezone system
---trailingclosures 
+--trailingclosures
 --trimwhitespace always
 --typeattributes preserve
 --typeblanklines remove
 --typedelimiter space-after
 --typemark "MARK: - %t"
---typemarks 
---typeorder 
---visibilitymarks 
---visibilityorder 
+--typemarks
+--typeorder
+--visibilitymarks
+--visibilityorder
 --voidtype void
 --wraparguments preserve
 --wrapcollections preserve
@@ -104,7 +104,7 @@
 --wrapternary default
 --wraptypealiases preserve
 --xcodeindentation disabled
---xctestsymbols 
+--xctestsymbols
 --yodaswap always
 --disable linebreakAtEndOfFile,redundantType,wrap,wrapMultilineStatementBraces,wrapSingleLineComments
 --enable isEmpty
