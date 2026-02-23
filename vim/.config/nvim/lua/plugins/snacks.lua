@@ -1,83 +1,80 @@
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	opts = {
-		bufdelete = {
-			enabled = true,
-		},
-		dashboard = {
-			enabled = true,
-		},
-		explorer = {
-			enabled = true,
-			layout = {
-				cycle = false,
-			},
-		},
-		gitbrowse = {
-			enabled = true,
-		},
-		image = {
-			enabled = true,
-		},
-		indent = {
-			enabled = true,
-		},
-		lazygit = {
-			enabled = true,
-			configure = false,
-		},
-		notifier = {
-			enabled = true,
-		},
-		picker = {
-			enabled = true,
-			focus = "input",
-			layout = {
-				cycle = false,
-			},
-			formatters = {
-				file = {
-					filename_first = true,
-				},
-			},
-			sources = {
-				files = {
-					hidden = true,
-				},
-				grep = {
-					hidden = true,
-				},
-				recent = {
-					hidden = true,
-					filter = { cwd = true },
-				},
-				grep_word = {
-					hidden = true,
-					focus = "list",
-				},
-				explorer = {
-					hidden = true,
-				},
-				buffers = {
-					focus = "list",
-				},
-			},
-			matcher = {
-				frecency = true,
-				cwd_bonus = true,
-			},
-		},
-		scratch = {
-			enabled = true,
-		},
-		statuscolumn = {
-			enabled = true,
-		},
-		terminal = {
-			enabled = true,
-		},
-	},
+    "folke/snacks.nvim",
+    priority = 1000,
+    opts = {
+        bufdelete = {
+            enabled = true,
+        },
+        dashboard = {
+            enabled = true,
+        },
+        explorer = {
+            enabled = true,
+            layout = {
+                cycle = false,
+            },
+        },
+        gitbrowse = {
+            enabled = true,
+        },
+        image = {
+            enabled = true,
+        },
+        indent = {
+            enabled = true,
+        },
+        lazygit = {
+            enabled = true,
+            configure = false,
+        },
+        notifier = {
+            enabled = true,
+        },
+        picker = {
+            enabled = true,
+            focus = "input",
+            layout = {
+                cycle = false,
+            },
+            formatters = {
+                file = {
+                    filename_first = true,
+                },
+            },
+            sources = {
+                files = {
+                    hidden = true,
+                },
+                grep = {
+                    hidden = true,
+                },
+                recent = {
+                    hidden = true,
+                    filter = { cwd = true },
+                },
+                grep_word = {
+                    hidden = true,
+                    focus = "list",
+                },
+                explorer = {
+                    hidden = true,
+                },
+            },
+            matcher = {
+                frecency = true,
+                cwd_bonus = true,
+            },
+        },
+        scratch = {
+            enabled = true,
+        },
+        statuscolumn = {
+            enabled = true,
+        },
+        terminal = {
+            enabled = true,
+        },
+    },
 	-- stylua: ignore
 	keys = {
         -- Files
