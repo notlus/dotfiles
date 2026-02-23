@@ -7,20 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "buffer_font_family": "FiraCode Nerd Font Propo",
   "agent": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-opus-4.6"
     }
   },
   "theme": "Tokyo Night",
   "vim_mode": true,
   "ui_font_size": 14,
   "buffer_font_size": 12,
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "vim": {
     "toggle_relative_line_numbers": true
   },
