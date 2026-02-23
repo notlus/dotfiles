@@ -117,6 +117,11 @@ if [[ -f ~/.zsh_secrets ]]; then
     source ~/.zsh_secrets
 fi
 
+# Load local overrides, if they exist
+if [[ -f ~/.zsh.local ]]; then
+    source ~/.zsh.local
+fi
+
 if [[ -d ~/.lmstudio ]]; then
     export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
