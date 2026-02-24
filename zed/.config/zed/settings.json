@@ -24,16 +24,13 @@
   "vim": {
     "toggle_relative_line_numbers": true
   },
-  "column": {
-    "width": 100
-  },
   "format_on_save": "off",
   "languages": {
-    "swift": {
+    "Swift": {
       "tab_size": 4,
       "enable_language_server": true,
       "language_servers": [
-       "sourcekit-lsp"
+        "sourcekit-lsp"
       ],
       "show_edit_predictions": true,
       "show_completions_on_input": true,
@@ -45,15 +42,9 @@
         }
       }
     },
-    "objc": {
-      "language_servers": ["clangd"],
-      "enable_language_server": true
-    }
   },
   "lsp": {
     "sourcekit-lsp": {
-      "command": "sourcekit-lsp",
-      "enabled": true
     },
     "clangd": {
       "initialization_options": {
@@ -69,6 +60,14 @@
     }
   },
   "file_types": {
-    "objc": ["m", "mm"]
+    "Objective C": ["m", "mm"]
+  },
+  "agent_servers": {
+    "cursor-agent": {
+      "type": "custom",
+      "command": "cursor-agent-acp",
+      "args": [],
+      "env": {}
+    }
   }
 }
