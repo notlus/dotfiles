@@ -1,28 +1,17 @@
 return {
-	"supermaven-inc/supermaven-nvim",
+    "supermaven-inc/supermaven-nvim",
     enabled = true,
-	event = "InsertEnter",
-	opts = {
-		disable_inline_completions = true,
-		-- disable_keymaps = true,
-	},
-	config = function()
-		require("supermaven-nvim").setup({
-			log_level = "off",
-			disable_ghost_text = true,
-			disable_inline_completions = true,
-			completion = {
-				enabled = false,
-				-- Try to adjust ghost text appearance to be less intrusive
-				ghost_text = {
-					hl_group = "Comment", -- Make ghost text appear as comments
-				},
-			},
-			integrations = {
-				blink_cmp = {
-					enabled = true,
-				},
-			},
-		})
-	end,
+    event = "InsertEnter",
+    config = function()
+        require("supermaven-nvim").setup({
+            log_level = "off",
+            disable_inline_completions = false,
+            disable_keymaps = true,
+        })
+
+        local suggestion = require("supermaven-nvim.completion_preview")
+        vim.keymap.set("i", "<C-l>", suggestion.on_accept_suggestion, { desc = "Accept suggestion (Supermaven)" })
+        vim.keymap.set("i", "<C-j>", suggestion.on_accept_suggestion_word, { desc = "Accept word (Supermaven)" })
+        vim.keymap.set("i", "<C-]>", suggestion.on_dispose_inlay, { desc = "Clear suggestion (Supermaven)" })
+    end,
 }
