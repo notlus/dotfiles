@@ -16,6 +16,19 @@ return {
 		{ "<leader>at", "<cmd>CodeCompanion /tests<cr>", mode = "v", desc = "Generate tests" },
 	},
 	opts = {
+		adapters = {
+			acp = {
+				cursor = function()
+					return require("codecompanion.adapters.acp").extend("claude_code", {
+						name = "cursor",
+						formatted_name = "Cursor",
+						commands = {
+							default = { vim.fn.expand("~/.local/bin/cursor-agent"), "acp" },
+						},
+					})
+				end,
+			},
+		},
 		chat = {
 			autoload = "default",
 			enabled = true,
