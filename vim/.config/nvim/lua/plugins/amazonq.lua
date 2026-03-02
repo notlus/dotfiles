@@ -3,6 +3,7 @@ return {
 		name = "amazonq",
 		url = "https://github.com/awslabs/amazonq.nvim.git",
 		cmd = "AmazonQ",
+        enabled = false,
 		inline_suggest = false,
 		opts = {
 			ssoStartUrl = "https://d-9067cfa456.awsapps.com/start",
