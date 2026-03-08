@@ -63,6 +63,9 @@
     "Objective C": ["m", "mm"]
   },
   "agent_servers": {
+    "cursor": {
+      "type": "registry"
+    },
     "cursor-agent": {
       "type": "custom",
       "command": "cursor-agent-acp",
