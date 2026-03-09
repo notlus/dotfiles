@@ -24,6 +24,7 @@ return {
     "olimorris/codecompanion.nvim",
     dependencies = {
         "nvim-lua/plenary.nvim",
+        "ravitemer/codecompanion-history.nvim"
     },
     keys = {
         { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Toggle chat" },
@@ -34,6 +35,7 @@ return {
         { "<leader>af", "<cmd>CodeCompanion /fix<cr>", mode = "v", desc = "Fix selection" },
         { "<leader>ax", "<cmd>CodeCompanion /explain<cr>", mode = "v", desc = "Explain selection" },
         { "<leader>at", "<cmd>CodeCompanion /tests<cr>", mode = "v", desc = "Generate tests" },
+        { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", mode = "n", desc = "Browse chat history" },
     },
     opts = {
         adapters = {
@@ -49,8 +51,30 @@ return {
                 end,
             },
         },
+        extensions = {
+            history = {
+                enabled = true,
+                opts = {
+                    keymap = "gh",
+                    save_chat_keymap = "sc",
+                    auto_save = true,
+                    expiration_days = 0, -- 0 means chats never expire
+                    picker = "snacks",
+                    auto_generate_title = true,
+                    title_generation_opts = {
+                        adapter = nil,
+                        model = nil,
+                        refresh_every_n_prompts = 5,
+                        max_refreshes = 3,
+                    },
+                    continue_last_chat = true,
+                    delete_on_clearing_chat = false,
+                    dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
+                    enable_logging = false,
+                },
+            },
+        },
         chat = {
-            autoload = "default",
             enabled = true,
         },
         display = {
