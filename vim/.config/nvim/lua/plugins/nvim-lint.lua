@@ -1,6 +1,7 @@
 return {
 	"mfussenegger/nvim-lint",
 	event = { "BufReadPre", "BufNewFile" },
+    enabled = false, -- Disable by default, enable manually in filetype config
 	config = function()
 		local lint = require("lint")
 

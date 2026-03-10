@@ -60,7 +60,7 @@ return {
                     auto_save = true,
                     expiration_days = 0, -- 0 means chats never expire
                     picker = "snacks",
-                    auto_generate_title = true,
+                    auto_generate_title = adapter ~= "acp",
                     title_generation_opts = {
                         adapter = nil,
                         model = nil,
