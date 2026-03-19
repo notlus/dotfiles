@@ -24,7 +24,7 @@ return {
     "olimorris/codecompanion.nvim",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "ravitemer/codecompanion-history.nvim"
+        "ravitemer/codecompanion-history.nvim",
     },
     keys = {
         { "<leader>aa", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "Toggle chat" },
@@ -60,7 +60,7 @@ return {
                     auto_save = true,
                     expiration_days = 0, -- 0 means chats never expire
                     picker = "snacks",
-                    auto_generate_title = adapter ~= "acp",
+                    auto_generate_title = adapter ~= "kiro" and adapter ~= "cursor",
                     title_generation_opts = {
                         adapter = nil,
                         model = nil,
@@ -69,7 +69,7 @@ return {
                     },
                     continue_last_chat = true,
                     delete_on_clearing_chat = false,
-                    dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history",
+                    dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history" .. vim.fn.getcwd(),
                     enable_logging = false,
                 },
             },
