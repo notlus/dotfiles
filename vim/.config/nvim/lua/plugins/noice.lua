@@ -7,8 +7,14 @@ return {
     },
     opts = {
         cmdline = {
-            -- enabled = true,
-            view = "cmdline",
+            view = "cmdline_popup",
+        },
+        lsp = {
+            -- override markdown rendering so that plugins use **Treesitter**
+            override = {
+                ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                ["vim.lsp.util.stylize_markdown"] = true,
+            },
         },
         notify = {
             enabled = false,
