@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Load lazy.nvim and its plugins
 
 require("lazy").setup("plugins", {
+    rocks = { enabled = false },
     "folke/which-key.nvim",
     { "folke/neoconf.nvim", cmd = "Neoconf" },
     {
