@@ -21,7 +21,7 @@ return {
             view = "notify",
         },
         presets = {
-            bottom_search = true,
+            bottom_search = false,
             command_palette = false,
             long_message_to_split = true,
             inc_rename = false,
