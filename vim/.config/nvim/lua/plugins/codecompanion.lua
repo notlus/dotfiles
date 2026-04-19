@@ -131,7 +131,8 @@ return {
                             return "Generate a commit message for these staged changes. Requirements:\n"
                                 .. "- Be concise\n"
                                 .. "- Use conventional commit format (e.g., feat:, fix:, refactor:, docs:)\n"
-                                .. "- Use backticks around code and type names\n\n"
+                                .. "- Use backticks around code and type names\n"
+                                .. "- Never commit without permission\n\n"
                                 .. "```diff\n"
                                 .. diff
                                 .. "\n```"
@@ -176,12 +177,6 @@ return {
                     vim.fn.expand("~/.config/dec-m-rules.md"),
                 },
                 is_preset = true,
-            },
-            pr = {
-                description = "Pull Request",
-                files = {
-                    vim.fn.expand("~/.kiro/steering/pull-request-template.md"),
-                },
             },
         },
     },
