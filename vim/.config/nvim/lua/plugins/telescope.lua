@@ -19,6 +19,16 @@ return {
 				selection_strategy = "reset",
 				path_display = { "smart" },
 				color_devicons = true,
+				mappings = {
+					i = {
+						["<C-j>"] = require("telescope.actions").move_selection_next,
+						["<C-k>"] = require("telescope.actions").move_selection_previous,
+					},
+					n = {
+						["<C-j>"] = require("telescope.actions").move_selection_next,
+						["<C-k>"] = require("telescope.actions").move_selection_previous,
+					},
+				},
 			},
 			extensions = {
 				["ui-select"] = {
