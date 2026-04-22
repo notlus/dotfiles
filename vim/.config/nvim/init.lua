@@ -19,36 +19,23 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
     rocks = { enabled = false },
-    "folke/which-key.nvim",
-    { "folke/neoconf.nvim", cmd = "Neoconf" },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        change_detection = {
-            enabled = true, -- automatically check for config file changes and reload the ui
-            notify = false, -- turn off notifications whenever plugin changes are made
-        },
-        config = function()
-            vim.cmd([[colorscheme tokyonight]])
-        end,
+    change_detection = {
+        enabled = true,
+        notify = false,
     },
-
-    require("core.options"),
-    require("core.keymaps"),
-    require("lsp"),
 })
+
+require("core.options")
+require("core.keymaps")
+require("lsp")
 
 -- Highlight configurations
-vim.cmd([[highlight Normal guibg=none]])
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "objc", "objcpp", "swift" },
+vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
-        vim.opt_local.commentstring = "// %s"
+        vim.cmd([[highlight Normal guibg=none]])
     end,
 })
+vim.cmd([[highlight Normal guibg=none]])
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
