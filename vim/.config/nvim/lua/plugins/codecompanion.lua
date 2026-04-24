@@ -1,4 +1,5 @@
 local adapter = os.getenv("CODECOMPANION_ADAPTER") or "anthropic"
+local config_home = vim.env.XDG_CONFIG_HOME or (vim.env.HOME .. "/.config")
 
 local function read_prompt_file(path, fallback)
     local f = io.open(vim.fn.expand(path), "r")
@@ -98,7 +99,7 @@ return {
                         role = "user",
                         content = function()
                             return read_prompt_file(
-                                "~/.config/code-review-prompt.md",
+                                config_home .. "/code-review-prompt.md",
                                 "Please review the selected code."
                             )
                         end,
@@ -147,7 +148,7 @@ return {
                         role = "user",
                         content = function()
                             local base_branch = vim.g.pr_base_branch or "dev"
-                            local prompt = read_prompt_file("~/.config/pull-request-prompt.md", "")
+                            local prompt = read_prompt_file(config_home .. "/pull-request-prompt.md", "")
                             local diff = git_diff(base_branch .. "...HEAD")
 
                             if not diff then
@@ -171,7 +172,7 @@ return {
                     ".cursorrules",
                     "AGENT.md",
                     "AGENTS.md",
-                    vim.fn.expand("~/.config/dec-m-rules.md"),
+                    config_home .. "/dec-m-rules.md",
                 },
                 is_preset = true,
             },
