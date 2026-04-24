@@ -20,6 +20,11 @@ local function git_diff(args)
     return diff
 end
 
+local function tagged_block(content, tag)
+    local safe_tag = (tag or "content"):lower():gsub("[^a-z0-9_%-]", "_")
+    return "<" .. safe_tag .. ">\n" .. content .. "\n</" .. safe_tag .. ">"
+end
+
 return {
     "olimorris/codecompanion.nvim",
     dependencies = {
@@ -114,7 +119,7 @@ return {
                 interaction = "chat",
                 description = "Generate a commit message for staged changes",
                 opts = {
-                    alias = "commit",
+                    alias = "cm",
                     is_slash_cmd = true,
                 },
                 prompts = {
@@ -129,13 +134,13 @@ return {
                                 return "No staged changes found. Please stage your changes with `git add` first."
                             end
                             return "Generate a commit message for these staged changes. Requirements:\n"
-                                .. "- Be concise\n"
                                 .. "- Use conventional commit format (e.g., feat:, fix:, refactor:, docs:)\n"
+                                .. "- Be concise\n"
+                                .. "- Keep subject line short\n"
                                 .. "- Use backticks around code and type names\n"
-                                .. "- Never commit without permission\n\n"
-                                .. "```diff\n"
-                                .. diff
-                                .. "\n```"
+                                .. "- Show commit message in a text block\n"
+                                .. "- Ask permission before committing\n\n"
+                                .. tagged_block(diff, "git_diff")
                         end,
                     },
                 },
@@ -161,7 +166,9 @@ return {
                             if diff == "" then
                                 return "No changes found compared to " .. base_branch .. " branch."
                             end
-                            return prompt .. "\n\n```diff\n" .. diff .. "\n```"
+                            return prompt
+                                .. "\n\nImportant: Return plain markdown only. Do not use fenced code blocks (no ``` blocks).\n\n"
+                                .. tagged_block(diff, "git_diff")
                         end,
                     },
                 },
