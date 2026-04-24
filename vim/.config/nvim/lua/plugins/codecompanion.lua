@@ -59,7 +59,7 @@ return {
                         refresh_every_n_prompts = 5,
                         max_refreshes = 3,
                     },
-                    continue_last_chat = true,
+                    continue_last_chat = false,
                     delete_on_clearing_chat = false,
                     dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history" .. vim.fn.getcwd(),
                     enable_logging = false,
