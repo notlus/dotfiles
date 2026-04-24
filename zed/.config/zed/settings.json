@@ -7,11 +7,24 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "edit_predictions": {
     "provider": "zed"
   },
   "buffer_font_family": "FiraCode Nerd Font Propo",
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "anthropic",
       "model": "claude-opus-4.6"
