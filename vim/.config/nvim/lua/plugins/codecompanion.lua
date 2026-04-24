@@ -43,19 +43,6 @@ return {
         { "<leader>ah", "<cmd>CodeCompanionHistory<cr>", mode = "n", desc = "Browse chat history" },
     },
     opts = {
-        adapters = {
-            acp = {
-                cursor = function()
-                    return require("codecompanion.adapters.acp").extend("claude_code", {
-                        name = "cursor",
-                        formatted_name = "Cursor",
-                        commands = {
-                            default = { vim.fn.expand("~/.local/bin/cursor-agent"), "acp" },
-                        },
-                    })
-                end,
-            },
-        },
         extensions = {
             history = {
                 enabled = true,
@@ -89,7 +76,10 @@ return {
         },
         interactions = {
             chat = {
-                adapter = adapter,
+                adapter = {
+                    name = adapter,
+                    model = "gpt-5.3-codex",
+                },
             },
         },
         opts = {
