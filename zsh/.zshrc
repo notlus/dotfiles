@@ -103,11 +103,12 @@ fi
 # Have FZF use `fd` instead of `find`.
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--layout=reverse"
+
 # Preview file content using bat
 export FZF_CTRL_T_OPTS="
     --preview 'bat -n --color=always {}'
     --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-
 # Paths
 export GEM_HOME=$HOME/.gem
 export PATH=$HOME/bin:/usr/local/bin:$GEM_HOME/bin:$HOME/bin:$PATH:$HOME/.local/bin/
