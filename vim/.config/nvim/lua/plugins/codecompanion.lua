@@ -11,6 +11,26 @@ local function read_prompt_file(path, fallback)
     return content
 end
 
+local function extract_markdown_template(content)
+    if not content then
+        return nil
+    end
+    local body = content
+    local template = body:match("```markdown%s*([\r\n].-)[\r\n]```")
+    if template then
+        return vim.trim(template)
+    end
+    return vim.trim(body)
+end
+
+local function remove_markdown_template_block(content)
+    if not content then
+        return ""
+    end
+    local without_template = content:gsub("```markdown%s*[\r\n].-[\r\n]```", "")
+    return vim.trim(without_template)
+end
+
 local function git_diff(args)
     local handle = io.popen("git diff " .. args)
     if not handle then
@@ -21,9 +41,71 @@ local function git_diff(args)
     return diff
 end
 
-local function tagged_block(content, tag)
-    local safe_tag = (tag or "content"):lower():gsub("[^a-z0-9_%-]", "_")
-    return "<" .. safe_tag .. ">\n" .. content .. "\n</" .. safe_tag .. ">"
+local function fenced_block(content, language)
+    local lang = language or ""
+    return "```" .. lang .. "\n" .. content .. "\n```"
+end
+
+local function save_pr_markdown(chat, data)
+    if not chat._save_pr_pending then
+        return
+    end
+    chat._save_pr_pending = false
+    local status = (data and data.status) or "unknown"
+
+    local content = nil
+    for i = #chat.messages, 1, -1 do
+        local message = chat.messages[i]
+        if
+            (message.role == "llm" or message.role == "assistant")
+            and type(message.content) == "string"
+            and message.content ~= ""
+        then
+            content = message.content
+            break
+        end
+    end
+
+    if not content then
+        vim.notify("No assistant response found to save as pr.md (status: " .. status .. ")", vim.log.levels.WARN)
+        return
+    end
+
+    local path = vim.fs.joinpath(vim.fn.getcwd(), "pr.md")
+    local file, err = io.open(path, "w")
+    if not file then
+        vim.notify("Failed to save pr.md: " .. (err or "unknown error"), vim.log.levels.ERROR)
+        return
+    end
+
+    file:write(content)
+    file:close()
+    vim.notify("Saved PR draft to " .. path, vim.log.levels.INFO)
+end
+
+local function build_pull_request_message()
+    local base_branch = vim.g.pr_base_branch or "dev"
+    local prompt_text = read_prompt_file(config_home .. "/pr-message.md", "")
+    local prompt_template = extract_markdown_template(prompt_text)
+    local prompt_instructions = remove_markdown_template_block(prompt_text)
+    local diff = git_diff(base_branch .. "...HEAD")
+
+    if not prompt_template or prompt_template == "" then
+        return "Missing markdown template in ~/.config/pr-message.md"
+    end
+    if not diff then
+        return "Failed to execute git command."
+    end
+    if diff == "" then
+        return "No changes found compared to " .. base_branch .. " branch."
+    end
+
+    return "Follow all instructions below and fill the markdown template using only the provided git diff. Do not inspect files or repo state. Return only the completed markdown body with no fenced code blocks.\n\n"
+        .. prompt_instructions
+        .. "\n\nMarkdown template:\n\n"
+        .. prompt_template
+        .. "\n\nUse only this diff as source material:\n\n"
+        .. fenced_block(diff, "diff")
 end
 
 return {
@@ -81,6 +163,28 @@ return {
                     name = adapter,
                     model = "gpt-5.3-codex",
                 },
+                slash_commands = {
+                    ["pr"] = {
+                        description = "Generate and save a pull request description",
+                        callback = function(chat)
+                            if not chat._pr_save_callback_registered then
+                                chat:add_callback("on_completed", save_pr_markdown)
+                                chat._pr_save_callback_registered = true
+                            end
+                            chat._save_pr_pending = true
+                            chat:add_message({
+                                role = "user",
+                                content = build_pull_request_message(),
+                            }, {
+                                visible = false,
+                            })
+                            chat:submit({ auto_submit = true })
+                        end,
+                        opts = {
+                            contains_code = false,
+                        },
+                    },
+                },
             },
         },
         opts = {
@@ -117,6 +221,10 @@ return {
                     {
                         role = "user",
                         content = function()
+                            local prompt = read_prompt_file(
+                                config_home .. "/commit-message.md",
+                                "Generate a concise commit message for the staged changes."
+                            )
                             local diff = git_diff("--cached")
                             if not diff then
                                 return "Failed to execute git command."
@@ -124,42 +232,9 @@ return {
                             if diff == "" then
                                 return "No staged changes found. Please stage your changes with `git add` first."
                             end
-                            return "Generate a commit message for these staged changes. Requirements:\n"
-                                .. "- Use conventional commit format (e.g., feat:, fix:, refactor:, docs:)\n"
-                                .. "- Be concise\n"
-                                .. "- Keep subject line short\n"
-                                .. "- Use backticks around code and type names\n"
-                                .. "- Show commit message in a text block\n"
-                                .. "- Ask permission before committing\n\n"
-                                .. tagged_block(diff, "git_diff")
-                        end,
-                    },
-                },
-            },
-            ["Pull Request"] = {
-                interaction = "chat",
-                description = "Generate a pull request description",
-                opts = {
-                    alias = "pr",
-                    is_slash_cmd = true,
-                },
-                prompts = {
-                    {
-                        role = "user",
-                        content = function()
-                            local base_branch = vim.g.pr_base_branch or "dev"
-                            local prompt = read_prompt_file(config_home .. "/pull-request-prompt.md", "")
-                            local diff = git_diff(base_branch .. "...HEAD")
-
-                            if not diff then
-                                return "Failed to execute git command."
-                            end
-                            if diff == "" then
-                                return "No changes found compared to " .. base_branch .. " branch."
-                            end
                             return prompt
-                                .. "\n\nImportant: Return plain markdown only. Do not use fenced code blocks (no ``` blocks).\n\n"
-                                .. tagged_block(diff, "git_diff")
+                                .. "\n\nUsing the staged diff below, generate a concise conventional commit message. Ask permission before committing.\n\n"
+                                .. fenced_block(diff, "diff")
                         end,
                     },
                 },
@@ -172,7 +247,7 @@ return {
                     ".cursorrules",
                     "AGENT.md",
                     "AGENTS.md",
-                    config_home .. "/dec-m-rules.md",
+                    config_home .. "/swift-rules.md",
                 },
                 is_preset = true,
             },
