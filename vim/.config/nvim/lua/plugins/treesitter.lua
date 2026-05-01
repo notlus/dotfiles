@@ -10,7 +10,9 @@ return {
         auto_install = true,
         ensure_installed = {
             "lua",
+            "markdown",
             "regex",
+            "yaml",
         },
     },
     config = function(_, opts)
