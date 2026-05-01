@@ -1,13 +1,20 @@
+# PR Message
 
-Create a concise pull request message for the changes made on the current branch. Do not consider
-changes that have not been committed. By default, the target branch is the `dev` branch. Use the
-following template to create the message and save to a file named pr.md
+Create a **concise** pull request message for the changes made on the current branch. Only consider
+changes that have been committed on the current branch. By default, the target branch is the `dev` branch.
 
-````
+- Remove the "_" instructions and replace with your own description of the changes
+- Bullet points should not end with a period
+- Use backticks for code blocks
+- Don't include file paths when referencing files
+- If a section is not applicable, or there is no information, write "N/A"
+
+Use the following template to create the message and save to a file named `pr.md`.
+
+```markdown
 ### Description
 
 _Provide a detailed explanation of the change. Why is this change needed?_
-
 
  ----------
 
@@ -86,3 +93,4 @@ _Attach any relevant images or screen recordings for visual changes or UI update
 - Are the added third party dependencies using the latest version?
 - Are the added third party dependencies actively maintained?
 ```
+
