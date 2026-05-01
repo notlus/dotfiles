@@ -528,6 +528,16 @@
               "bundleIdentifier" : "com.apple.dt.Xcode",
               "iconPath" : "/Applications/Xcode.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
+            },
+            {
+              "bundleIdentifier" : "dev.zed.Zed",
+              "iconPath" : "/Applications/Zed.app/Contents/Resources/Zed.icns",
+              "name" : "Zed"
+            },
+            {
+              "bundleIdentifier" : "com.neovide.neovide",
+              "iconPath" : "/Applications/Neovide.app/Contents/Resources/Neovide.icns",
+              "name" : "Neovide"
             }
           ],
           "assignAppShortcut" : "opt+shift+x",
@@ -687,6 +697,11 @@
               "bundleIdentifier" : "com.DanPristupov.Fork",
               "iconPath" : "/Applications/Fork.app/Contents/Resources/AppIcon.icns",
               "name" : "Fork"
+            },
+            {
+              "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+              "iconPath" : "/Applications/Cursor.app/Contents/Resources/Cursor.icns",
+              "name" : "Cursor"
             }
           ],
           "assignAppShortcut" : "opt+shift+x",
