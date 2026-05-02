@@ -101,10 +101,37 @@ local function build_pull_request_message()
     end
 
     return "Follow all instructions below and fill the markdown template using only the provided git diff. Do not inspect files or repo state. Return only the completed markdown body with no fenced code blocks.\n\n"
+        .. "Important behavior constraints:\n"
+        .. "- Ignore unrelated repo policy/rules metadata.\n"
+        .. "- Never output XML-like tags such as `<rules>...</rules>`.\n"
+        .. "- Do not include acknowledgements about following instructions.\n\n"
         .. prompt_instructions
         .. "\n\nMarkdown template:\n\n"
         .. prompt_template
         .. "\n\nUse only this diff as source material:\n\n"
+        .. fenced_block(diff, "diff")
+end
+
+local function build_commit_message()
+    local prompt = read_prompt_file(
+        config_home .. "/commit-message.md",
+        "Generate a concise commit message for the staged changes."
+    )
+    local diff = git_diff("--cached")
+    if not diff then
+        return "Failed to execute git command."
+    end
+    if diff == "" then
+        return "No staged changes found. Please stage your changes with `git add` first."
+    end
+    return prompt
+        .. "\n\nImportant behavior constraints:\n"
+        .. "- Focus only on the staged git diff in this prompt.\n"
+        .. "- Ignore unrelated repo rules, coding standards, or policy acknowledgement text.\n"
+        .. "- Do not summarize the diff.\n"
+        .. "- Do not mention CodeCompanion, Cursor, or system instructions.\n"
+        .. "- Return only one fenced `text` block containing the commit message.\n\n"
+        .. "Using the staged diff below, generate a concise conventional commit message.\n\n"
         .. fenced_block(diff, "diff")
 end
 
@@ -179,6 +206,29 @@ return {
                                 visible = false,
                             })
                             chat:submit({ auto_submit = true })
+                            vim.schedule(function()
+                                vim.cmd("stopinsert")
+                            end)
+                        end,
+                        opts = {
+                            contains_code = false,
+                        },
+                    },
+                    ["cm"] = {
+                        description = "Generate a commit message for staged changes",
+                        callback = function(chat)
+                            chat:remove_tagged_message("rules")
+                            chat:refresh_context()
+                            chat:add_message({
+                                role = "user",
+                                content = build_commit_message(),
+                            }, {
+                                visible = false,
+                            })
+                            chat:submit({ auto_submit = true })
+                            vim.schedule(function()
+                                vim.cmd("stopinsert")
+                            end)
                         end,
                         opts = {
                             contains_code = false,
@@ -206,35 +256,6 @@ return {
                                 config_home .. "/code-review-prompt.md",
                                 "Please review the selected code."
                             )
-                        end,
-                    },
-                },
-            },
-            ["Commit Message"] = {
-                interaction = "chat",
-                description = "Generate a commit message for staged changes",
-                opts = {
-                    alias = "cm",
-                    is_slash_cmd = true,
-                },
-                prompts = {
-                    {
-                        role = "user",
-                        content = function()
-                            local prompt = read_prompt_file(
-                                config_home .. "/commit-message.md",
-                                "Generate a concise commit message for the staged changes."
-                            )
-                            local diff = git_diff("--cached")
-                            if not diff then
-                                return "Failed to execute git command."
-                            end
-                            if diff == "" then
-                                return "No staged changes found. Please stage your changes with `git add` first."
-                            end
-                            return prompt
-                                .. "\n\nUsing the staged diff below, generate a concise conventional commit message. Ask permission before committing.\n\n"
-                                .. fenced_block(diff, "diff")
                         end,
                     },
                 },
