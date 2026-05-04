@@ -472,6 +472,27 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "raycast_layer_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Raycast Sesh Connect",
+                                "from": { "key_code": "s" },
+                                "to": [
+                                    { "shell_command": "open -g raycast://extensions/joshmedeski/sesh/cmd-connect" },
+                                    {
+                                        "set_variable": {
+                                            "name": "raycast_layer_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },

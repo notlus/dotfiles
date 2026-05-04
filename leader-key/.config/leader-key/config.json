@@ -72,6 +72,7 @@
         },
         {
           "key" : "p",
+          "label" : "Confetti",
           "type" : "url",
           "value" : "raycast://confetti"
         },
@@ -86,6 +87,12 @@
           "label" : "Translate",
           "type" : "url",
           "value" : "raycast://extensions/raycast/translator/translate"
+        },
+        {
+          "key" : "s",
+          "label" : "Sesh",
+          "type" : "url",
+          "value" : "raycast://extensions/joshmedeski/sesh/cmd-connect"
         }
       ],
       "key" : "r",

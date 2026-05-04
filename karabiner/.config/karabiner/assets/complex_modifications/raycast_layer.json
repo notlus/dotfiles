@@ -76,7 +76,7 @@
               "value": 1
             }
           ],
-          "description": "Raycast Clipboard History",
+          "description": "Clipboard History",
           "from": {
             "key_code": "c"
           },
@@ -108,6 +108,31 @@
           "to": [
             {
               "shell_command": "open -g raycast://confetti"
+            },
+            {
+              "set_variable": {
+                "name": "raycast_layer_active",
+                "value": 0
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "raycast_layer_active",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Sesh Connect",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "shell_command": "open -g raycast://extensions/joshmedeski/sesh/cmd-connect"
             },
             {
               "set_variable": {
