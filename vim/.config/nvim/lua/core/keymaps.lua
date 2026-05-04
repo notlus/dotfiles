@@ -21,11 +21,11 @@ keymap.set("v", "p", '"_dP')
 -- Create a new file
 keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
 
--- Navigate between split views
-keymap.set("n", "<C-J>", "<C-W><C-J>")
-keymap.set("n", "<C-K>", "<C-W><C-K>")
-keymap.set("n", "<C-H>", "<C-W><C-H>")
-keymap.set("n", "<C-L>", "<C-W><C-L>")
+-- Navigate between Neovim/tmux panes (falls back to Neovim splits when possible)
+keymap.set("n", "<C-J>", "<cmd>TmuxNavigateDown<CR>")
+keymap.set("n", "<C-K>", "<cmd>TmuxNavigateUp<CR>")
+keymap.set("n", "<C-H>", "<cmd>TmuxNavigateLeft<CR>")
+keymap.set("n", "<C-L>", "<cmd>TmuxNavigateRight<CR>")
 
 -- Toggle MiniFiles
 keymap.set("n", "<leader>m", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", { silent = true, desc = "Toggle MiniFiles" })
