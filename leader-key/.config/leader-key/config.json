@@ -56,6 +56,11 @@
           "key" : "z",
           "type" : "application",
           "value" : "/Applications/Zed.app"
+        },
+        {
+          "key" : "r",
+          "type" : "application",
+          "value" : "/System/Applications/Reminders.app"
         }
       ],
       "key" : "a",
@@ -68,31 +73,31 @@
           "key" : "e",
           "label" : "Emoji",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+          "value" : "raycast-x://extensions/raycast/emoji-symbols/search-emoji-symbols"
         },
         {
           "key" : "p",
           "label" : "Confetti",
           "type" : "url",
-          "value" : "raycast://confetti"
+          "value" : "raycast-x://confetti"
         },
         {
           "key" : "c",
           "label" : "Clipboard",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+          "value" : "raycast-x://extensions/raycast/clipboard-history/clipboard-history"
         },
         {
           "key" : "t",
           "label" : "Translate",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/translator/translate"
+          "value" : "raycast-x://extensions/raycast/translator/translate"
         },
         {
           "key" : "s",
           "label" : "Sesh",
           "type" : "url",
-          "value" : "raycast://extensions/joshmedeski/sesh/cmd-connect"
+          "value" : "raycast-x://extensions/joshmedeski/sesh/cmd-connect"
         }
       ],
       "key" : "r",
@@ -105,25 +110,25 @@
           "key" : "h",
           "label" : "Left Half",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/left-half"
+          "value" : "raycast-x://extensions/raycast/window-management/left-half"
         },
         {
           "key" : "l",
           "label" : "Right Half",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/right-half"
+          "value" : "raycast-x://extensions/raycast/window-management/right-half"
         },
         {
           "key" : "m",
           "label" : "Maximize",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/maximize"
+          "value" : "raycast-x://extensions/raycast/window-management/maximize"
         },
         {
           "key" : "c",
           "label" : "Center",
           "type" : "url",
-          "value" : "raycast://extensions/raycast/window-management/center"
+          "value" : "raycast-x://extensions/raycast/window-management/center"
         },
         {
           "key" : "s",
