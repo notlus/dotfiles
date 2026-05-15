@@ -189,7 +189,7 @@ return {
             chat = {
                 adapter = {
                     name = adapter,
-                    model = "gpt-5.3-codex",
+                    model = "gpt-5.5",
                 },
                 slash_commands = {
                     ["pr"] = {
