@@ -50,7 +50,7 @@ return {
         sources = {
             default = { "lsp", "path", "snippets", "buffer", "supermaven" },
             per_filetype = {
-                codecompanion = { "lsp", "buffer", "supermaven" },
+                codecompanion = { "codecompanion" },
             },
             min_keyword_length = 3,
             providers = {
