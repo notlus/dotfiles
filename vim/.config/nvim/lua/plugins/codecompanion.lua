@@ -126,7 +126,8 @@ local function build_commit_message()
     end
     return prompt
         .. "\n\nImportant behavior constraints:\n"
-        .. "- Focus only on the staged git diff in this prompt.\n"
+        .. "- Only look at the staged git diff in this prompt.\n"
+        .. "- Always use the git diff as the source material.\n"
         .. "- Ignore unrelated repo rules, coding standards, or policy acknowledgement text.\n"
         .. "- Do not summarize the diff.\n"
         .. "- Do not mention CodeCompanion, Cursor, or system instructions.\n"
