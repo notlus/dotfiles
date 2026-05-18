@@ -1,4 +1,25 @@
-local adapter = os.getenv("CODECOMPANION_ADAPTER") or "anthropic"
+-- Tie adapter+model together as a single named profile so they can't drift.
+-- Add new combinations here; select one via $CODECOMPANION_PROFILE.
+local profiles = {
+    claude_code = { adapter = "claude_code", model = "claude-opus-4-7" },
+    cursor_cli = { adapter = "cursor_cli", model = "gpt-5.5" },
+}
+
+local default_profile = "claude_code"
+local profile_name = os.getenv("CODECOMPANION_PROFILE") or default_profile
+local profile = profiles[profile_name]
+if not profile then
+    vim.schedule(function()
+        vim.notify(
+            ("CodeCompanion: unknown profile %q, falling back to %q"):format(profile_name, default_profile),
+            vim.log.levels.WARN
+        )
+    end)
+    profile = profiles[default_profile]
+end
+
+local adapter = profile.adapter
+local model = profile.model
 local config_home = vim.env.XDG_CONFIG_HOME or (vim.env.HOME .. "/.config")
 
 local function read_prompt_file(path, fallback)
@@ -189,7 +210,7 @@ return {
             chat = {
                 adapter = {
                     name = adapter,
-                    model = "gpt-5.5",
+                    model = model,
                 },
                 slash_commands = {
                     ["pr"] = {
