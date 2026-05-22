@@ -98,6 +98,12 @@
           "label" : "Sesh",
           "type" : "url",
           "value" : "raycast-x://extensions/joshmedeski/sesh/cmd-connect"
+        },
+        {
+          "key" : "d",
+          "label" : "Dictation",
+          "type" : "url",
+          "value" : "raycast-x://extensions/raycast/dictation/dictate"
         }
       ],
       "key" : "r",
