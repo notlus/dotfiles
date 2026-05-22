@@ -191,6 +191,12 @@
           "label" : "DuckDuckGo",
           "type" : "url",
           "value" : "https://duckduckgo.com"
+        },
+        {
+          "key" : "f",
+          "label" : "Search Files",
+          "type" : "url",
+          "value" : "raycast-x://extensions/raycast/file-search/search-files"
         }
       ],
       "key" : "s",
