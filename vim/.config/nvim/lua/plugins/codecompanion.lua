@@ -2,7 +2,7 @@
 -- Add new combinations here; select one via $CODECOMPANION_PROFILE.
 local profiles = {
     claude_code = { adapter = "claude_code", model = "claude-opus-4-7" },
-    cursor_cli = { adapter = "cursor_cli", model = "gpt-5.5" },
+    cursor_cli = { adapter = "cursor_cli", model = "composer-2.5[fast=true]" },
 }
 
 local default_profile = "claude_code"
