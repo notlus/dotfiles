@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -97,9 +90,6 @@ if command -v mise >/dev/null 2>&1; then
     eval "$(mise activate zsh --shims)"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Have FZF use `fd` instead of `find`.
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -128,8 +118,9 @@ if [[ -d ~/.lmstudio ]]; then
     export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
 
-if [[ -d /opt/homebrew/share/powerlevel10k ]]; then
-    source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+# starship
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
 fi
 
 # Added by LM Studio CLI (lms)
