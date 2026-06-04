@@ -184,13 +184,7 @@ return {
                     auto_save = true,
                     expiration_days = 0, -- 0 means chats never expire
                     picker = "snacks",
-                    auto_generate_title = adapter ~= "kiro" and adapter ~= "cursor_cli",
-                    title_generation_opts = {
-                        adapter = nil,
-                        model = nil,
-                        refresh_every_n_prompts = 5,
-                        max_refreshes = 3,
-                    },
+                    auto_generate_title = false,
                     continue_last_chat = false,
                     delete_on_clearing_chat = false,
                     dir_to_save = vim.fn.stdpath("data") .. "/codecompanion-history" .. vim.fn.getcwd(),
