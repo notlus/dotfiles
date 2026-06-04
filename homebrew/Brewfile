@@ -31,6 +31,7 @@ brew "tmux"
 brew "xcode-build-server"
 brew "yarn"
 brew "yazi"
+brew "starship"
 brew "zsh-autosuggestions"
 brew "zsh-vi-mode"
 
