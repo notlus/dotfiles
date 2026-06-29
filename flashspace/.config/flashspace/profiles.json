@@ -302,9 +302,11 @@
               "name" : "Ghostty"
             }
           ],
+          "assignAppShortcut" : "opt+shift+t",
           "display" : "Built-in Retina Display",
           "id" : "82BACFB9-1A62-4AD9-881A-A2F9A8130D0F",
           "name" : "T",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+t",
           "symbolIconName" : "apple.terminal"
         },
@@ -369,9 +371,11 @@
               "name" : "Xcode"
             }
           ],
+          "assignAppShortcut" : "opt+shift+x",
           "display" : "Built-in Retina Display",
           "id" : "9EDE67DA-383B-4944-A455-8D0E2D26E44D",
           "name" : "X",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+x",
           "symbolIconName" : "swift"
         },
@@ -388,9 +392,11 @@
               "name" : "Things"
             }
           ],
+          "assignAppShortcut" : "opt+shift+p",
           "display" : "Built-in Retina Display",
           "id" : "86ED5A17-C193-40CB-9D80-4ED5846ECC7C",
           "name" : "P",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+p",
           "symbolIconName" : "brain.head.profile"
         },
@@ -416,9 +422,11 @@
               "name" : "Screens"
             }
           ],
+          "assignAppShortcut" : "opt+shift+v",
           "display" : "Built-in Retina Display",
           "id" : "B4A0403C-12FE-4E5A-BAD9-2FFF2CD9F306",
           "name" : "V",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+v",
           "symbolIconName" : "appletvremote.gen1"
         },
