@@ -298,7 +298,7 @@
           "apps" : [
             {
               "bundleIdentifier" : "com.mitchellh.ghostty",
-              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+              "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
               "name" : "Ghostty"
             }
           ],
@@ -369,6 +369,11 @@
               "bundleIdentifier" : "com.apple.dt.Xcode",
               "iconPath" : "/Applications/Xcode.app/Contents/Resources/Xcode.icns",
               "name" : "Xcode"
+            },
+            {
+              "bundleIdentifier" : "dev.zed.Zed",
+              "iconPath" : "/Applications/Zed.app/Contents/Resources/Zed.icns",
+              "name" : "Zed"
             }
           ],
           "assignAppShortcut" : "opt+shift+x",
@@ -420,6 +425,11 @@
               "bundleIdentifier" : "com.edovia.screens4.mac",
               "iconPath" : "/Applications/Screens 4.app/Contents/Resources/AppIcon.icns",
               "name" : "Screens"
+            },
+            {
+              "bundleIdentifier" : "com.utmapp.UTM",
+              "iconPath" : "/Applications/UTM.app/Contents/Resources/AppIcon.icns",
+              "name" : "UTM"
             }
           ],
           "assignAppShortcut" : "opt+shift+v",
@@ -441,6 +451,21 @@
               "bundleIdentifier" : "com.apple.ScreenContinuity",
               "iconPath" : "/System/Applications/iPhone Mirroring.app/Contents/Resources/AppIcon.icns",
               "name" : "iPhone Mirroring"
+            },
+            {
+              "bundleIdentifier" : "com.openai.chat",
+              "iconPath" : "/Applications/ChatGPT.app/Contents/Resources/AppIcon.icns",
+              "name" : "ChatGPT"
+            },
+            {
+              "bundleIdentifier" : "com.anthropic.claudefordesktop",
+              "iconPath" : "/Applications/Claude.app/Contents/Resources/electron.icns",
+              "name" : "Claude"
+            },
+            {
+              "bundleIdentifier" : "com.openai.codex",
+              "iconPath" : "/Applications/Codex.app/Contents/Resources/electron.icns",
+              "name" : "Codex"
             }
           ],
           "assignAppShortcut" : "opt+shift+a",
