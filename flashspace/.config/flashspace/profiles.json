@@ -392,9 +392,9 @@
               "name" : "Obsidian"
             },
             {
-              "bundleIdentifier" : "com.culturedcode.ThingsMac",
-              "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
-              "name" : "Things"
+              "bundleIdentifier" : "com.apple.reminders",
+              "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
+              "name" : "Reminders"
             }
           ],
           "assignAppShortcut" : "opt+shift+p",
