@@ -15,6 +15,9 @@ return {
 				sidebars = "transparent", -- style for sidebars, see below
 				floats = "transparent", -- style for floating windows
 			},
+			on_highlights = function(hl, c)
+				hl.YankHighlight = { bg = c.blue7, fg = c.fg, bold = true }
+			end,
 		})
 		-- load the colorscheme here
 		vim.cmd([[colorscheme tokyonight]])
