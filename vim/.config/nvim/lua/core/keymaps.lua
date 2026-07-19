@@ -12,11 +12,11 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 keymap.set("t", "<ESC>", [[<C-\><C-n>]])
 
 -- Delete single character without copying to clipboard
-keymap.set("n", "x", '"_x')
-keymap.set("n", "X", '"_X')
+keymap.set("n", "x", '"_x', { desc = "Delete character without copying to clipboard" })
+keymap.set("n", "X", '"_X', { desc = "Delete previous character without copying to clipboard" })
 
 -- Keep last yanked text when pasting
-keymap.set("v", "p", '"_dP')
+keymap.set("v", "p", '"_dP', { desc = "Keep last yanked text when pasting" })
 
 -- Create a new file
 keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
@@ -33,7 +33,6 @@ keymap.set("n", "<leader>m", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0), 
 -- Close all buffers
 keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
 
-
 -- Xcode
 keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<CR>", { desc = "Show All Xcodebuild Actions" })
 keymap.set("n", "<leader>xm", "<cmd>XcodebuildProjectManager<CR>", { desc = "Show Project Manager Actions" })
@@ -45,7 +44,7 @@ keymap.set("n", "<leader>xR", "<cmd>XcodebuildRun<CR>", { desc = "Run without bu
 keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<CR>", { desc = "Test" })
 keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<CR>", { desc = "Run Selected Tests" })
 keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<CR>", { desc = "Run This Test Class" })
-keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
+keymap.set("n", "<leader>xP", "<cmd>XcodebuildSelectTestPlan<CR>", { desc = "Select Test Plan" })
 keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<CR>", { desc = "Toggle Test Explorer" })
 keymap.set("n", "<leader>xs", "<cmd>XcodebuildSelectScheme<CR>", { desc = "Select scheme" })
 keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<CR>", { desc = "Toggle Xcodebuild Logs" })
@@ -53,7 +52,7 @@ keymap.set("n", "<leader>x.", "<cmd>XcodebuildCancel<CR>", { desc = "Cancel buil
 keymap.set("n", "<leader>xC", "<cmd>XcodebuildSetup<CR>", { desc = "Show Configuration Wizard" })
 keymap.set("n", "<leader>xf", "<cmd>XcodebuildQuickfixLine<CR>", { desc = "Quickfix Line" })
 keymap.set("n", "<leader>xa", "<cmd>XcodebuildCodeActions<CR>", { desc = "Show code actions" })
-keymap.set("n", "<leader>xp", "<cmd>XcodebuildOpenInXcode<CR>", { desc = "Open in Xcode"})
+keymap.set("n", "<leader>xp", "<cmd>XcodebuildOpenInXcode<CR>", { desc = "Open in Xcode" })
 keymap.set("n", "<leader>xo", function()
 	vim.fn.system({
 		"open",
@@ -100,16 +99,3 @@ keymap.set("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
 keymap.set("n", "<leader>qQ", "<cmd>qa!<CR>", { desc = "Quit all without saving" })
 keymap.set("n", "<leader>qw", "<cmd>wq<CR>", { desc = "Save and quit" })
-
--- Copilot partial completion keymaps
-keymap.set("i", "<C-l>", function()
-	require("copilot.suggestion").accept()
-end, { silent = true, desc = "Accept Copilot suggestion" })
-
-keymap.set("i", "<C-j>", function()
-	require("copilot.suggestion").accept_word()
-end, { silent = true, desc = "Accept Copilot word" })
-
-keymap.set("i", "<C-k>", function()
-	require("copilot.suggestion").accept_line()
-end, { silent = true, desc = "Accept Copilot line" })

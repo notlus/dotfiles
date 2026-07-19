@@ -40,39 +40,28 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Enable completion triggered by <c-x><c-o>
 		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-		-- Buffer local mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local opts = { buffer = ev.buf, noremap = true, silent = true }
+		local function buf_opts(desc)
+			return vim.tbl_extend("force", { buffer = ev.buf, noremap = true, silent = true }, { desc = desc })
+		end
 
-		opts.desc = "Show declaration for what is under cursor"
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, buf_opts("Show declaration for what is under cursor"))
 
-		-- Jump to the implementation of the word under your cursor.
-		-- opts.desc = "Jump to implementation"
-		-- vim.keymap.set("n", "gI", require("telescope.builtin").lsp_implementations, opts)
+		vim.keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", buf_opts("Code Action"))
+		vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", buf_opts("[C]ode [O]utline"))
+		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", buf_opts("Rename"))
+		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", buf_opts("[P]eek [D]efinition"))
+		vim.keymap.set("n", "K", function()
+			local winid = require("ufo").peekFoldedLinesUnderCursor()
+			if not winid then
+				vim.cmd("Lspsaga hover_doc")
+			end
+		end, buf_opts("Show documentation for what is under cursor"))
 
-		vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" }, opts)
-		vim.keymap.set("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "[C]ode [O]utline" }, opts)
-		vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { desc = "[R]ename" }, opts)
-		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { desc = "[P]eek [D]efinition" }, opts)
-		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show documentation for what is under cursor"}, opts)
-
-		opts.desc = "Add workspace folder"
-		vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-
-		opts.desc = "Remove workspace folder"
-		vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-
-		opts.desc = "List workspace folders"
+		vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, buf_opts("Add workspace folder"))
+		vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, buf_opts("Remove workspace folder"))
 		vim.keymap.set("n", "<leader>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-
-		opts.desc = "Rename what is under cursor"
-		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-
-		opts.desc = "Show code actions for what is under cursor"
-		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+		end, buf_opts("List workspace folders"))
 
 		-- opts.desc = "Format the current buffer"
 		-- vim.keymap.set("n", "<space>f", function()
