@@ -55,20 +55,40 @@
         }
       }
     },
+    "C": {
+      "language_servers": [
+        "sourcekit-lsp"
+      ]
+    },
+    "C++": {
+      "language_servers": [
+        "sourcekit-lsp"
+      ]
+    },
+    "Objective-C": {
+      "language_servers": [
+        "sourcekit-lsp"
+      ]
+    },
+    "Objective-C++": {
+      "language_servers": [
+        "sourcekit-lsp"
+      ]
+    }
   },
   "lsp": {
     "sourcekit-lsp": {
-    },
-    "clangd": {
-      "initialization_options": {
-        "compilationDatabasePath": "build"
-      },
       "binary": {
-        "path": "/usr/local/bin/clangd",
-        "arguments": ["--background-index"],
-        "env": {
-          "CLANGD_FLAGS": "--log=verbose"
-        }
+        "arguments": [
+          "-Xclangd",
+          "--clang-tidy",
+          "-Xclangd",
+          "--background-index",
+          "-Xclangd",
+          "--offset-encoding=utf-8",
+          "-Xclangd",
+          "--query-driver=/Applications/Xcode*.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang*"
+        ]
       }
     }
   },
