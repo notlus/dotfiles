@@ -19,7 +19,7 @@ Personal development environment for macOS, optimized for Swift/Xcode developmen
 Extensive [Neovim configuration](vim/.config/nvim/) using [lazy.nvim](https://github.com/folke/lazy.nvim) with 36+ plugins:
 
 - **Xcode Integration** — Build, run, and test iOS projects via [xcodebuild.nvim](https://github.com/wojciech-kulik/xcodebuild.nvim)
-- **LSP** — sourcekit (Swift), clangd (C/C++), pyright (Python), lua_ls (Lua), bashls (Bash)
+- **LSP** — sourcekit (Swift/C/C++/ObjC), pyright (Python), lua_ls (Lua), bashls (Bash)
 - **Completion** — [blink.cmp](https://github.com/Saghen/blink.cmp) with LSP, snippets, path sources, and a custom [LM Studio source](vim/.config/nvim/lua/blink-cmp-lmstudio.lua) for local model completions
 - **AI** — CodeCompanion (named profiles), Copilot, Supermaven, Amazon Q, LM Studio (local Qwen 2.5 Coder)
 - **Debugging** — DAP with DAP-UI for integrated debugging
