@@ -21,12 +21,6 @@ keymap.set("v", "p", '"_dP', { desc = "Keep last yanked text when pasting" })
 -- Create a new file
 keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
 
--- Navigate between Neovim/tmux panes (falls back to Neovim splits when possible)
-keymap.set("n", "<C-J>", "<cmd>TmuxNavigateDown<CR>")
-keymap.set("n", "<C-K>", "<cmd>TmuxNavigateUp<CR>")
-keymap.set("n", "<C-H>", "<cmd>TmuxNavigateLeft<CR>")
-keymap.set("n", "<C-L>", "<cmd>TmuxNavigateRight<CR>")
-
 -- Toggle MiniFiles
 keymap.set("n", "<leader>m", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", { silent = true, desc = "Toggle MiniFiles" })
 
