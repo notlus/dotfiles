@@ -5,7 +5,7 @@ local profiles = {
     cursor_cli = { adapter = "cursor_cli", model = "composer-2.5[fast=true]" },
 }
 
-local default_profile = "claude_code"
+local default_profile = "cursor_cli"
 local profile_name = os.getenv("CODECOMPANION_PROFILE") or default_profile
 local profile = profiles[profile_name]
 if not profile then
