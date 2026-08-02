@@ -71,4 +71,12 @@ data/
 
 karabiner/.config/karabiner/automatic_backups
 vim/.config/nvim/lazy-lock.json
+
+# herdr machine-local state (plugins installed by scripts/bootstrap from herdr/plugins.txt)
+herdr/.config/herdr/plugins/
+herdr/.config/herdr/plugins.json
+herdr/.config/herdr/session.json
+herdr/.config/herdr/.plugins.lock
+herdr/.config/herdr/*.log
+herdr/.config/herdr/*.sock
 # End of https://www.gitignore.io/api/swift,xcode

@@ -1,36 +1,69 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-DOTFILES_ROOT=~/.dotfiles
+DOTFILES_ROOT="${DOTFILES_ROOT:-$HOME/.dotfiles}"
 
-# Install ohmysh
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+link() {
+    local source=$1
+    local target=$2
 
-# Create symlink for O
-omzssrc="$DOTFILES_ROOT"/".oh-my-zsh"
-omzsdst="$HOME"/".oh-my-zsh"
-ln -s $omzssrc $omzsdst
-
-DOTFILES=`find "$DOTFILES_ROOT" -type f -maxdepth 1`
- 
-for src in $DOTFILES
-do
-    filename=$(basename $src)
-    if [[ "$filename" != ".DS_Store" && "$filename" != ".dotfiles" && "$filename" != "scripts" && "$filename" != ".oh-my-zsh" && "$filename" != ".git" ]]
-    then
-        dst="$HOME/$filename"
-
-        if [ -e $dst ]
-        then
-            echo "Backing up existing file: "$dst
-            if [ -e $dst.backup ]
-            then
-            echo    rm -f $dst.backup
-            fi
-            echo mv -f $dst $dst.backup
-        fi
-        # echo $src $dst
-        ln -s $src $dst
-    else
-        echo "Skipping "$filename
+    if [[ ! -e "$source" ]]; then
+        echo "Skipping missing source: $source"
+        return 0
     fi
-done
+
+    mkdir -p "$(dirname "$target")"
+
+    if [[ -e "$target" && ! -L "$target" ]]; then
+        echo "Backing up $target -> $target.backup"
+        rm -f "$target.backup"
+        mv "$target" "$target.backup"
+    fi
+
+    ln -sfn "$source" "$target"
+    echo "Linked $target -> $source"
+}
+
+# Home directory
+link "$DOTFILES_ROOT/formatting/.clang-format" "$HOME/.clang-format"
+link "$DOTFILES_ROOT/p10k/.p10k.zsh" "$HOME/.p10k.zsh"
+link "$DOTFILES_ROOT/formatting/.swiftformat" "$HOME/.swiftformat"
+link "$DOTFILES_ROOT/tmux/.tmux" "$HOME/.tmux"
+link "$DOTFILES_ROOT/tmux/.tmux.conf" "$HOME/.tmux.conf"
+link "$DOTFILES_ROOT/zsh/.zshrc" "$HOME/.zshrc"
+link "$DOTFILES_ROOT/homebrew/Brewfile" "$HOME/Brewfile"
+
+# ~/.config directories
+link "$DOTFILES_ROOT/bat/.config/bat" "$HOME/.config/bat"
+link "$DOTFILES_ROOT/eza/.config/eza" "$HOME/.config/eza"
+link "$DOTFILES_ROOT/flashspace/.config/flashspace" "$HOME/.config/flashspace"
+link "$DOTFILES_ROOT/ghostty/.config/ghostty" "$HOME/.config/ghostty"
+link "$DOTFILES_ROOT/herdr/.config/herdr" "$HOME/.config/herdr"
+link "$DOTFILES_ROOT/karabiner/.config/karabiner" "$HOME/.config/karabiner"
+link "$DOTFILES_ROOT/lazygit/.config/lazygit" "$HOME/.config/lazygit"
+link "$DOTFILES_ROOT/leader-key/.config/leader-key" "$HOME/.config/leader-key"
+link "$DOTFILES_ROOT/vim/.config/nvim" "$HOME/.config/nvim"
+link "$DOTFILES_ROOT/yazi/.config/yazi" "$HOME/.config/yazi"
+
+# ~/.config files
+link "$DOTFILES_ROOT/config/.config/code-review-prompt.md" "$HOME/.config/code-review-prompt.md"
+link "$DOTFILES_ROOT/config/.config/commit-message.md" "$HOME/.config/commit-message.md"
+link "$DOTFILES_ROOT/config/.config/pr-message.md" "$HOME/.config/pr-message.md"
+link "$DOTFILES_ROOT/starship/.config/starship.toml" "$HOME/.config/starship.toml"
+link "$DOTFILES_ROOT/config/.config/swift-rules.md" "$HOME/.config/swift-rules.md"
+
+# Zed (other files in ~/.config/zed stay local)
+link "$DOTFILES_ROOT/zed/.config/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+link "$DOTFILES_ROOT/zed/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
+link "$DOTFILES_ROOT/zed/.config/zed/tasks.json" "$HOME/.config/zed/tasks.json"
+
+# Cursor
+link "$DOTFILES_ROOT/config/.config/swift-rules.md" "$HOME/.cursor/rules/swift-rules.md"
+
+# Herdr plugins (machine-local install; paths come from herdr, not dotfiles)
+if command -v herdr >/dev/null 2>&1 && [[ -f "$DOTFILES_ROOT/herdr/plugins.txt" ]]; then
+    while IFS= read -r plugin || [[ -n "$plugin" ]]; do
+        [[ -z "$plugin" || "$plugin" =~ ^[[:space:]]*# ]] && continue
+        herdr plugin install "$plugin" --yes
+    done < "$DOTFILES_ROOT/herdr/plugins.txt"
+fi

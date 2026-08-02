@@ -1,0 +1,2 @@
+qu8n/herdr-automatic-rename
+paulbkim-dev/vim-herdr-navigation
