@@ -318,19 +318,21 @@
               "name" : "Safari"
             },
             {
-              "bundleIdentifier" : "com.brave.Browser",
-              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
-              "name" : "Brave Browser"
-            },
-            {
               "bundleIdentifier" : "app.zen-browser.zen",
               "iconPath" : "/Applications/Zen Browser.app/Contents/Resources/firefox.icns",
               "name" : "Zen Browser"
+            },
+            {
+              "bundleIdentifier" : "com.brave.Browser",
+              "iconPath" : "/Applications/Brave Browser.app/Contents/Resources/app.icns",
+              "name" : "Brave Browser"
             }
           ],
+          "assignAppShortcut" : "opt+shift+b",
           "display" : "Built-in Retina Display",
           "id" : "7FC25A9F-334B-4034-B9F2-D34F99ACDA01",
           "name" : "B",
+          "openAppsOnActivation" : false,
           "shortcut" : "opt+b",
           "symbolIconName" : "pencil.circle.fill"
         },
