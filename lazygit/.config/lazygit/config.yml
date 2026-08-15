@@ -5,6 +5,6 @@ gui:
     selectedRangeBgColor:
       - "#292e42"
 git:
-  pagers:
-    - pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --syntax-theme tokyonight_night --side-by-side
+  diffRenderers:
+    - command: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --syntax-theme tokyonight_night --side-by-side
       colorArg: always
