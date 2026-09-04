@@ -21,8 +21,19 @@ keymap.set("v", "p", '"_dP', { desc = "Keep last yanked text when pasting" })
 -- Create a new file
 keymap.set("n", "<leader>n", ":enew<CR>", { desc = "[N]ew file" })
 
--- Toggle MiniFiles
-keymap.set("n", "<leader>m", ":lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>", { silent = true, desc = "Toggle MiniFiles" })
+-- Toggle MiniFiles (falls back to cwd for scratch/message buffers)
+keymap.set("n", "<leader>m", function()
+	if MiniFiles.close() then
+		return
+	end
+	local path = vim.api.nvim_buf_get_name(0)
+	local buftype = vim.api.nvim_get_option_value("buftype", { buf = 0 })
+	local stat = path ~= "" and vim.uv.fs_stat(path) or nil
+	if buftype ~= "" or not stat or (stat.type ~= "file" and stat.type ~= "directory") then
+		path = vim.fn.getcwd()
+	end
+	MiniFiles.open(path, false)
+end, { desc = "Toggle MiniFiles" })
 
 -- Close all buffers
 keymap.set("n", "<leader>ba", "<cmd>:bufdo bd<CR>", { desc = "Close all buffers" })
