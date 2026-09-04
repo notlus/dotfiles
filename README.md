@@ -80,6 +80,16 @@ brew bundle --file=homebrew/Brewfile
 
 The bootstrap script creates symlinks from dotfiles into your home directory, backing up any existing files first.
 
+### Herdr
+
+If [Herdr](https://herdr.dev) is installed, bootstrap also registers plugins from [`herdr/plugins.txt`](herdr/plugins.txt) (including `vim-herdr-navigation`, which forwards Ctrl+h/j/k/l into Neovim). If you install Herdr after the first bootstrap run, install plugins manually:
+
+```sh
+./scripts/herdr-plugins
+```
+
+Then reload Herdr (`prefix+shift+r`). Requires `jq` (included in the Brewfile).
+
 ## Key Design Decisions
 
 - **Vim-aware navigation everywhere** — Tmux, WezTerm, and Neovim share seamless pane/split navigation with consistent keybindings

@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES_ROOT="${DOTFILES_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
+PLUGINS_FILE="$DOTFILES_ROOT/herdr/plugins.txt"
+
+if ! command -v herdr >/dev/null 2>&1; then
+    echo "herdr not installed; skipping plugin setup."
+    echo "After installing herdr, run: $DOTFILES_ROOT/scripts/herdr-plugins"
+    exit 0
+fi
+
+if [[ ! -f "$PLUGINS_FILE" ]]; then
+    echo "No herdr plugins file at $PLUGINS_FILE" >&2
+    exit 1
+fi
+
+if ! command -v jq >/dev/null 2>&1; then
+    echo "jq not installed; vim-herdr-navigation needs it to detect nvim panes." >&2
+    echo "Install jq (brew install jq), then re-run this script." >&2
+    exit 1
+fi
+
+while IFS= read -r plugin || [[ -n "$plugin" ]]; do
+    [[ -z "$plugin" || "$plugin" =~ ^[[:space:]]*# ]] && continue
+    echo "Installing herdr plugin: $plugin"
+    if ! herdr plugin install "$plugin" --yes; then
+        echo "Failed to install $plugin" >&2
+        exit 1
+    fi
+done < "$PLUGINS_FILE"
+
+if ! herdr plugin action list --plugin vim-herdr-navigation 2>/dev/null | grep -q '"action_id":"left"'; then
+    echo "vim-herdr-navigation is not registered; Ctrl+h/j/k/l will not reach nvim." >&2
+    exit 1
+fi
+
+echo "Herdr plugins ready."
+echo "Reload herdr (prefix+shift+r) if it is already running."

@@ -60,10 +60,5 @@ link "$DOTFILES_ROOT/zed/.config/zed/tasks.json" "$HOME/.config/zed/tasks.json"
 # Cursor
 link "$DOTFILES_ROOT/config/.config/swift-rules.md" "$HOME/.cursor/rules/swift-rules.md"
 
-# Herdr plugins (machine-local install; paths come from herdr, not dotfiles)
-if command -v herdr >/dev/null 2>&1 && [[ -f "$DOTFILES_ROOT/herdr/plugins.txt" ]]; then
-    while IFS= read -r plugin || [[ -n "$plugin" ]]; do
-        [[ -z "$plugin" || "$plugin" =~ ^[[:space:]]*# ]] && continue
-        herdr plugin install "$plugin" --yes
-    done < "$DOTFILES_ROOT/herdr/plugins.txt"
-fi
+# Herdr plugins (machine-local; registered via herdr, not tracked in git)
+"$DOTFILES_ROOT/scripts/herdr-plugins"
