@@ -1,29 +1,30 @@
+local parsers = {
+    "bash",
+    "c",
+    "cpp",
+    "json",
+    "lua",
+    "markdown",
+    "objc",
+    "python",
+    "regex",
+    "swift",
+    "vim",
+    "yaml",
+}
+
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPre", "BufNewFile" },
+    lazy = false,
     build = ":TSUpdate",
-    opts = {
-        highlight = {
-            enable = true,
-        },
-        indent = { enable = true },
-        auto_install = true,
-        ensure_installed = {
-            "bash",
-            "c",
-            "cpp",
-            "json",
-            "lua",
-            "markdown",
-            "objc",
-            "python",
-            "regex",
-            "swift",
-            "vim",
-            "yaml",
-        },
-    },
-    config = function(_, opts)
-        require("nvim-treesitter").setup(opts)
+    config = function()
+        require("nvim-treesitter").install(parsers)
+
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(event)
+                pcall(vim.treesitter.start, event.buf)
+                vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end,
+        })
     end,
 }
