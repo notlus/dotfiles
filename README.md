@@ -51,6 +51,7 @@ Extensive [Neovim configuration](vim/.config/nvim/) using [lazy.nvim](https://gi
 | [bat](bat/) | Syntax-highlighted `cat` replacement |
 | [eza](eza/) | Modern `ls` replacement |
 | [yazi](yazi/) | Terminal file manager |
+| [superfile](superfile/) | Terminal file manager (bat preview, zoxide, transparent background) |
 | [lldb](lldb/) | Debugger configuration |
 
 ### Code Formatting

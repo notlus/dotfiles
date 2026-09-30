@@ -52,6 +52,10 @@ link "$DOTFILES_ROOT/config/.config/pr-message.md" "$HOME/.config/pr-message.md"
 link "$DOTFILES_ROOT/starship/.config/starship.toml" "$HOME/.config/starship.toml"
 link "$DOTFILES_ROOT/config/.config/swift-rules.md" "$HOME/.config/swift-rules.md"
 
+# Superfile (theme/ stays local; superfile writes default themes there)
+link "$DOTFILES_ROOT/superfile/.config/superfile/config.toml" "$HOME/.config/superfile/config.toml"
+link "$DOTFILES_ROOT/superfile/.config/superfile/hotkeys.toml" "$HOME/.config/superfile/hotkeys.toml"
+
 # Zed (other files in ~/.config/zed stay local)
 link "$DOTFILES_ROOT/zed/.config/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 link "$DOTFILES_ROOT/zed/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
