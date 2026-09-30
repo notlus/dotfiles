@@ -54,6 +54,14 @@ if command -v yazi >/dev/null 2>&1; then
   alias yz="yazi"
 fi
 
+# superfile
+# Resolve the binary directly so this does not follow the swiftpm `spf` alias.
+spf_bin="$(whence -p spf 2>/dev/null)"
+if [[ -n "$spf_bin" ]]; then
+  alias sf="$spf_bin"
+fi
+unset spf_bin
+
 if command -v bat >/dev/null 2>&1; then
     alias cat="bat --paging=never --style=plain"
     export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
