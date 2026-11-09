@@ -10,6 +10,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "Studio Display",
@@ -121,6 +126,11 @@
               "bundleIdentifier" : "com.culturedcode.ThingsMac",
               "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
               "name" : "Things"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "display" : "Studio Display",
@@ -155,6 +165,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -241,6 +256,11 @@
               "bundleIdentifier" : "com.culturedcode.ThingsMac",
               "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
               "name" : "Things"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -300,6 +320,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "assignAppShortcut" : "opt+shift+t",
@@ -397,6 +422,11 @@
               "bundleIdentifier" : "com.apple.reminders",
               "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
               "name" : "Reminders"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "assignAppShortcut" : "opt+shift+p",
@@ -488,6 +518,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/Ghostty.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "assignAppShortcut" : "opt+shift+t",
@@ -623,6 +658,11 @@
               "bundleIdentifier" : "com.apple.Notes",
               "iconPath" : "/System/Applications/Notes.app/Contents/Resources/AppIcon.icns",
               "name" : "Notes"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "assignAppShortcut" : "opt+shift+p",
@@ -660,6 +700,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -758,6 +803,11 @@
               "bundleIdentifier" : "com.apple.reminders",
               "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
               "name" : "Reminders"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "display" : "Built-in Retina Display",
@@ -817,6 +867,11 @@
               "bundleIdentifier" : "com.mitchellh.ghostty",
               "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
               "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.herdr.app",
+              "iconPath" : "/Applications/Herdr.app/Contents/Resources/Herdr.icns",
+              "name" : "Herdr"
             }
           ],
           "display" : "LG UltraFine",
@@ -918,6 +973,11 @@
               "bundleIdentifier" : "com.culturedcode.ThingsMac",
               "iconPath" : "/Applications/Things3.app/Contents/Resources/App-Release.icns",
               "name" : "Things"
+            },
+            {
+              "bundleIdentifier" : "app.unforgetful.unforgetful",
+              "iconPath" : "/Applications/Unforgetful.app/Contents/Resources/AppIcon.icns",
+              "name" : "Unforgetful"
             }
           ],
           "display" : "LG UltraFine",
