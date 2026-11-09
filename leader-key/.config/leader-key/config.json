@@ -61,6 +61,11 @@
           "key" : "r",
           "type" : "application",
           "value" : "/System/Applications/Reminders.app"
+        },
+        {
+          "key" : "h",
+          "type" : "application",
+          "value" : "/Applications/Herdr.app"
         }
       ],
       "key" : "a",
