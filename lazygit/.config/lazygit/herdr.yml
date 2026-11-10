@@ -1,0 +1,24 @@
+# Loaded after config.yml in Herdr app terminals (LG_CONFIG_FILE in ~/.zshrc).
+# ctrl-h/j/k/l move between Herdr panes, so the commits view gives them up.
+keybinding:
+  commits:
+    moveDownCommit: <alt-down>
+    moveUpCommit: <alt-up>
+    openLogMenu: <ctrl+x>
+customCommands:
+  - key: <ctrl+h>
+    context: global
+    description: Herdr pane left
+    command: herdr-app do pane.go --direction left >/dev/null
+  - key: <ctrl+j>
+    context: global
+    description: Herdr pane down
+    command: herdr-app do pane.go --direction down >/dev/null
+  - key: <ctrl+k>
+    context: global
+    description: Herdr pane up
+    command: herdr-app do pane.go --direction up >/dev/null
+  - key: <ctrl+l>
+    context: global
+    description: Herdr pane right
+    command: herdr-app do pane.go --direction right >/dev/null

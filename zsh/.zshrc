@@ -89,6 +89,28 @@ if [[ -e /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh 
     source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fi
 
+# Herdr app: ctrl-h/j/k/l at the prompt and in lazygit move between panes (Neovim handles them itself)
+if [[ -n $HC_TERMINAL_ID ]] && command -v herdr-app >/dev/null 2>&1; then
+    export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/herdr.yml"
+    _herdr_pane_go() {
+        herdr-app do pane.go --direction "${WIDGET#_herdr_pane_}" >/dev/null 2>&1 &!
+    }
+    _herdr_pane_bindkeys() {
+        local map key dir
+        for key dir in '^H' left '^J' down '^K' up '^L' right; do
+            zle -N _herdr_pane_$dir _herdr_pane_go
+            for map in viins vicmd; do
+                bindkey -M $map $key _herdr_pane_$dir
+            done
+        done
+    }
+    if (( $+functions[zvm_init] )); then
+        zvm_after_init_commands+=(_herdr_pane_bindkeys)
+    else
+        _herdr_pane_bindkeys
+    fi
+fi
+
 # zsh-autosuggestions
 if [[ -e /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
     source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
