@@ -13,11 +13,6 @@
           "value" : "/System/Applications/Mail.app"
         },
         {
-          "key" : "i",
-          "type" : "application",
-          "value" : "/System/Applications/Music.app"
-        },
-        {
           "key" : "m",
           "type" : "application",
           "value" : "/System/Applications/Messages.app"
@@ -31,11 +26,6 @@
           "key" : "o",
           "type" : "application",
           "value" : "/Applications/Obsidian.app"
-        },
-        {
-          "key" : "t",
-          "type" : "application",
-          "value" : "/Applications/Things3.app"
         },
         {
           "key" : "g",
@@ -66,6 +56,11 @@
           "key" : "h",
           "type" : "application",
           "value" : "/Applications/Herdr.app"
+        },
+        {
+          "key" : "i",
+          "type" : "application",
+          "value" : "/System/Applications/Siri AI.app"
         }
       ],
       "key" : "a",
