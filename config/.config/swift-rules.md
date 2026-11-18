@@ -4,7 +4,7 @@
 - **Use modern Swift.** Prefer Swift 5.9+ features, **async/await**, **actors**, **structured concurrency**, and **Sendable** when appropriate.
 - **Write safe, testable code.** Add or update **XCTest** for new or changed logic; keep code **pure** where possible; isolate side effects.
 - **Be explicit.** Prefer clarity over cleverness; small functions; single responsibility; meaningful names.
-- **Document decisions.** When non‑obvious, add brief comments and a commit message explaining *why*, not just *what*.
+- **Document decisions.** When non‑obvious, use DocC or header docs and a commit message explaining *why*, not just *what*.
 
 ---
 
@@ -54,8 +54,10 @@
 - Concurrency tests: use `async` tests; verify cancellation and error paths.
 
 ### Documentation
-- Public APIs: **DocC** comments with examples, concurrency and thread‑safety notes.
-- Non‑obvious decisions: a short `// RATIONALE:` comment near the code, and/or a `docs/decision-log.md` entry.
+- Swift: **DocC** (`///`) on declarations; see project [code-comments](.cursor/rules/code-comments.mdc) rule.
+- Objective-C: header documentation in `.h` files.
+- Non‑obvious decisions: DocC, header docs, commit messages, or `docs/decision-log.md` — never `RATIONALE:` in source.
+- Removals: update or delete stale docs and comments; note replacements when behavior is non-obvious.
 
 ### Git & Code Review
 - Small PRs (< 400 lines diff where possible) with a clear title and checklist.
