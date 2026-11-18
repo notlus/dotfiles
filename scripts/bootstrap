@@ -24,6 +24,21 @@ link() {
     echo "Linked $target -> $source"
 }
 
+# Replaces an old whole-directory symlink with a real directory, moving the app's
+# runtime state out of the repo. Must run before linking files inside `target`.
+unlink_dir() {
+    local source=$1
+    local target=$2
+
+    [[ -L "$target" && "$(cd "$target" && pwd -P)" == "$(cd "$source" && pwd -P)" ]] || return 0
+
+    rm "$target"
+    mkdir -p "$target"
+    find "$source" -mindepth 1 -maxdepth 1 ! -name config.toml ! -name '*.sock*' \
+        -exec mv {} "$target"/ \;
+    echo "Moved $target out of $source"
+}
+
 # Home directory
 link "$DOTFILES_ROOT/formatting/.clang-format" "$HOME/.clang-format"
 link "$DOTFILES_ROOT/p10k/.p10k.zsh" "$HOME/.p10k.zsh"
@@ -38,7 +53,6 @@ link "$DOTFILES_ROOT/bat/.config/bat" "$HOME/.config/bat"
 link "$DOTFILES_ROOT/eza/.config/eza" "$HOME/.config/eza"
 link "$DOTFILES_ROOT/flashspace/.config/flashspace" "$HOME/.config/flashspace"
 link "$DOTFILES_ROOT/ghostty/.config/ghostty" "$HOME/.config/ghostty"
-link "$DOTFILES_ROOT/herdr/.config/herdr" "$HOME/.config/herdr"
 link "$DOTFILES_ROOT/karabiner/.config/karabiner" "$HOME/.config/karabiner"
 link "$DOTFILES_ROOT/lazygit/.config/lazygit" "$HOME/.config/lazygit"
 link "$DOTFILES_ROOT/leader-key/.config/leader-key" "$HOME/.config/leader-key"
@@ -60,6 +74,10 @@ link "$DOTFILES_ROOT/superfile/.config/superfile/hotkeys.toml" "$HOME/.config/su
 link "$DOTFILES_ROOT/zed/.config/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 link "$DOTFILES_ROOT/zed/.config/zed/settings.json" "$HOME/.config/zed/settings.json"
 link "$DOTFILES_ROOT/zed/.config/zed/tasks.json" "$HOME/.config/zed/tasks.json"
+
+# Herdr (sessions, plugins, and logs stay local)
+unlink_dir "$DOTFILES_ROOT/herdr/.config/herdr" "$HOME/.config/herdr"
+link "$DOTFILES_ROOT/herdr/.config/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 
 # Cursor
 link "$DOTFILES_ROOT/config/.config/swift-rules.md" "$HOME/.cursor/rules/swift-rules.md"
