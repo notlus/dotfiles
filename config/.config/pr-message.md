@@ -1,7 +1,8 @@
 # PR Message
 
 Create a **concise** pull request message for the changes made on the current branch. Only consider
-changes that have been committed on the current branch. By default, the target branch is the `dev` branch.
+changes that have been committed on the current branch. Infer the target branch from the repository
+(e.g. an existing PR base branch or the repository default branch); do not assume a fixed branch name.
 
 - Remove the "_" instructions and replace with your own description of the changes
 - Bullet points should not end with a period
