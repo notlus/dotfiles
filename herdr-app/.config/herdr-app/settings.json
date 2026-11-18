@@ -1,0 +1,11 @@
+{
+  "zoom": 1,
+  "sounds": {
+    "enabled": true
+  },
+  "theme": "tokyo-night",
+  "font_ligatures": false,
+  "minimum_contrast": 1,
+  "font_size": 11,
+  "font": "SF Mono"
+}
