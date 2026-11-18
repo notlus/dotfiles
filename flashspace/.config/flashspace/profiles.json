@@ -650,11 +650,6 @@
               "name" : "Obsidian"
             },
             {
-              "bundleIdentifier" : "com.apple.reminders",
-              "iconPath" : "/System/Applications/Reminders.app/Contents/Resources/AppIcon.icns",
-              "name" : "Reminders"
-            },
-            {
               "bundleIdentifier" : "com.apple.Notes",
               "iconPath" : "/System/Applications/Notes.app/Contents/Resources/AppIcon.icns",
               "name" : "Notes"
